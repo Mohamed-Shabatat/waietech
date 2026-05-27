@@ -8,8 +8,10 @@
     color: #ffffff;
     
     /*  التعديل الأساسي: تثبيت الارتفاع الكلي  */
-    height: 180px; 
+    min-height: 180px; 
+    height: auto;
     margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
+    padding: 20px 0;
     
     /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
     display: flex;
@@ -118,8 +120,8 @@
     color: #cbd5e1;
 }
 .channel-text strong {
-    font-size: 1rem;
-    margin-top: 2px;
+    font-size: 0.85rem;
+    margin-top: 3px;
 }
 .contact-social-box h4 {
     font-size: 1rem;
