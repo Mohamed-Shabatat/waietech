@@ -475,7 +475,7 @@ html[dir="ltr"] .hero-section {
         font-size: 1.8rem !important;
         line-height: 1.4 !important;
     }
-    
+
     .hero-buttons {
         flex-direction: row;
         justify-content: center;
@@ -589,6 +589,12 @@ html[dir="ltr"] .hero-section {
     /* إلغاء حركة التكبير تماماً عن أيقونات كروت المحاور فقط */
     .pillar-item:hover .pillar-img-placeholder {
         transform: translateY(-50%) scale(1) !important; /* يحافظ على التوسط العمودي ويلغي التكبير */
+    }
+
+    /* قفل عنوان قسم الأثر بالأرقام على سطر واحد للموبايل للغتين */
+    .impact-text-content .impact-main-title {
+        font-size: 1.35rem !important; /* حجم متناسق يمنع نزول أي كلمة */
+        white-space: nowrap !important; /* إجبار العنوان على البقاء في سطر واحد */
     }
     
 }
