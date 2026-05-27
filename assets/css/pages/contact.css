@@ -78,7 +78,7 @@
     box-shadow: 0 4px 20px rgba(11, 31, 58, 0.1);
 }
 .contact-info-sidebar h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 15px;
     color: #27b5f7;
 }
@@ -121,7 +121,7 @@
     color: #cbd5e1;
 }
 .channel-text strong {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-top: 4px;
     white-space: normal; /* السماح للنص بالالتفاف المريح */
     word-break: break-word; /* حماية البريد الإلكتروني والنصوص الطويلة من التداخل */
@@ -163,7 +163,7 @@
     border: 1px solid rgba(11, 31, 58, 0.05);
 }
 .contact-form-block h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #0b1f3a;
     margin-bottom: 30px;
 }
@@ -228,13 +228,6 @@
     }
 }
 @media (max-width: 768px) {
-    .form-group-row {
-        grid-template-columns: 1fr; /* جعل حقول الاسم والايميل تحت بعض بالموبايل */
-        gap: 0;
-    }
-    .contact-form-block {
-        padding: 30px 20px;
-    }
 
     .inner-page-hero h1 {
         font-size: 1.5rem !important; /* تصغير الخط ليناسب الشاشة */
@@ -249,7 +242,7 @@
     .contact-grid-wrapper {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important; /* مسافة ثابتة وممتازة بين كرت الاتصال ونموذج الارسال */
+        gap: 30px !important; /* مسافة ثابتة وممتازة بين كرت الاتصال ونموذج الارسال */
         align-items: stretch !important;
     }
 
@@ -257,7 +250,7 @@
     .contact-info-sidebar {
         width: 100% !important;
         margin-bottom: 0 !important; /* إلغاء أي هوامش سفلية قديمة تسبب الفراغ */
-        padding: 30px 20px !important;
+        padding: 30px 30px !important;
     }
 
     /* كرت نموذج الإرسال (الأبيض) */
