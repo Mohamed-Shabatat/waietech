@@ -19,7 +19,7 @@
     background: linear-gradient(135deg, #0b1f3a 0%, #13335c 100%);
     color: #ffffff;
     
-    /* 🌟 التعديل الأساسي: تثبيت الارتفاع الكلي 🌟 */
+    /* التعديل الأساسي: تثبيت الارتفاع الكلي */
     height: 180px; 
     margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
     
@@ -229,5 +229,10 @@
     .inner-page-hero .subtitle {
         font-size: 0.9rem !important;
         padding: 0 15px;
+    }
+
+    /* تصغير عنوان قسم "من نحن" فقط في الموبايل ليتوافق مع أبعاد الشاشة */
+    .about-text-block .section-title-accent {
+        font-size: 1.5rem !important; /* حجم متناسق يمنع تضخم الكلمات في الشاشات الصغيرة */
     }
 }
