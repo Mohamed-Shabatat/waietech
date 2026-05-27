@@ -1,0 +1,668 @@
+/* --- 1. الإعدادات العامة والمتغيرات اللونية --- */
+:root {
+    --primary-color: #0B1F3A;    /* Dark Navy */
+    --secondary-color: #27B5F7;  /* Cyber Blue */
+    --bg-color: #F4F8FB;         /* Light Background */
+    --accent-glow: #5ED3FF;     /* Accent Glow */
+    --white: #FFFFFF;
+    --text-dark: #1A2B49;
+    --text-light: #5A6E85;
+    --transition: all 0.3s ease;
+}
+
+/* --- تخصيص شريط التمرير (Scrollbar) للمتصفح --- */
+
+/* 1. التحكم بعرض شريط التمرير بالكامل */
+::-webkit-scrollbar {
+    width: 10px; /* عرض الشريط (يمكنك تقليله لـ 8px ليكون أنحف وأكثر عصرية) */
+}
+
+/* 2. خلفية المجرى الذي يتحرك فيه الشريط (Track) */
+::-webkit-scrollbar-track {
+    background: var(--primary-color); /* اللون الكحلي الداكن للموقع */
+}
+
+/* 3. الجزء المتحرك الذي يمسكه المستخدم (Thumb) */
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color); /* اللون الأزرق السماوي السيبراني */
+    border-radius: 10px; /* جعل أطراف الشريط دائرية ناعمة */
+    border: 2px solid var(--primary-color); /* يصنع مسافة وهمية أنيقة حول الشريط */
+}
+
+/* 4. تأثير عند تمرير الماوس فوق شريط التمرير أو سحبه */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-glow); /* يتغير للون التوهج الفاتح عند الهوفر */
+}
+
+/* لدعم متصفح فايرفوكس */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--primary-color);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* دعم قلب الاتجاه تلقائياً بناءً على dir="ltr" */
+html[dir="ltr"] body {
+    font-family: 'Poppins', 'Tajawal', sans-serif;
+}
+
+/* الحل الصحيح: تطبيق خط Poppins على اسم المبادرة فقط عند تحول اللغة للإنجليزية */
+html[dir="ltr"] .logo-text {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+/* --- 2. تنسيق الـ Navbar (الهيدر) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    
+    /* التأثير الزجاجي الضبابي الشفاف */
+    background-color: rgba(255, 255, 255, 0.60) !important; /* لون أبيض شفاف بنسبة 75% */
+    backdrop-filter: blur(12px) !important; /* درجة الضبابية وتشتيت الرؤية خلف الهيدر */
+    -webkit-backdrop-filter: blur(12px) !important; /* لدعم متصفحات أبل وسفاري */
+    
+    border-bottom: 2px solid transparent !important;
+    border-image: linear-gradient(to left, var(--primary-color), var(--secondary-color), var(--accent-glow)) 1 !important;
+    box-shadow: 0 4px 15px rgba(11, 31, 58, 0.03); /* تقليل حدة الظل ليناسب الزجاج */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* مسافة ناعمة بين الأيقونة والنص */
+    white-space: nowrap; /* منع النص من النزول لسطر جديد */
+}
+
+/* إخفاء الأيقونات بداخل القائمة العلوية في سطح المكتب لتبدو أنظف (تظهر في الموبايل فقط) */
+.nav-links li .nav-icon {
+    display: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    position: relative; /* مهم جداً لتحديد مكان الخط السفلي */
+    padding-bottom: 5px;
+    transition: var(--transition);
+}
+
+/* إنشاء الخط السفلي المخفي افتراضياً */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* ضع البداية في المنتصف تماماً */
+    transform: translateX(-50%); /* لضمان توسط الخط بدقة قبل التمدد */
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+/* جعل الخط يتمدد من اليسار لليمين عند التمرير (Hover) أو عندما يكون الرابط نشطاً */
+.nav-links a:hover::after, 
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* تغيير لون النص عند التمرير */
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-lang {
+    background: none;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 6px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-lang:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* إخفاء عناصر الموبايل تلقائياً في الشاشات الكبيرة */
+.menu-toggle, .sidebar-mobile-header {
+    display: none;
+}
+
+
+/* --- 4. الـ Footer --- */
+/* --- 4. الـ Mega Footer الاحترافي المطور --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 8% 20px 8%;
+    border-top: 3px solid var(--secondary-color);
+}
+
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-contact-info li span {
+    white-space: nowrap; 
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-col .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.85)) !important;
+}
+
+.footer-col .logo-text {
+    color: var(--white);
+}
+
+.footer-desc {
+    color: #a4b3c6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* تنسيق الكلمات الجوهرية الأربعة */
+.footer-core-values {
+    font-size: 0.9rem;
+    color: var(--accent-glow);
+    font-weight: 600;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.col-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-glow);
+}
+
+html[dir="rtl"] .col-title::after {
+    left: auto;
+    right: 0;
+}
+
+.footer-links, .footer-contact-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* تأثير روابط الفوتر الاحترافي (تغير اللون والخط السفلي) */
+.footer-links a {
+    color: #cdd7e2;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    transition: var(--transition);
+}
+
+/* تجهيز الخط المخفي أسفل روابط الفوتر */
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* ضع البداية في المنتصف تماماً */
+    transform: translateX(-50%); /* لضمان توسط الخط بدقة قبل التمدد */
+    width: 0;
+    height: 1.5px;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+/* تمدد الخط وتغير اللون عند التمرير (Hover) */
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cdd7e2;
+    font-size: 0.95rem;
+}
+
+.footer-contact-info li i {
+    color: var(--secondary-color);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.footer-socials a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none; /* إزالة أي خط افتراضي */
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(39, 181, 247, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- 5. التجاوب الكامل مع الموبايل (Responsive Design) --- */
+@media (max-width: 992px) {
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* إخفاء زر اللغة وروابط سطح المكتب الافتراضية */
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center;
+    }
+
+    /* إخفاء زر اللغة لسطح المكتب فقط والاعتماد على زر لغة السايدبار */
+    .btn-lang {
+        display: none !important;
+    }
+
+    /* إظهار زر البرغر بشكل صحيح ومكانه مريح */
+    .menu-toggle {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        color: var(--secondary-color) !important;
+        font-size: 1.6rem !important;
+        cursor: pointer !important;
+        padding: 5px !important;
+        z-index: 1005 !important; /* رفعه للأعلى لكي لا تحجبه أي عناصر أخرى */
+    }
+
+    .btn-lang-mobile {
+        background: none !important;
+        border: 2px solid var(--secondary-color) !important;
+        color: var(--secondary-color) !important;
+        padding: 6px 16px !important;
+        border-radius: 20px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        font-size: 0.9rem !important;
+        transition: var(--transition) !important;
+        box-shadow: 0 2px 8px rgba(39, 181, 247, 0.1);
+    }
+
+    /* تأثير التمرير (Hover) والضغط النشط لزر الموبايل */
+    .btn-lang-mobile:hover,
+    .btn-lang-mobile:active {
+        background-color: var(--secondary-color) !important;
+        color: var(--white) !important;
+        transform: none; /* تكبير خفيف وتفاعلي عند الضغط */
+        box-shadow: none; /* توهج سيبراني متناسق */
+    }
+
+    /* تحويل الروابط إلى قائمة جانبية (Sidebar) مخفية */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -280px; 
+        width: 280px;
+        height: 100vh;
+        
+        /*  التأثير الزجاجي الضبابي الشفاف للسايدبار  */
+        background-color: rgba(255, 255, 255, 0.90) !important; /* شفافية مريحة للقراءة في الموبايل */
+        backdrop-filter: blur(15px) !important; /* ضبابية أعلى قليلاً لتعزل عناصر القائمة */
+        -webkit-backdrop-filter: blur(15px) !important;
+        
+        box-shadow: -5px 0 25px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 40px 30px;
+        gap: 25px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+    }
+
+    /* دعم اتجاه الـ LTR للإنجليزي في الموبايل */
+    html[dir="ltr"] .nav-links {
+        right: auto;
+        left: -280px;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    html[dir="ltr"] .nav-links.open {
+        left: 0;
+    }
+
+    /* إظهار الأيقونات ورأس القائمة الجانبية في الموبايل فقط */
+    .nav-links li .nav-icon {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center; /* تملأ الأيقونة المركز */
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+        width: 30px; /* هذا العرض الثابت يضمن محاذاة كل النصوص على خط مستقيم واحد */
+        flex-shrink: 0; /* منع انضغاط الأيقونة */
+    }
+
+    .sidebar-mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(11, 31, 58, 0.08);
+    }
+
+    .sidebar-logo {
+        height: 70px;
+        width: auto;
+        border-radius: 10px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    /* طبقة التظليل الخلفية */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(11, 31, 58, 0.4);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+        z-index: 999;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links a::after {
+        display: block !important;
+        content: '';
+        position: absolute;
+        bottom: -2px; /* إنزال الخط قليلاً ليكون مريحاً للعين */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1.5px; /* نفس سماكة سطح المكتب بالضبط */
+        background-color: var(--secondary-color);
+        opacity: 0; /* يبدأ مخفياً تماماً لمنع التداخل والغمقان الزائد */
+        transition: var(--transition);
+    }
+
+    /* حالة الهوفر أو عندما تكون الصفحة نشطة */
+    .nav-links a:hover::after, 
+    .nav-links a.active::after {
+        width: 100%;
+        opacity: 1; /* يظهر بنعومة وبسماكة 2px صافية وبدون أي ثقل أو غمقان مكرر */
+    }
+
+
+    /* footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-grid img ,.footer-logo{ 
+        display: block !important;
+        margin: 0 auto 5px auto !important; /* التوسيط داخل الفوتر فقط */
+        max-width: 150px !important;
+        height: auto !important;
+        filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.85)) !important; /* إضاءة الفوتر فقط */
+    }
+    .col-title::after {
+        left: 50% !important;
+        transform: translateX(-50%);
+        right: auto !important;
+    }
+    .footer-contact-info li, .footer-socials {
+        justify-content: center;
+    }
+}
+
+
+/* إخفاء زر الموبايل وعنصر اللغة في الشاشات الكبيرة تلقائياً */
+.menu-toggle, .mobile-lang-item {
+    display: none;
+}
+
+/* ==========================================================================
+   --- شاشة التحميل الذكية لـ وَعْي تك ---
+   ========================================================================== */
+.cyber-loader-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: #0b1f3a !important; /* اللون الكحلي الفخم للمنصة */
+    z-index: 999999 !important; /* فوق كل شيء بلا استثناء */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+/* حاوية المحتوى */
+.loader-content {
+    text-align: center;
+}
+
+/* تصميم السبنر السيبراني المضيء */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(39, 181, 247, 0.1);
+    border-left-color: #27b5f7 !important; /* الأزرق السماوي للمبادرة */
+    border-right-color: #5ed3ff !important;
+    border-radius: 50%;
+    animation: spinCyber 1s linear infinite;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 15px rgba(39, 181, 247, 0.2);
+}
+
+/* النص المرافق للتحميل */
+.loader-text {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: pulseText 1.5s infinite ease-in-out;
+}
+
+/* الأنيماشين الخاص بالدوران والنبض */
+@keyframes spinCyber {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* كلاس الإخفاء بنعومة */
+.cyber-loader-overlay.fade-out {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+
+/* التنسيق الأساسي لزر الصعود للأعلى */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--secondary-color); /* اللون الأزرق الخاص بك */
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 149, 255, 0.25);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+/* التوافق الذكي مع اللغات */
+html[dir="rtl"] .back-to-top {
+    left: 15px;  /* يظهر أسفل اليسار في اللغة العربية */
+    right: auto;
+}
+
+html[dir="ltr"] .back-to-top {
+    right: 15px; /* يظهر أسفل اليمين في اللغة الإنجليزية */
+    left: auto;
+}
+
+/* عند ظهور الزر (تفعيل عبر الـ JS) */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* تأثير التمرير بالماوس (Hover) */
+.back-to-top:hover {
+    background: var(--primary-color); /* درجة أغمق قليلاً عند التمرير */
+    box-shadow: 0 6px 20px var(--secondary-color);
+    transform: translateY(-5px); /* حركة صعود خفيفة وانسيابية */
+}
+

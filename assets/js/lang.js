@@ -1,0 +1,396 @@
+// assets/js/lang.js
+
+const translations = {
+    ar: {
+
+        //--- عناوين الصفحات ---
+        page_about_title: "من نحن | وَعْي تك ",
+        page_services_title: "خدماتنا | وَعْي تك ",
+        page_courses_title: "الدورات التدريبية | وَعْي تك ",
+        page_events_title: "الأحداث والورشات | وَعْي تك",
+        page_blog_title: "المدونة الرقمية | وَعْي تك",
+        page_contact_title: "تواصل معنا | وَعْي تك ",
+
+
+        // --- القائمة الرئيسية والفوتر الموحد ---
+        logo_text: "وَعْي تك",
+        nav_home: "الرئيسية",
+        nav_about: "من نحن",
+        nav_services: "خدماتنا",
+        nav_courses: "الدورات التدريبية",
+        nav_contact: "تواصل معنا",
+        nav_events: "الورش والفعاليات",
+        nav_blog: "مدونة التوعية",
+        nav_impact: "إنجازاتنا",
+        footer_slogan: "لأنك تستحق... أن تدرك",
+        footer_rights: "جميع الحقوق محفوظة.",
+        footer_links_title: "روابط سريعة",
+        footer_future_title: "المبادرات والأخبار",
+        footer_support_title: "تواصل معنا",
+        footer_location: "المملكة الأردنية الهاشمية",
+
+        // --- نصوص الصفحة الرئيسية (Home Section) ---
+        hero_title: "تمكين الوعي الرقمي لمستقبل أكثر أماناً",
+        hero_desc: "مبادرة تقنية تهتم بنشر الوعي بالأمن السيبراني، التمكين الرقمي، وتطوير المهارات التكنولوجية الحديثة للشباب والمجتمع.",
+        btn_explore: "استكشف الدورات",
+        btn_join: "انضم للمبادرة",
+        val_awareness: "التوعية",
+        val_empowerment: "التمكين",
+        val_growth: "النمو",
+        val_security: "الأمن",
+
+        // --- أزرار عامة ---
+        btn_register: "سجل الآن",
+        btn_send: "إرسال الرسالة",
+
+        // --- صفحة من نحن (About Us Page) ---
+        about_title: "من نحن",
+        about_subtitle: "تعرّف على رسالة وأهداف مبادرة وَعْي تك",
+        about_who_title: "ما هي مبادرة وَعْي تك ؟",
+        about_who_desc1: "وَعْي تك (WaieTech) هي مبادرة تقنية وطنية تهدف إلى نشر الوعي الرقمي وتعزيز الثقافة السيبرانية والمهارات التكنولوجية الحديثة لدى الشباب وأفراد المجتمع في المملكة الأردنية الهاشمية.",
+        about_who_desc2: "نسعى إلى تمكين الأفراد من فهم التكنولوجيا واستخدامها بشكل آمن وفعّال، من خلال تقديم محتوى تدريبي وتوعوي متقدم ومبسط في مجالات الأمن السيبراني، الذكاء الاصطناعي، والتحقيق الرقمي.",
+        about_vision_title: "رؤيتنا",
+        about_vision_desc: "بناء مجتمع رقمي واعٍ، قادر على مواكبة التطور التكنولوجي المتسارع والتعامل مع التحديات والتهديدات الرقمية بثقة وأمان تام.",
+        about_mission_title: "رسالتنا",
+        about_mission_desc: "توفير بيئة تعليمية وتوعوية رائدة تُسهم في تطوير المهارات الرقمية ونشر الوعي السيبراني بطرق حديثة ومبسطة تناسب مختلف الفئات المجتمعية.",
+        about_values_title: "قيمنا الجوهرية",
+        val_awareness: "التوعية",
+        val_empowerment: "التمكين",
+        val_growth: "النمو",
+        val_security: "الأمن",
+        val_innovation: "الابتكار",
+
+        // --- صفحة خدماتنا (Services Page) ---
+        services_title: "خدماتنا",
+        services_subtitle: "ماذا نقدم للمجتمع والشباب في المنظومة الرقمية",
+        service_cyber_title: "الأمن السيبراني (Cybersecurity)",
+        service_cyber_desc: "رفع الوعي بالأمن السيبراني، مبادئ الحماية الرقمية الشخصية، وكيفية التعامل مع التهديدات الإلكترونية والتصيد الحديث بشكل ذكي.",
+        service_ai_title: "الذكاء الاصطناعي (AI)",
+        service_ai_desc: "التعريف بتطبيقات الذكاء الاصطناعي الحديثة، وتوعية الأفراد حول كيفية استغلال أدواته بأمان في العمل، التعليم، والحياة اليومية.",
+        service_skills_title: "المهارات الرقمية (Digital Skills)",
+        service_skills_desc: "تطوير المهارات التقنية الأساسية والمتقدمة للطلاب والخريجين لتأهيلهم تكنولوجياً، وبناء هوية رقمية آمنة في بيئات العمل الحديثة.",
+        service_net_title: "الشبكات والتقنية (Networking)",
+        service_net_desc: "تعزيز المعرفة المفاهيمية بالبنية التحتية الرقمية، كيفية عمل الإنترنت والشبكات، وفهم المبادئ الأمنية التي تحكم تدفق البيانات.",
+
+        // --- صفحة الدورات التدريبية (Courses Page) ---
+        courses_title: "الدورات التدريبية",
+        courses_subtitle: "برامج تعليمية متخصصة لتمكينك في العالم الرقمي بأمان",
+        course_cyber_title: "مقدمة في الأمن السيبراني",
+        course_cyber_desc: "تأسيس متكامل لفهم المفاهيم الأساسية للحماية الرقمية وأمن المعلومات.",
+        course_safety_title: "أساسيات السلامة الرقمية",
+        course_safety_desc: "طرق حماية الحسابات الشخصية وتجنب الوقوع في فخاخ التصيد الإلكتروني.",
+        course_ai_title: "أساسيات الذكاء الاصطناعي",
+        course_ai_desc: "التعرف على أدوات الذكاء الاصطناعي وكيفية استخدامها وتوجيهها بأمان.",
+        course_office_title: "أساسيات مايكروسوفت أوفيس",
+        course_office_desc: "تمكين الأفراد من الأدوات المكتبية الأساسية لإنتاجية أفضل في العمل والدراسة.",
+        course_literacy_title: "محو الأمية الرقمية",
+        course_literacy_desc: "بناء المهارات الأساسية للتعامل مع الحواسيب والأنظمة الذكية بثقة.",
+        
+        // مفاتيح الميتا والمستويات المكتوبة في الـ HTML الخاص بك
+        course_level_beginner: "مبتدئ",
+        course_duration_4w: "4 أسابيع",
+        
+        // دعم ترجمة الكروت المتبقية تلقائياً في حال قراءتها
+        course_level_general: "عام",
+        course_duration_2w: "أسبوعين",
+        course_duration_3w: "3 أسابيع",
+        
+
+        // --- صفحة اتصل بنا (Contact Us Page) ---
+        contact_title: "تواصل معنا",
+        contact_subtitle: "يسعدنا استقبال استفساراتكم وآرائكم لدعم مسيرتنا ",
+        contact_info_heading: "معلومات الاتصال",
+        contact_info_desc: "يمكنك التواصل معنا مباشرة عبر القنوات الرسمية التالية، أو ترك رسالة سريعة عبر النموذج.",
+        contact_follow_us: "تابعنا على منصاتنا",
+        contact_form_heading: "أرسل لنا رسالة",
+
+        // المفاتيح الجديدة الخاصة بالبريد والموقع الجغرافي
+        contact_email_label: "البريد الإلكتروني",
+        contact_email_val: "info@waietech.com",
+        contact_location_label: "الموقع الجغرافي",
+        contact_location_val: "المملكة الأردنية الهاشمية",
+        
+        // حقول الفورم والـ Placeholders الناقصة سابقاً
+        label_name: "الاسم الكامل",
+        placeholder_name: "أدخل اسمك الكريم",
+        label_email: "البريد الإلكتروني",
+        placeholder_email: "example@domain.com",
+        label_subject: "موضوع الرسالة",
+        placeholder_subject: "ما هو عنوان استفسارك؟",
+        label_message: "نص الرسالة",
+        placeholder_message: "اكتب تفاصيل رسالتك هنا...",
+        btn_send: "إرسال الرسالة",
+
+        //loading 
+        loading_text: "جاري تشفير الاتصال والتحميل...",
+
+        // الاقسام الاضافية للصفحة الرئيسية
+        home_goals_title: "أهدافنا الاستراتيجية",
+        home_goals_subtitle: "رؤية واضحة نحو مجتمع رقمي آمن وممكّن تقنياً",
+        goal_1_title: "نشر الثقافة الرقمية",
+        goal_1_desc: "رفع مستوى الوعي بالمخاطر السيبرانية وكيفية التعامل مع التكنولوجيا اليومية بأمان.",
+        goal_2_title: "تأهيل وبناء القدرات",
+        goal_2_desc: "تمكين وتدريب الشباب والخريجين لتقليص الفجوة بين التعليم الأكاديمي ومتطلبات سوق العمل التقني.",
+        goal_3_title: "المسؤولية المجتمعية",
+        goal_3_desc: "تقديم استشارات وورش عمل مجانية ومبسطة تصل إلى كافة فئات المجتمع لضمان سلامة الجميع.",
+        
+        home_pillars_title: "محاور التركيز في وَعْي تك",
+        home_pillars_subtitle: "المجالات الرئيسية التي نكرس جهودنا لتطويرها",
+        pillar_cyber_title: "السلامة والأمن السيبراني",
+        pillar_cyber_desc: "برامج توعوية لحماية البيانات الشخصية ومكافحة التصيد والهندسة الاجتماعية.",
+        pillar_ai_title: "الذكاء الاصطناعي الناشئ",
+        pillar_ai_desc: "توجيه المجتمع نحو الاستخدام الآمن والأخلاقي لأدوات الذكاء الاصطناعي لرفع الإنتاجية.",
+        pillar_citizenship_title: "المواطنة الرقمية",
+        pillar_citizenship_desc: "تعزيز السلوكيات الإيجابية والأخلاقية أثناء التعامل مع المنصات الرقمية وشبكات الإنترنت.",
+        
+        home_news_title: "آخر المستجدات والمبادرات",
+        home_news_subtitle: "تابع أنشطتنا الميدانية وورش العمل التوعوية أولاً بأول",
+
+
+        impact_badge: "الأثر بالأرقام",
+        impact_title: "أرقام مختصرة وواضحة",
+        impact_desc: "هذه الأرقام تعرض حجم التفاعل والعمل داخل وَعْي تك بطريقة مباشرة دون تكرار.",
+        stat_participants: "طلب انضمام وتفاعل",
+        stat_workshops: "ورشة عمل منفذة",
+        stat_programs: "برامج ومبادرات تدريبية",
+        stat_partnerships: "شراكة وتكامل مؤسسي",
+    },
+
+    en: {
+
+        // --- Title of Pages ---
+        page_about_title: "About Us | WaieTech",
+        page_services_title: "Services | WaieTech",
+        page_courses_title: "Courses | WaieTech",
+        page_events_title: "Events & Workshops | WaieTech",
+        page_blog_title: "Digital Blog | WaieTech",
+        page_contact_title: "Contact Us | WaieTech",
+
+
+        // --- Navbar & Unified Footer ---
+        logo_text: "WaieTech",
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_services: "Services",
+        nav_courses: "Courses",
+        nav_contact: "Contact",
+        nav_events: "Workshops & Events",
+        nav_blog: "Awareness Blog",
+        nav_impact: "Our Impact",
+        footer_slogan: "Aware • Empower • Secure",
+        footer_rights: "All Rights Reserved.",
+        footer_links_title: "Quick Links",
+        footer_future_title: "Initiatives & News",
+        footer_support_title: "Contact Us",
+        footer_location: "Hashemite Kingdom of Jordan",
+
+        // --- Home Page Texts ---
+        hero_title: "Empowering Digital Awareness for a Safer Future",
+        hero_desc: "WaieTech is a technology initiative focused on cybersecurity awareness, digital empowerment, and modern tech education for youth and the community.",
+        btn_explore: "Explore Courses",
+        btn_join: "Join the Initiative",
+        val_awareness: "Awareness",
+        val_empowerment: "Empowerment",
+        val_growth: "Growth",
+        val_security: "Security",
+
+        // --- General Buttons ---
+        btn_register: "Register Now",
+        btn_send: "Send Message",
+
+        // --- About Us Page ---
+        about_title: "About Us",
+        about_subtitle: "Discover the mission and goals of WaieTech initiative",
+        about_who_title: "What is WaieTech Initiative ?",
+        about_who_desc1: "WaieTech is a national technology initiative aimed at spreading digital awareness, enhancing cyber culture, and modern technological skills among youth and community members in the Hashemite Kingdom of Jordan.",
+        about_who_desc2: "We strive to empower individuals to understand and use technology safely and effectively by providing advanced yet simplified educational and awareness content in cybersecurity, artificial intelligence, and digital forensics.",
+        about_vision_title: "Our Vision",
+        about_vision_desc: "Building an aware digital society capable of keeping pace with rapid technological advancement and dealing with digital challenges and threats with utmost confidence and safety.",
+        about_mission_title: "Our Mission",
+        about_mission_desc: "Providing a leading educational and awareness environment that contributes to developing digital skills and spreading cyber awareness in modern and simplified ways suitable for various community groups.",
+        about_values_title: "Our Core Values",
+        val_awareness: "Awareness",
+        val_empowerment: "Empowerment",
+        val_growth: "Growth",
+        val_security: "Security",
+        val_innovation: "Innovation",
+
+        // --- Services Page ---
+        services_title: "Our Services",
+        services_subtitle: "What we offer to the youth and community in the digital ecosystem",
+        service_cyber_title: "Cybersecurity",
+        service_cyber_desc: "Raising awareness about cybersecurity, personal digital defense principles, and how to smartly tackle online threats and modern phishing techniques.",
+        service_ai_title: "Artificial Intelligence (AI)",
+        service_ai_desc: "Introducing modern AI applications and educating individuals on how to safely leverage these tools in work, education, and daily life.",
+        service_skills_title: "Digital Skills",
+        service_skills_desc: "Developing basic and advanced technical skills for students and graduates to tech-empower them and build a secure digital identity in modern workspaces.",
+        service_net_title: "Networking & Tech",
+        service_net_desc: "Enhancing conceptual knowledge of digital infrastructure, how the internet and networks function, and understanding the security principles governing data flow.",
+
+        // --- Courses Page ---
+        courses_title: "Training Courses",
+        courses_subtitle: "Specialized educational programs to empower you safely in the digital world",
+        course_cyber_title: "Introduction to Cybersecurity",
+        course_cyber_desc: "A comprehensive foundation to understand the core concepts of digital protection and information security.",
+        course_safety_title: "Digital Safety Foundations",
+        course_safety_desc: "Methods to protect personal accounts and avoid falling victim to online phishing traps.",
+        course_ai_title: "AI Fundamentals",
+        course_ai_desc: "Discover artificial intelligence tools, how to use them, and prompt them securely.",
+        course_office_title: "Microsoft Office Essentials",
+        course_office_desc: "Empowering individuals with basic office tools for better productivity in work and study.",
+        course_literacy_title: "Digital Literacy",
+        course_literacy_desc: "Building essential skills to handle computers and smart systems with utmost confidence.",
+        
+        // English Meta Values
+        course_level_beginner: "Beginner",
+        course_duration_4w: "4 Weeks",
+        course_level_general: "General",
+        course_duration_2w: "2 Weeks",
+        course_duration_3w: "3 Weeks",
+
+
+        // --- Contact Us Page ---
+        contact_title: "Contact Us",
+        contact_subtitle: "We are glad to receive your inquiries and feedback to support our journey",
+        contact_info_heading: "Contact Information",
+        contact_info_desc: "You can contact us directly through the following official channels, or leave a quick message via the form.",
+        contact_follow_us: "Follow Us",
+        contact_form_heading: "Send Us a Message",
+
+        // الترجمة الإنجليزية للمفاتيح الجديدة
+        contact_email_label: "Email Address",
+        contact_email_val: "info@waietech.com",
+        contact_location_label: "Location",
+        contact_location_val: "Hashemite Kingdom of Jordan",
+        
+        // English Form Fields & Placeholders
+        label_name: "Full Name",
+        placeholder_name: "Enter your full name",
+        label_email: "Email Address",
+        placeholder_email: "example@domain.com",
+        label_subject: "Subject",
+        placeholder_subject: "What is the subject of your inquiry?",
+        label_message: "Message",
+        placeholder_message: "Write your message details here...",
+        btn_send: "Send Message",
+
+        //Loading
+        loading_text: "Encrypting connection and loading...",
+
+        //Additional sections of home
+        home_goals_title: "Our Strategic Goals",
+        home_goals_subtitle: "A clear vision towards a secure and technologically empowered digital society",
+        goal_1_title: "Spreading Digital Culture",
+        goal_1_desc: "Raising awareness of cyber risks and how to handle everyday technology securely.",
+        goal_2_title: "Capacity Building & Qualification",
+        goal_2_desc: "Empowering and training youth and graduates to bridge the gap between academic education and tech market needs.",
+        goal_3_title: "Social Responsibility",
+        goal_3_desc: "Providing simplified, free consultations and workshops reaching all community groups to ensure public safety.",
+        
+        home_pillars_title: "WaieTech Focus Pillars",
+        home_pillars_subtitle: "The core areas where we dedicate our efforts to develop",
+        pillar_cyber_title: "Safety & Cybersecurity",
+        pillar_cyber_desc: "Specialized awareness programs to protect personal data and combat phishing and social engineering.",
+        pillar_ai_title: "Emerging AI Tools",
+        pillar_ai_desc: "Guiding the community toward the safe and ethical utilization of AI tools to boost productivity.",
+        pillar_citizenship_title: "Digital Citizenship",
+        pillar_citizenship_desc: "Promoting positive and ethical behaviors while interacting with digital platforms and the internet.",
+        
+        home_news_title: "Latest News & Initiatives",
+        home_news_subtitle: "Stay updated with our on-ground activities and educational workshops",
+
+        impact_badge: "Our Impact",
+        impact_title: "Impact in Numbers",
+        impact_desc: "These numbers reflect the volume of engagement and work within WaieTech directly and clearly.",
+        stat_participants: "Participants & Engagement",
+        stat_workshops: "Workshops Delivered",
+        stat_programs: "Training Programs",
+        stat_partnerships: "Institutional Partnerships",
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    let currentLang = localStorage.getItem("lang") || "ar";
+
+    setLanguage(currentLang);
+
+    const handleLangChange = () => {
+        currentLang = currentLang === "ar" ? "en" : "ar";
+        localStorage.setItem("lang", currentLang);
+        setLanguage(currentLang);
+    };
+
+    setTimeout(() => {
+        const langToggle = document.getElementById("lang-toggle");
+        const langToggleMobile = document.getElementById("lang-toggle-mobile");
+
+        if (langToggle) langToggle.addEventListener("click", handleLangChange);
+        if (langToggleMobile) langToggleMobile.addEventListener("click", handleLangChange);
+        
+        setLanguage(currentLang);
+    }, 60); 
+});
+
+//  تحديث الدالة الذكية لترجمة النصوص والـ Placeholders معاً ومنع المشاكل
+function setLanguage(lang) {
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = lang;
+    
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) langToggle.textContent = lang === "ar" ? "EN" : "عربي";
+
+    const langToggleMobile = document.getElementById("lang-toggle-mobile");
+    if (langToggleMobile) langToggleMobile.textContent = lang === "ar" ? "EN" : "عربي";
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+        const translationKey = element.getAttribute("data-i18n");
+        
+        if (translations[lang] && translations[lang][translationKey]) {
+            const translationValue = translations[lang][translationKey];
+            
+            // الفحص والترجمة الذكية بحسب نوع عنصر الـ HTML
+            if (element.tagName === "TITLE") {
+                // 1. إذا كان العنصر هو عنوان الصفحة في المتصفح
+                document.title = translationValue;
+            } else if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+                // 2. إذا كان العنصر حقل إدخال، نترجم الـ Placeholder
+                element.setAttribute("placeholder", translationValue);
+            } else {
+                // 3. إذا كان عنصراً عادياً، نترجم النص الداخلي له
+                element.textContent = translationValue;
+            }
+        }
+    });
+    // استدعاء بناء كروت الدورات ديناميكياً لتحديثها مع تغيير اللغة
+    renderCourses(lang);
+}
+
+function renderCourses(lang) {
+    const container = document.getElementById("courses-container");
+    // إذا لم نكن في صفحة الدورات (أو لم يتم تحميل الملف بنجاح) نخرج فوراً
+    if (!container || typeof coursesData === 'undefined') return; 
+
+    container.innerHTML = ""; 
+
+    coursesData.forEach(course => {
+        const registerBtnText = lang === "ar" ? "سجل الآن" : "Register Now";
+
+        const cardHTML = `
+            <div class="course-card-item">
+                <div class="course-image-placeholder">
+                    <i class="${course.icon}"></i>
+                </div>
+                <div class="course-card-body">
+                    <h3 class="course-title">${course.title[lang]}</h3>
+                    <p class="course-desc">${course.desc[lang]}</p>
+                    <div class="course-meta-info">
+                        <span><i class="fas fa-layer-group"></i> <span>${course.level[lang]}</span></span>
+                        <span><i class="far fa-clock"></i> <span>${course.duration[lang]}</span></span>
+                    </div>
+                    <a href="#" class="btn-course-register">${registerBtnText}</a>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+}

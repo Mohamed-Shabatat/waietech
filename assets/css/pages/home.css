@@ -1,0 +1,574 @@
+/* --- 3. الـ Hero Section --- */
+.hero-section {
+    min-height: auto;
+    display: flex;
+    align-items: flex-start;
+    padding: 140px 8% 40px 8%;
+    background: radial-gradient(circle at 80% 20%, rgba(39, 181, 247, 0.08) 0%, transparent 50%);
+}
+
+/* انعكاس توزيع الخلفية في الإنجليزي ليكون متناسقاً بصرياً */
+html[dir="ltr"] .hero-section {
+    background: radial-gradient(circle at 20% 20%, rgba(39, 181, 247, 0.08) 0%, transparent 50%);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 450px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(39, 181, 247, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #179cdb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* منطقة الشعار والـ Glow */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-img {
+    max-width: 85%;
+    height: auto;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+.glow-effect {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-glow);
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+/* تأثير الطفو الأنيق للوجو (Floating Animation) */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+
+/* تنسيق عام للعناوين الجانبية والأقسام */
+.text-center {
+    text-align: center;
+}
+.bg-light {
+    background-color: var(--bg-light-secondary, #f8f9fa);
+    padding: 60px 0;
+}
+.section-header {
+    margin-bottom: 50px;
+}
+.section-header h2 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color, #2d3748);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+/* الخط الجمالي أسفل العنوان */
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+.section-header p {
+    font-family: 'Tajawal', sans-serif;
+    color: var(--text-light);
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+
+
+/* 1️⃣ شبكة الأهداف الاستراتيجية (Strategic Goals) */
+.goals-section {
+    padding: 80px 8%;
+}
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.goal-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+.goal-icon-box {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 102, 204, 0.08); /* لون خفيف مشتق من الأساسي */
+    color: var(--primary-color, #0066cc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 25px auto;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.goal-card:hover .goal-icon-box {
+    background: var(--primary-color, #0066cc);
+    color: #ffffff;
+}
+.goal-card h3 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+.goal-card p {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* 2️⃣ شبكة محاور الوعي (Focus Pillars) */
+.pillars-section {
+    padding: 60px 8%;
+}
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+.pillar-item {
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+}
+.pillar-img-placeholder {
+    font-size: 3.5rem;
+    color: var(--secondary-color, #2b6cb0);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+.pillar-item:hover .pillar-img-placeholder {
+    transform: scale(1.1);
+}
+.pillar-item h3 {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+.pillar-item p {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1rem;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* 3️⃣ شبكة المستجدات والمبادرات (News & Initiatives Grid) */
+.news-section {
+    padding: 60px 8%;
+}
+.news-container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+
+
+/* ==========================================================================
+   --- قسم الأثر والإنجازات (Our Impact Section) ---
+   ========================================================================== */
+.impact-section {
+    padding: 60px 20px;
+    background-color: #f8fafc; /* خلفية الصفحة الخارجية الفاتحة المريحة */
+    display: flex;
+    justify-content: center;
+    font-family: inherit;
+}
+
+.impact-card-wrapper {
+    background-color: #0b1829; /* اللون الكحلي الداكن الفخم من لقطة الشاشة */
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1140px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* توزيع المساحة بين النص والكروت */
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* اللمسة الفنية: الهالة الدائرية الزرقاء الشفافة في الزاوية */
+.impact-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(39, 181, 247, 0.08);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* جانب النصوص */
+.impact-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.impact-badge {
+    background-color: #ffffff;
+    color: #0b1829;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.impact-main-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.impact-description {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 300px;
+}
+
+/* شبكة الكروت */
+.impact-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 كروت متساوية بجانب بعضها */
+    gap: 16px;
+}
+
+.stat-box-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-box-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(39, 181, 247, 0.3);
+}
+
+.stat-number {
+    color: #27b5f7; /* اللون السماوي المعتمد عندك في الهيدر */
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: #ffffff;
+    font-size: 0.88rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+
+
+/* animation */
+/* 1. تعريف حركة الارتفاع والهبوط الانسيابية */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(var(--hover-offset, 0px));
+    }
+    50% {
+        transform: translateY(calc(var(--hover-offset, 0px) - 6px)); /* يرتفع بناءً على حالة الكرت الحالية */
+    }
+    100% {
+        transform: translateY(var(--hover-offset, 0px));
+    }
+}
+
+/* الحركة التلقائية (الموجات المتتابعة) والظل الأزرق الثابت */
+.goal-card, .pillar-item {
+    animation: floatAnimation 4s ease-in-out infinite;
+    will-change: transform, box-shadow;
+    border: 1px solid rgba(0, 102, 204, 0.05);
+    border-radius: 12px;
+    background: #ffffff;
+    
+    /* إضافة الظل الأزرق الناعم الخفيف كحالة افتراضية ثابتة */
+    box-shadow: 0 10px 25px rgba(0, 149, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.01);
+    
+    /* منع الكرت بالكامل من التحرك أو القفز عند الـ Hover */
+    transition: box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+/* تأثير التمرير (Hover) - زيادة توهج الظل الأزرق فقط وتغيير ألوان الأيقونات بدون تحريك الكرت */
+.goal-card:hover, .pillar-item:hover {
+    box-shadow: 0 15px 35px rgba(0, 149, 255, 0.12) !important;
+    border-color: rgba(0, 149, 255, 0.15) !important;
+}
+
+/* الانسيابية الخاصة بالأيقونات والشعارات الداخلية */
+.goal-icon-box, .pillar-img-placeholder {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                background-color 0.4s ease, 
+                color 0.4s ease !important;
+}
+
+/* تغيير لون الشعار (الأيقونة الداخلية) في كروت الأهداف إلى الأزرق */
+.goal-icon-box i {
+    color: var(--primary-color, #0066cc);
+    transition: color 0.4s ease;
+}
+
+/* عند التمرير: خلفية زرقاء للأهداف وتحول الأيقونة للون الأبيض */
+.goal-card:hover .goal-icon-box {
+    background: var(--primary-color, #0066cc) !important;
+}
+.goal-card:hover .goal-icon-box i {
+    color: var(--secondary-color) !important;
+}
+
+/* عند التمرير: تكبير وتلوين أيقونات كروت المحاور */
+.pillar-item:hover .pillar-img-placeholder {
+    color: var(--primary-color, #0066cc) !important;
+    transform: scale(1.2) !important;
+}
+
+/* إعادة تتابع الموجات (تأخير بدء الحركة بين الكروت لكي لا تتحرك معاً) */
+.goals-grid .goal-card:nth-child(1), .pillars-grid .pillar-item:nth-child(1) { animation-delay: 0s; }
+.goals-grid .goal-card:nth-child(2), .pillars-grid .pillar-item:nth-child(2) { animation-delay: 0.4s; }
+.goals-grid .goal-card:nth-child(3), .pillars-grid .pillar-item:nth-child(3) { animation-delay: 0.8s; }
+
+
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero-section {
+        padding-top: 140px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .impact-card-wrapper {
+        grid-template-columns: 1fr; /* تحويل العرض إلى عمودي */
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .impact-text-content {
+        align-items: center;
+    }
+    .impact-stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* كرتين في كل سطر على التابلت */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-title {
+        line-height: 1.6 !important;
+    }
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+    .hero-buttons .btn {
+        padding: 10px 20px; /* تقليص الحشو قليلاً ليناسب الشاشات الصغيرة */
+        font-size: 0.95rem;
+        flex: 1; /* تجعل الزرين متساويين في الحجم بشكل أنيق */
+        text-align: center;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    /* تحويل شبكات العرض إلى عمود واحد منظم */
+    .goals-grid, .pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    /* تنسيق الكروت الأساسية وإعطائها مساحة داخلية مريحة */
+    .goal-card, .pillar-item {
+        display: block !important; /* إلغاء الـ flex والـ grid لمنع تشوه النصوص */
+        position: relative !important;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        padding: 25px 20px !important;
+    }
+
+    /* --- التوافق الذكي مع الاتجاهات (عربي / إنجليزي) --- */
+    
+    /* الوضع العربي: دفع النصوص لليمين لإفساح مجال للأيقونة اليمنى */
+    html[dir="rtl"] .goal-card, html[dir="rtl"] .pillar-item {
+        text-align: right !important;
+        padding-right: 85px !important; /* مسافة أمان تبدأ بعد الأيقونة */
+        padding-left: 20px !important;
+    }
+    
+    /* الوضع الإنجليزي: دفع النصوص لليسار لإفساح مجال للأيقونة اليسرى */
+    html[dir="ltr"] .goal-card, html[dir="ltr"] .pillar-item {
+        text-align: left !important;
+        padding-left: 85px !important; /* مسافة أمان تبدأ بعد الأيقونة */
+        padding-right: 20px !important;
+    }
+
+    /* تثبيت مكان الأيقونة بالمنتصف العمودي تماماً وعلى الطرف */
+    .goal-icon-box, .pillar-img-placeholder {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important; /* التوسيط العمودي المثالي */
+        width: 50px !important;
+        height: 50px !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.3rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    
+
+    /* تحديد مكان الأيقونة بناءً على اتجاه الموقع */
+    html[dir="rtl"] .goal-icon-box, html[dir="rtl"] .pillar-img-placeholder {
+        right: 20px !important;
+        left: auto !important;
+    }
+    html[dir="ltr"] .goal-icon-box, html[dir="ltr"] .pillar-img-placeholder {
+        left: 20px !important;
+        right: auto !important;
+    }
+
+    /* ترتيب النصوص رأسياً بشكل طبيعي (العنوان فوق والوصف أسفله) */
+    .goal-card h3, .pillar-item h3 {
+        margin: 0 0 6px 0 !important;
+        font-size: 1.15rem !important;
+        line-height: 1.4 !important;
+        display: block !important;
+    }
+
+    .goal-card p, .pillar-item p {
+        margin: 0 !important;
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        color: var(--text-light) !important;
+        display: block !important;
+    }
+
+    /* إلغاء حركة التكبير تماماً عن أيقونات كروت المحاور فقط */
+    .pillar-item:hover .pillar-img-placeholder {
+        transform: translateY(-50%) scale(1) !important; /* يحافظ على التوسط العمودي ويلغي التكبير */
+    }
+    
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قريباً | Under Development</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050c14; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .isolated-cs-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            animation: fadeInPage 0.8s ease-out forwards;
+        }
+
+        /* حاوية الأنميشن الخاص بملف الـ JSON */
+        .lottie-animation-box {
+            width: 280px;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #lottie-player-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .lottie-animation-box::after {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(39, 181, 247, 0.12);
+            filter: blur(45px);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .cs-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cs-badge-tag {
+            background: rgba(39, 181, 247, 0.08);
+            color: #27b5f7;
+            border: 1px solid rgba(39, 181, 247, 0.2);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .cs-main-heading {
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .cs-sub-paragraph {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 480px;
+        }
+
+        .cs-return-action-btn {
+            margin-top: 10px;
+            background: #27b5f7;
+            color: #050c14;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(39, 181, 247, 0.2);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        .cs-return-action-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(39, 181, 247, 0.35);
+        }
+
+        .cs-return-action-btn i {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cs-return-action-btn:hover i {
+            transform: translateX(-4px); 
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================================================
+        --- شاشة التحميل الذكية لـ وَعْي تك ---
+        ========================================================================== */
+        .cyber-loader-overlay {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100vh !important;
+            background-color: #0b1f3a !important; /* اللون الكحلي الفخم للمنصة */
+            z-index: 999999 !important; /* فوق كل شيء بلا استثناء */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: opacity 0.5s ease, transform 0.5s ease !important;
+        }
+
+        /* حاوية المحتوى */
+        .loader-content {
+            text-align: center;
+        }
+
+        /* تصميم السبنر السيبراني المضيء */
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(39, 181, 247, 0.1);
+            border-left-color: #27b5f7 !important; /* الأزرق السماوي للمبادرة */
+            border-right-color: #5ed3ff !important;
+            border-radius: 50%;
+            animation: spinCyber 1s linear infinite;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 0 15px rgba(39, 181, 247, 0.2);
+        }
+
+        /* النص المرافق للتحميل */
+        .loader-text {
+            color: #ffffff;
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            animation: pulseText 1.5s infinite ease-in-out;
+        }
+
+        /* الأنيماشين الخاص بالدوران والنبض */
+        @keyframes spinCyber {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* كلاس الإخفاء بنعومة */
+        .cyber-loader-overlay.fade-out {
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        @media (max-width: 480px) {
+            .lottie-animation-box {
+                width: 220px;
+                height: 220px;
+            }
+            .cs-main-heading {
+                font-size: 1.7rem;
+            }
+            .cs-sub-paragraph {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="isolated-cs-container">
+        
+        <div class="lottie-animation-box">
+            <div id="lottie-player-container"></div>
+        </div>
+
+        <div class="cs-info-wrapper">
+            <span class="cs-badge-tag">الصفحة قيد الإنشاء والتطوير</span>
+            <h1 class="cs-main-heading">نعمل على إطلاق التجربة قريباً</h1>
+            <p class="cs-sub-paragraph">
+                نقوم الآن ببناء وتجهيز البنية التحتية البرمجية والفعاليات الرقمية المتقدمة لتقديم محتوى نوعي وآمن يليق بكم.
+            </p>
+            
+            <a href="home.html" class="cs-return-action-btn">
+                <span>العودة للرئيسية</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+
+    </main>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <script>
+        // تشغيل الحركة برمجياً عبر استدعاء ملف الـ JSON الخاص بالمشروع
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-player-container'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'assets/build-pages.json' // تأكد أن ملف الـ JSON بنفس المجلد أو حدد مساره
+        });
+    </script>
+
+</body>
+</html>

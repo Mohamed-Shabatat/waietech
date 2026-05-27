@@ -1,0 +1,174 @@
+/* ==========================================================================
+   --- تنسيقات صفحة الدورات التدريبية المنفصلة (Courses Page) ---
+   ========================================================================== */
+
+/* تثبيت حجم وأبعاد الهيدر الداخلي لجميع الصفحات */
+.inner-page-hero {
+    background: linear-gradient(135deg, #0b1f3a 0%, #13335c 100%);
+    color: #ffffff;
+    
+    /* التعديل الأساسي: تثبيت الارتفاع الكلي */
+    height: 180px; 
+    margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
+    
+    /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 40px; /* يعطي مسافة أمان 20px يمين ويسار داخل الهيدر لمنع النص الطويل من ملامسة الحواف في أي شاشة */
+}
+
+/* ضبط حاوية النصوص بالداخل لضمان عدم تأثر الأبعاد */
+.inner-page-hero .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* مسافة ثابتة وصغيرة بين العنوان والوصف */
+    align-items: center;
+    text-align: center;
+}
+
+/* ضبط حجم الخطوط المحدث لتتناسب مع الارتفاع الثابت الجديد */
+.inner-page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.inner-page-hero .subtitle {
+    font-size: 1.05rem;
+    color: #27b5f7 !important;
+    margin: 0 !important;
+}
+
+/* حل مشكلة التداخل: هوامش حماية علوية وسفلية ممتازة لقسم الكروت */
+.courses-grid-section {
+    padding-top: 90px !important;
+    padding-bottom: 110px !important;
+    background-color: #f4f8fb;
+}
+
+.courses-grid-section.container {
+    display: block !important; /* إلغاء أي تأثير للـ Flexbox القادم من الهيدر */
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 60px 20px 120px 20px !important; /* دمج مسافات الأمان العلوية والسفلية والجانبية */
+    box-sizing: border-box !important;
+}
+
+/* توزيع كروت الدورات بشكل شبكي متجاوب */
+.courses-container-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+/* تصميم كرت الدورة */
+.course-card-item {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(11, 31, 58, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(39, 181, 247, 0.1);
+}
+
+/* مكان الصورة التعبيرية في رأس كرت الدورة */
+.course-image-placeholder {
+    height: 160px;
+    background: linear-gradient(45deg, #0b1f3a, #1a3a60);
+    color: #27b5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+}
+
+/* تفاصيل جسد كرت الدورة */
+.course-card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.course-title {
+    color: #0b1f3a;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.course-desc {
+    color: #64748b;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* المعلومات الفرعية (المستوى والمدة) */
+.course-meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #718096;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    border-top: 1px dashed rgba(11, 31, 58, 0.1);
+}
+.course-meta-info i {
+    color: #27b5f7;
+    margin-left: 5px;
+}
+
+/* زر التسجيل الأنيق */
+.btn-course-register {
+    background-color: #0b1f3a;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-course-register:hover {
+    background-color: #27b5f7;
+    color: #ffffff;
+}
+
+/* متجاوب تماماً مع الشاشات */
+@media (max-width: 768px) {
+
+    .courses-grid-section.container {
+        padding: 60px 15px 80px 15px !important; /* مسافات أنعم على الهواتف */
+    }
+
+    .courses-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inner-page-hero h1 {
+        font-size: 1.5rem !important; 
+        padding: 0 15px;
+    }
+
+    .inner-page-hero .subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+    }
+}

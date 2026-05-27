@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_contact_title">تواصل معنا | وَعْي تك - WaieTech</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;650;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/contact.css">
+    
+</head>
+<body class="light-theme">
+
+    <header id="header"></header>
+
+    <main class="contact-page-content">
+        
+        <section class="inner-page-hero">
+            <div class="container">
+                <h1 data-i18n="contact_title">تواصل معنا</h1>
+                <p class="subtitle" data-i18n="contact_subtitle">يسعدنا استقبال استفساراتكم وآرائكم لدعم مسيرتنا </p>
+            </div>
+        </section>
+
+        <section class="contact-section container">
+            <div class="contact-grid-wrapper">
+                
+                <div class="contact-info-sidebar">
+                    <h2 data-i18n="contact_info_heading">معلومات الاتصال</h2>
+                    <p class="sidebar-intro-p" data-i18n="contact_info_desc">يمكنك التواصل معنا مباشرة عبر القنوات الرسمية التالية، أو ترك رسالة سريعة عبر النموذج.</p>
+                    
+                    <div class="contact-channels">
+                        <div class="channel-item">
+                            <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="channel-text">
+                                <span data-i18n="contact_email_label">البريد الإلكتروني</span>
+                                <strong data-i18n="contact_email_val">info@waietech.com</strong>
+                            </div>
+                        </div>
+                        <div class="channel-item">
+                            <div class="channel-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="channel-text">
+                                <span data-i18n="contact_location_label">الموقع الجغرافي</span>
+                                <strong data-i18n="contact_location_val">المملكة الأردنية الهاشمية</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social-box">
+                        <h4 data-i18n="contact_follow_us">تابعنا على منصاتنا</h4>
+                        <div class="social-links-flex">
+                            <a href="https://www.linkedin.com/company/waietech" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/waietech" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://chat.whatsapp.com/HByxRD39W0a9ABUs6xjder" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-block">
+                    <h2 data-i18n="contact_form_heading">أرسل لنا رسالة</h2>
+                    <form action="#" method="POST" class="waie-contact-form">
+                        <div class="form-group-row">
+                            <div class="input-field-wrapper">
+                                <label for="form_name" data-i18n="label_name">الاسم الكامل</label>
+                                <input type="text" id="form_name" data-i18n="placeholder_name" placeholder="أدخل اسمك الكريم" required>
+                            </div>
+                            <div class="input-field-wrapper">
+                                <label for="form_email" data-i18n="label_email">البريد الإلكتروني</label>
+                                <input type="email" id="form_email" data-i18n="placeholder_email" placeholder="example@domain.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-field-wrapper">
+                            <label for="form_subject" data-i18n="label_subject">موضوع الرسالة</label>
+                            <input type="text" id="form_subject" data-i18n="placeholder_subject" placeholder="ما هو عنوان استفسارك؟" required>
+                        </div>
+
+                        <div class="input-field-wrapper">
+                            <label for="form_message" data-i18n="label_message">نص الرسالة</label>
+                            <textarea id="form_message" rows="5" data-i18n="placeholder_message" placeholder="اكتب تفاصيل رسالتك هنا..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit-contact">
+                            <span data-i18n="btn_send">إرسال الرسالة</span> <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/lang.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

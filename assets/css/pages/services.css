@@ -1,0 +1,160 @@
+/* ==========================================================================
+   --- تنسيقات صفحة خدماتنا المخصصة (Services Page) ---
+   ========================================================================== */
+
+/* تثبيت حجم وأبعاد الهيدر الداخلي لجميع الصفحات */
+.inner-page-hero {
+    background: linear-gradient(135deg, #0b1f3a 0%, #13335c 100%);
+    color: #ffffff;
+    
+    /* التعديل الأساسي: تثبيت الارتفاع الكلي */
+    height: 180px; 
+    margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
+    
+    /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ضبط حاوية النصوص بالداخل لضمان عدم تأثر الأبعاد */
+.inner-page-hero .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* مسافة ثابتة وصغيرة بين العنوان والوصف */
+}
+
+/* ضبط حجم الخطوط المحدث لتتناسب مع الارتفاع الثابت الجديد */
+.inner-page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.inner-page-hero .subtitle {
+    font-size: 1.05rem;
+    color: #27b5f7 !important;
+    margin: 0 !important;
+}
+
+/* مسافات الأمان للمحاوي الجانبي */
+.services-page-content .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* التوزيع الشبكي الاحترافي للخدمات */
+.services-grid-section {
+    padding-top: 60px !important;
+    padding-bottom: 120px !important;
+}
+.services-container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* تصميم كروت الخدمات السيبرانية */
+.service-card-item {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+    border: 1px solid rgba(11, 31, 58, 0.04);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* صندوق الأيقونة المضيء */
+.service-icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(39, 181, 247, 0.06);
+    color: #27b5f7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.service-card-title {
+    color: #0b1f3a;
+    font-size: 1.3rem;
+    font-weight: 650;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.service-card-desc {
+    color: #718096;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* الخط الجمالي السفلي الذي يرتفع عند التحويم */
+.card-accent-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #27b5f7;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* تأثيرات التحويم (Hover Effects) */
+.service-card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(39, 181, 247, 0.1);
+    border-color: rgba(39, 181, 247, 0.2);
+}
+
+.service-card-item:hover .service-icon-box {
+    background: #0b1f3a;
+    color: #ffffff;
+    transform: rotateY(180deg); /* تدوير سيبراني خفيف للأيقونة */
+}
+
+.service-card-item:hover .card-accent-line {
+    transform: scaleX(1);
+}
+
+/* متجاوب تماماً للهواتف */
+@media (max-width: 768px) {
+
+    .services-container-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    .service-card-item {
+        padding: 30px 20px;
+    }
+
+    .inner-page-hero h1 {
+        font-size: 1.5rem !important; /* تصغير الخط ليناسب الشاشة */
+        padding: 0 15px;
+    }
+    .inner-page-hero .subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+    }
+}

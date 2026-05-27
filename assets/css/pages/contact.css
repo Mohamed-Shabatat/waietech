@@ -1,0 +1,242 @@
+/* ==========================================================================
+   --- تنسيقات صفحة تواصل معنا المنفصلة (Contact Page) ---
+   ========================================================================== */
+
+/* تثبيت حجم وأبعاد الهيدر الداخلي لجميع الصفحات */
+.inner-page-hero {
+    background: linear-gradient(135deg, #0b1f3a 0%, #13335c 100%);
+    color: #ffffff;
+    
+    /*  التعديل الأساسي: تثبيت الارتفاع الكلي  */
+    height: 180px; 
+    margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
+    
+    /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ضبط حاوية النصوص بالداخل لضمان عدم تأثر الأبعاد */
+.inner-page-hero .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* مسافة ثابتة وصغيرة بين العنوان والوصف */
+}
+
+/* ضبط حجم الخطوط المحدث لتتناسب مع الارتفاع الثابت الجديد */
+.inner-page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.inner-page-hero .subtitle {
+    font-size: 1.05rem;
+    color: #27b5f7 !important;
+    margin: 0 !important;
+}
+
+/* مسافات الأمان الجانبية للمحاوي */
+.contact-page-content .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* حل التداخل: مسافة أمان ضخمة لفصل المحتوى عن الهيدر والفوتر */
+.contact-section {
+    padding-top: 65px !important;
+    padding-bottom: 110px !important;
+    background-color: #f4f8fb;
+}
+
+/* التوزيع الهيكلي المشترك (توزيع شبكي ثنائي) */
+.contact-grid-wrapper {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* --- تصميم الجانب الأيمن (معلومات الاتصال) --- */
+.contact-info-sidebar {
+    background: #0b1f3a;
+    color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(11, 31, 58, 0.1);
+}
+.contact-info-sidebar h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #27b5f7;
+}
+.sidebar-intro-p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #a0aec0;
+    margin-bottom: 30px;
+}
+.contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.channel-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.channel-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(39, 181, 247, 0.1);
+    color: #27b5f7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+.channel-text {
+    display: flex;
+    flex-direction: column;
+}
+.channel-text span {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
+.channel-text strong {
+    font-size: 1rem;
+    margin-top: 2px;
+}
+.contact-social-box h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #27b5f7;
+}
+.social-links-flex {
+    display: flex;
+    gap: 12px;
+}
+.social-links-flex a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.social-links-flex a:hover {
+    background: #27b5f7;
+    color: #0b1f3a;
+    transform: translateY(-3px);
+}
+
+/* --- تصميم الجانب الأيسر (النموذج الاحترافي) --- */
+.contact-form-block {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+    border: 1px solid rgba(11, 31, 58, 0.05);
+}
+.contact-form-block h2 {
+    font-size: 1.6rem;
+    color: #0b1f3a;
+    margin-bottom: 30px;
+}
+.form-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.input-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.input-field-wrapper label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+.input-field-wrapper input, .input-field-wrapper textarea {
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+.input-field-wrapper input:focus, .input-field-wrapper textarea:focus {
+    outline: none;
+    border-color: #27b5f7;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(39, 181, 247, 0.1);
+}
+
+/* زر الإرسال السيبراني الكحلي */
+.btn-submit-contact {
+    background-color: #0b1f3a;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-submit-contact:hover {
+    background-color: #27b5f7;
+    transform: translateY(-2px);
+}
+
+/* مرونة التصميم الكامل للهواتف والموبايل */
+@media (max-width: 992px) {
+    .contact-grid-wrapper {
+        grid-template-columns: 1fr; /* قلب التوزيع ليصبح عمودياً */
+        gap: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .form-group-row {
+        grid-template-columns: 1fr; /* جعل حقول الاسم والايميل تحت بعض بالموبايل */
+        gap: 0;
+    }
+    .contact-form-block {
+        padding: 30px 20px;
+    }
+
+    .inner-page-hero h1 {
+        font-size: 1.5rem !important; /* تصغير الخط ليناسب الشاشة */
+        padding: 0 15px;
+    }
+    .inner-page-hero .subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+    }
+}
