@@ -158,11 +158,4 @@
         padding: 0 15px;
     }
 
-    /* إجبار النص الإنجليزي بين القوسين على النزول لسطر جديد أسفل العربي */
-    html[dir="rtl"] .service-card-title {
-        display: flex;
-        flex-direction: column; /* يضع العناصر فوق بعضها */
-        gap: 4px; /* مسافة ناعمة بين السطر العربي والإنجليزي */
-        font-size: 1.3rem !important; /* حجم متناسق للعنوان */
-    }
 }
