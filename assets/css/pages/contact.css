@@ -245,14 +245,37 @@
         padding: 0 15px;
     }
 
+    /* تحويل الحاوية الرئيسية إلى Flex عمودي لمنع الفراغات والتباعد الهائل */
     .contact-grid-wrapper {
-        /* تحويل الكروت لتصبح تحت بعضها تماماً في الشاشات الصغيرة */
-        grid-template-columns: 1fr !important;
-        gap: 30px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important; /* مسافة ثابتة وممتازة بين كرت الاتصال ونموذج الارسال */
+        align-items: stretch !important;
+    }
+
+    /* كرت معلومات الاتصال (الداكن) */
+    .contact-info-sidebar {
+        width: 100% !important;
+        margin-bottom: 0 !important; /* إلغاء أي هوامش سفلية قديمة تسبب الفراغ */
+        padding: 30px 20px !important;
+    }
+
+    /* كرت نموذج الإرسال (الأبيض) */
+    .contact-form-block {
+        width: 100% !important;
+        margin-top: 0 !important; /* منع أي تباعد علوي زائد */
+        padding: 30px 20px !important;
+    }
+
+    /* ضبط الحقول الداخلية للنموذج لتكون منسابة تحت بعضها مباشرة */
+    .form-group-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
     }
     
-    .contact-page-content .container {
-        width: 95%; /* إعطاء مساحة أكبر للكونتينر على الأطراف */
-        padding: 0 10px;
+    .input-field-wrapper {
+        width: 100% !important;
+        margin-bottom: 5px !important;
     }
 }
