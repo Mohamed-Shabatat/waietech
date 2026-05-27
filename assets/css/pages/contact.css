@@ -8,10 +8,8 @@
     color: #ffffff;
     
     /*  التعديل الأساسي: تثبيت الارتفاع الكلي  */
-    min-height: 180px; 
-    height: auto;
+    height: 180px; 
     margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
-    padding: 20px 0;
     
     /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
     display: flex;
@@ -44,15 +42,6 @@
     font-size: 1.05rem;
     color: #27b5f7 !important;
     margin: 0 !important;
-}
-
-/* 3. دعم قلب الاتجاهات التلقائي (تأمين إضافي إذا بقي dir="rtl" في الانقليزي) */
-html[lang="en"] .inner-page-hero,
-html[lang="en"] .contact-grid-wrapper {
-    text-align: left !important;
-}
-html[lang="en"] .channel-item {
-    flex-direction: row !important;
 }
 
 /* مسافات الأمان الجانبية للمحاوي */
@@ -249,11 +238,5 @@ html[lang="en"] .channel-item {
     .inner-page-hero .subtitle {
         font-size: 0.9rem !important;
         padding: 0 15px;
-    }
-
-    /* تقليل مساحة الارتفاع الأدنى للموبايل مع الحفاظ على المرونة */
-    .inner-page-hero {
-        min-height: 150px; 
-        padding: 25px 0;
     }
 }
