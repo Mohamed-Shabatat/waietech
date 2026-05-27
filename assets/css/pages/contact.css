@@ -241,4 +241,9 @@
         font-size: 0.9rem !important;
         padding: 0 15px;
     }
+
+    /* تقليل مساحة الارتفاع الأدنى للموبايل مع الحفاظ على المرونة */
+    .inner-page-hero {
+        min-height: 140px; 
+    }
 }
