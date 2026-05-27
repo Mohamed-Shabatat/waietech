@@ -462,6 +462,7 @@ html[dir="rtl"] .col-title::after {
         font-size: 1.2rem;
         width: 30px; /* هذا العرض الثابت يضمن محاذاة كل النصوص على خط مستقيم واحد */
         flex-shrink: 0; /* منع انضغاط الأيقونة */
+        margin: 0 !important;
     }
 
     .sidebar-mobile-header {
@@ -482,6 +483,8 @@ html[dir="rtl"] .col-title::after {
 
     .nav-links li {
         width: 100%;
+        display: flex;
+        align-items: center; /* توسط عمودي مثالي للسطر */
     }
 
     /* طبقة التظليل الخلفية */
@@ -502,6 +505,16 @@ html[dir="rtl"] .col-title::after {
     .nav-overlay.active {
         opacity: 1;
         pointer-events: auto;
+    }
+
+    /* جعل الرابط نفسه يعتمد الـ Flex ليتوسط النص مع الأيقونة */
+    .nav-links a {
+        display: flex !important;
+        align-items: center !important; /* توسط النص مع الأيقونة */
+        gap: 10px; /* مسافة ناعمة وثابتة بين الأيقونة والنص */
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 5px 0;
     }
 
     .nav-links a::after {
