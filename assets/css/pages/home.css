@@ -469,6 +469,13 @@ html[dir="ltr"] .hero-section {
     .hero-title {
         line-height: 1.6 !important;
     }
+
+    /* تصغير كود العنوان للإنجليزي ليكون متناسقاً ولا يتكدس */
+    html[dir="ltr"] .hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.4 !important;
+    }
+    
     .hero-buttons {
         flex-direction: row;
         justify-content: center;
@@ -497,7 +504,7 @@ html[dir="ltr"] .hero-section {
     }
 
     .section-header p {
-        font-size: 0.95rem !important;
+        font-size: 0.90rem !important;
         padding: 0 10px;
         line-height: 1.5;
     }
@@ -555,11 +562,11 @@ html[dir="ltr"] .hero-section {
 
     /* تحديد مكان الأيقونة بناءً على اتجاه الموقع */
     html[dir="rtl"] .goal-icon-box, html[dir="rtl"] .pillar-img-placeholder {
-        right: 20px !important;
+        right: 15px !important;
         left: auto !important;
     }
     html[dir="ltr"] .goal-icon-box, html[dir="ltr"] .pillar-img-placeholder {
-        left: 20px !important;
+        left: 15px !important;
         right: auto !important;
     }
 

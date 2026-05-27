@@ -546,6 +546,11 @@ html[dir="rtl"] .col-title::after {
     .footer-contact-info li, .footer-socials {
         justify-content: center;
     }
+
+    html[dir="ltr"] .footer-core-values {
+    font-size: 0.75rem !important; /* حجم خط ناعم ومتناسق يمنع تداخل الكلمات الإنجليزية */
+    letter-spacing: 0px;
+    }
 }
 
 
