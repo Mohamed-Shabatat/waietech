@@ -63,7 +63,8 @@
 /* التوزيع الهيكلي المشترك (توزيع شبكي ثنائي) */
 .contact-grid-wrapper {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    /* جعل الأعمدة مرنة ومتساوية لتستوعب النصوص الإنجليزية الطويلة */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     align-items: start;
 }
@@ -97,6 +98,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    width: 100%;
 }
 .channel-icon {
     width: 45px;
@@ -112,14 +114,17 @@
 .channel-text {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 .channel-text span {
     font-size: 0.8rem;
     color: #cbd5e1;
 }
 .channel-text strong {
-    font-size: 1rem;
-    margin-top: 2px;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    white-space: normal; /* السماح للنص بالالتفاف المريح */
+    word-break: break-word; /* حماية البريد الإلكتروني والنصوص الطويلة من التداخل */
 }
 .contact-social-box h4 {
     font-size: 1rem;
@@ -238,5 +243,16 @@
     .inner-page-hero .subtitle {
         font-size: 0.9rem !important;
         padding: 0 15px;
+    }
+
+    .contact-grid-wrapper {
+        /* تحويل الكروت لتصبح تحت بعضها تماماً في الشاشات الصغيرة */
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    
+    .contact-page-content .container {
+        width: 95%; /* إعطاء مساحة أكبر للكونتينر على الأطراف */
+        padding: 0 10px;
     }
 }
