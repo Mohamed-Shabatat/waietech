@@ -474,26 +474,39 @@ html[dir="ltr"] .hero-section {
         justify-content: center;
         gap: 15px;
         width: 100%;
+        align-items: stretch;
     }
     .hero-buttons .btn {
-        padding: 10px 20px; /* تقليص الحشو قليلاً ليناسب الشاشات الصغيرة */
-        font-size: 0.95rem;
-        flex: 1; /* تجعل الزرين متساويين في الحجم بشكل أنيق */
+        padding: 12px 10px; /* مساحة داخلية متوازنة تمنع التكدس للأسفل */
+        font-size: 0.9rem;
+        flex: 1; 
         text-align: center;
+        display: flex; /* لضمان توسيط النصوص داخل الأزرار برمجياً */
+        align-items: center;
+        justify-content: center;
+        white-space: normal; /* يسمح بالنزول لسطرين في اللغتين بشكل موحد إذا ضاقت الشاشة */
     }
     .hero-buttons .btn {
         width: 100%;
         text-align: center;
     }
+
+
     .section-header h2 {
         font-size: 1.6rem;
+    }
+
+    .section-header p {
+        font-size: 0.95rem !important;
+        padding: 0 10px;
+        line-height: 1.5;
     }
 
     /* تحويل شبكات العرض إلى عمود واحد منظم */
     .goals-grid, .pillars-grid {
         grid-template-columns: 1fr !important;
-        gap: 20px;
-        padding: 0 15px;
+        gap: 15px;
+        padding: 0 5px;
     }
 
     /* تنسيق الكروت الأساسية وإعطائها مساحة داخلية مريحة */
@@ -512,15 +525,15 @@ html[dir="ltr"] .hero-section {
     /* الوضع العربي: دفع النصوص لليمين لإفساح مجال للأيقونة اليمنى */
     html[dir="rtl"] .goal-card, html[dir="rtl"] .pillar-item {
         text-align: right !important;
-        padding-right: 85px !important; /* مسافة أمان تبدأ بعد الأيقونة */
-        padding-left: 20px !important;
+        padding-right: 75px !important; /* مسافة أمان تبدأ بعد الأيقونة */
+        padding-left: 15px !important;
     }
     
     /* الوضع الإنجليزي: دفع النصوص لليسار لإفساح مجال للأيقونة اليسرى */
     html[dir="ltr"] .goal-card, html[dir="ltr"] .pillar-item {
         text-align: left !important;
-        padding-left: 85px !important; /* مسافة أمان تبدأ بعد الأيقونة */
-        padding-right: 20px !important;
+        padding-left: 75px !important; /* مسافة أمان تبدأ بعد الأيقونة */
+        padding-right: 15px !important;
     }
 
     /* تثبيت مكان الأيقونة بالمنتصف العمودي تماماً وعلى الطرف */
