@@ -507,15 +507,6 @@ html[dir="rtl"] .col-title::after {
         pointer-events: auto;
     }
 
-    /* جعل الرابط نفسه يعتمد الـ Flex ليتوسط النص مع الأيقونة */
-    .nav-links a {
-        display: flex !important;
-        align-items: center !important; /* توسط النص مع الأيقونة */
-        gap: 10px; /* مسافة ناعمة وثابتة بين الأيقونة والنص */
-        width: max-content;
-        font-size: 1.05rem;
-    }
-
     .nav-links a::after {
         display: block !important;
         content: '';
