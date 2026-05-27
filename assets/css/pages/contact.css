@@ -46,6 +46,15 @@
     margin: 0 !important;
 }
 
+/* 3. دعم قلب الاتجاهات التلقائي (تأمين إضافي إذا بقي dir="rtl" في الانقليزي) */
+html[lang="en"] .inner-page-hero,
+html[lang="en"] .contact-grid-wrapper {
+    text-align: left !important;
+}
+html[lang="en"] .channel-item {
+    flex-direction: row !important;
+}
+
 /* مسافات الأمان الجانبية للمحاوي */
 .contact-page-content .container {
     width: 90%;
@@ -244,6 +253,7 @@
 
     /* تقليل مساحة الارتفاع الأدنى للموبايل مع الحفاظ على المرونة */
     .inner-page-hero {
-        min-height: 140px; 
+        min-height: 150px; 
+        padding: 25px 0;
     }
 }
