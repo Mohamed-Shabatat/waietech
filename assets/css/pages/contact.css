@@ -220,6 +220,26 @@
     transform: translateY(-2px);
 }
 
+.counter-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    padding: 0 4px;
+}
+
+.counter-container span {
+    font-size: 0.75rem;
+    color: #718096;
+    font-weight: 600;
+    font-family: 'Poppins', 'Tajawal', sans-serif;
+    user-select: none; /* منع المستخدم من تحديد أو نسخ نص العداد */
+}
+
+/* دعم تلقائي لقلب اتجاه العداد عند تحول الموقع للغة الإنجليزية */
+html[dir="ltr"] .counter-container {
+    justify-content: flex-end; /* سيبقى في نهاية الحقل من الجهة الأخرى تلقائياً بفضل الـ Flex */
+}
+
 /* مرونة التصميم الكامل للهواتف والموبايل */
 @media (max-width: 992px) {
     .contact-grid-wrapper {

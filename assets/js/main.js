@@ -140,4 +140,68 @@ document.addEventListener("DOMContentLoaded", () => {
         stats.forEach(stat => observer.observe(stat));
     }
 
+
+
+    //form
+
+    const contactForm = document.querySelector(".waie-contact-form");
+    const submitBtn = document.querySelector(".btn-submit-contact");
+    
+    const subjectInput = document.getElementById("form_subject");
+    const subjectCounter = document.getElementById("subject-counter");
+    const maxSubject = 50;
+
+    const messageInput = document.getElementById("form_message");
+    const messageCounter = document.getElementById("message-counter");
+    const maxMessage = 500;
+
+    // دالة التحقق والقص الفوري للحماية
+    function validateAndCount(input, counter, maxLength) {
+        if (!input || !counter) return true;
+
+        // الحماية الجوهرية: إذا تم حذف maxlength من الـ HTML، الـ JS سيقوم بقص النص فوراً
+        if (input.value.length > maxLength) {
+            input.value = input.value.substring(0, maxLength);
+        }
+
+        const currentLength = input.value.length;
+        counter.textContent = `${currentLength} / ${maxLength}`;
+
+        if (currentLength >= maxLength) {
+            counter.style.color = "#e53e3e"; // تنبيه أحمر
+            return true;
+        } else {
+            counter.style.color = "#718096";
+            return false;
+        }
+    }
+
+    // مراقبة حقل الموضوع أثناء الكتابة
+    if (subjectInput) {
+        subjectInput.addEventListener("input", () => {
+            validateAndCount(subjectInput, subjectCounter, maxSubject);
+        });
+    }
+
+    // مراقبة حقل النص أثناء الكتابة
+    if (messageInput) {
+        messageInput.addEventListener("input", () => {
+            validateAndCount(messageInput, messageCounter, maxMessage);
+        });
+    }
+
+    // الفحص الأمني النهائي عند محاولة الإرسال (حظر التلاعب بالـ F12)
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            const isSubjectOver = subjectInput && subjectInput.value.length > maxSubject;
+            const isMessageOver = messageInput && messageInput.value.length > maxMessage;
+
+            if (isSubjectOver || isMessageOver) {
+                e.preventDefault(); // إلغاء عملية الإرسال فوراً وحظرها
+                alert("تنبيه أمني: تم تجاوز الحد المسموح به من الحروف برمجياً!");
+                return false;
+            }
+        });
+    }
+    
 });
