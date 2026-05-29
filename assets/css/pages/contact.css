@@ -240,9 +240,10 @@ html[dir="ltr"] .counter-container {
     justify-content: flex-end; /* سيبقى في نهاية الحقل من الجهة الأخرى تلقائياً بفضل الـ Flex */
 }
 
+
 /* تنسيق القائمة المنسدلة للموضوع */
 .input-field-wrapper select {
-    padding: 12px 15px;
+    padding: 14px 15px 12px 15px !important; /* زيادة الحشو العلوي قليلاً (14px) لدفع الخط العربي لأسفل ومنع قصه */
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     font-family: inherit;
@@ -252,7 +253,9 @@ html[dir="ltr"] .counter-container {
     transition: all 0.3s ease;
     width: 100%;
     cursor: pointer;
-    /* دعم ظهور السهم بشكل أنيق في اللغتين */
+    line-height: 1.5 !important; /* إعطاء مساحة مريحة لارتفاع أسطر الخطوط العربية */
+    box-sizing: border-box !important;
+    
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
