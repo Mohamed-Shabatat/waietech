@@ -238,37 +238,53 @@
         padding: 0 15px;
     }
 
-    /* تحويل الحاوية الرئيسية إلى Flex عمودي لمنع الفراغات والتباعد الهائل */
+    /* 1. توسيع الحاوية الخارجية الكبرى للموقع في صفحة الاتصال */
+    .contact-page-content .container {
+        width: 100% !important;     /* استغلال العرض الكامل للشاشة */
+        max-width: 100% !important;
+        padding: 0 12px !important;  /* ترك مسافة أمان صغيرة جداً (12px) على الأطراف لكي لا تلتصق الشاشات بالحافة تماماً */
+        box-sizing: border-box;
+    }
+
+    /* 2. ضبط الحاوية المرنة وتوسيعها */
     .contact-grid-wrapper {
         display: flex !important;
         flex-direction: column !important;
-        gap: 30px !important; /* مسافة ثابتة وممتازة بين كرت الاتصال ونموذج الارسال */
-        align-items: stretch !important;
+        gap: 25px !important; /* المسافة المريحة بين المربعين */
+        width: 100% !important;
+
+        /* إبعاد المربعات عن الهيدر الداخلي وعن الفوتر */
+        margin-top: 60px !important;    /* دفع المربع الأول لأسفل بعيداً عن الهيدر */
+        margin-bottom: 60px !important; /* دفع الفوتر لأسفل بعيداً عن مربع الإرسال */
     }
 
-    /* كرت معلومات الاتصال (الداكن) */
+    /* 3. توسيع كرت معلومات الاتصال (الداكن) */
     .contact-info-sidebar {
         width: 100% !important;
-        margin-bottom: 0 !important; /* إلغاء أي هوامش سفلية قديمة تسبب الفراغ */
-        padding: 30px 30px !important;
+        padding: 35px 25px !important; /* زيادة الحشو الداخلي ليصبح المربع أوسع ومريحاً للعين */
+        border-radius: 16px !important; /* تنعيم الحواف ليظهر بشكل فخم */
+        margin-bottom: 0 !important;
+        box-sizing: border-box;
     }
 
-    /* كرت نموذج الإرسال (الأبيض) */
+    /* 4. توسيع كرت نموذج الإرسال (الأبيض) */
     .contact-form-block {
         width: 100% !important;
-        margin-top: 0 !important; /* منع أي تباعد علوي زائد */
-        padding: 30px 20px !important;
+        padding: 35px 25px !important; /* زيادة الحشو الداخلي بالتطابق مع الكرت العلوي */
+        border-radius: 16px !important;
+        margin-top: 0 !important;
+        box-sizing: border-box;
     }
 
-    /* ضبط الحقول الداخلية للنموذج لتكون منسابة تحت بعضها مباشرة */
+    /* 5. جعل حقول الإدخال ممتدة بالكامل داخل المربع الموسّع */
     .form-group-row {
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important;
+        gap: 0px !important;
+        width: 100% !important;
     }
     
     .input-field-wrapper {
         width: 100% !important;
-        margin-bottom: 5px !important;
     }
 }
