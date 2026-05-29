@@ -242,7 +242,7 @@
     .contact-page-content .container {
         width: 100% !important;     /* استغلال العرض الكامل للشاشة */
         max-width: 100% !important;
-        padding: 0 12px !important;  /* ترك مسافة أمان صغيرة جداً (12px) على الأطراف لكي لا تلتصق الشاشات بالحافة تماماً */
+        padding: 0 15px !important;  /* ترك مسافة أمان صغيرة جداً (12px) على الأطراف لكي لا تلتصق الشاشات بالحافة تماماً */
         box-sizing: border-box;
     }
 
@@ -250,7 +250,7 @@
     .contact-grid-wrapper {
         display: flex !important;
         flex-direction: column !important;
-        gap: 25px !important; /* المسافة المريحة بين المربعين */
+        gap: 30px !important; /* المسافة المريحة بين المربعين */
         width: 100% !important;
 
         /* إبعاد المربعات عن الهيدر الداخلي وعن الفوتر */
