@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 2. جلب القيم من حقول الإدخال بدقة بحسب الـ IDs الحالية
             const name = document.getElementById("form_name")?.value || "";
             const email = document.getElementById("form_email")?.value || "";
+            const phone = document.getElementById("form_phone")?.value || "غير محدد (Not Specified)";
             const message = document.getElementById("form_message")?.value || "";
             
             // 3. جلب النص الظاهري الحالي المختار للموضوع من القائمة المنسدلة
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ticketId,
                         name,
                         email,
+                        phone,
                         subject,
                         message,
                         lang,

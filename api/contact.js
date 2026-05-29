@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     try {
         // 2. تفكيك البيانات القادمة من الـ Frontend
-        const { ticketId, name, email, subject, message, lang, platform, date, time } = req.body;
+        const { ticketId, name, email, phone, subject, message, lang, platform, date, time } = req.body;
 
         // 3. جلب الـ IP الخاص بالمرسل تلقائياً من الـ Headers لأمان السيبراني
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || "Unknown";
@@ -20,6 +20,7 @@ export default async function handler(req, res) {
 🆔 رقم التذكرة: ${ticketId}
 👤 الاسم: ${name}
 📧 البريد: ${email}
+📞 الهاتف: ${phone}
 📝 الموضوع: ${subject}
 
 💬 الرسالة:
@@ -37,6 +38,7 @@ ${message}
 🆔 Ticket ID: ${ticketId}
 👤 Name: ${name}
 📧 Email: ${email}
+📞 Phone: ${phone}
 📝 Subject: ${subject}
 
 💬 Message:
