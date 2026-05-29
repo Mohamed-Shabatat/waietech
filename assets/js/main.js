@@ -178,4 +178,40 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
+    const customDropdown = document.querySelector(".custom-dropdown");
+    const selectedDiv = document.getElementById("dropdown-selected");
+    const optionsList = document.getElementById("dropdown-options");
+    const hiddenInput = document.getElementById("form_subject_hidden");
+
+    if (customDropdown && selectedDiv && optionsList) {
+        // 1. فتح وإغلاق القائمة عند النقر على الحقل الرئيسي
+        selectedDiv.addEventListener("click", (e) => {
+            e.stopPropagation();
+            customDropdown.classList.toggle("active");
+        });
+
+        // 2. عند اختيار عنصر من القائمة
+        optionsList.querySelectorAll("li").forEach(option => {
+            option.addEventListener("click", function(e) {
+                e.stopPropagation();
+                
+                // تحديث النص الظاهري والـ Value المخفية بأمان
+                selectedDiv.textContent = this.textContent;
+                hiddenInput.value = this.getAttribute("data-value");
+                
+                // إزالة اللون الباهت الافتراضي
+                selectedDiv.style.color = "#0b1f3a";
+                
+                // إغلاق القائمة
+                customDropdown.classList.remove("active");
+            });
+        });
+
+        // 3. إغلاق القائمة تلقائياً إذا نقر المستخدم في أي مكان خارجها
+        document.addEventListener("click", () => {
+            customDropdown.classList.remove("active");
+        });
+    }
+
 });

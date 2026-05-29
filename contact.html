@@ -78,15 +78,18 @@
                         
                         <div class="input-field-wrapper">
                             <label for="form_subject" data-i18n="label_subject">موضوع الرسالة</label>
-                            <select id="form_subject" required>
-                                <option value="" disabled selected data-i18n="placeholder_subject_select">اختر موضوع الرسالة...</option>
-                                <option value="cooperation" data-i18n="subject_cooperation">تعاون</option>
-                                <option value="inquiry" data-i18n="subject_inquiry">استفسار</option>
-                                <option value="suggestion" data-i18n="subject_suggestion">اقتراح</option>
-                                <option value="affiliation" data-i18n="subject_affiliation">انتساب</option>
-                                <option value="technical" data-i18n="subject_technical">بلاغ عن مشكلة تقنية</option>
-                                <option value="other" data-i18n="subject_other">أخرى</option>
-                            </select>
+                            <div class="custom-dropdown">
+        <div class="dropdown-selected" id="dropdown-selected" data-i18n="placeholder_subject_select">اختر موضوع الرسالة...</div>
+        
+        <ul class="dropdown-options" id="dropdown-options">
+            <li data-value="cooperation" data-i18n="subject_cooperation">تعاون</li>
+            <li data-value="inquiry" data-i18n="subject_inquiry">استفسار</li>
+            <li data-value="suggestion" data-i18n="subject_suggestion">اقتراح</li>
+            <li data-value="affiliation" data-i18n="subject_affiliation">انتساب</li>
+            <li data-value="technical" data-i18n="subject_technical">بلاغ عن مشكلة تقنية</li>
+            <li data-value="other" data-i18n="subject_other">أخرى</li>
+        </ul>
+    </div>
                         </div>
 
                         <div class="input-field-wrapper">
