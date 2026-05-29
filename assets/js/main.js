@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //options
 
+    // === كود القائمة المنسدلة المحدث والمحمي من التداخل ===
     const customDropdown = document.querySelector(".custom-dropdown");
     const selectedDiv = document.getElementById("dropdown-selected");
     const optionsList = document.getElementById("dropdown-options");
@@ -193,29 +194,30 @@ document.addEventListener("DOMContentLoaded", () => {
             customDropdown.classList.toggle("active");
         });
 
-        // 2. الحل النهائي والقاطع للاختفاء الفوري بمجرد الاختيار
+        // 2. الاختفاء الفوري الحتمي بمجرد النقر على الخيار
         optionsList.addEventListener("click", function(e) {
             const li = e.target.closest("li");
             
             if (li) {
                 e.stopPropagation();
                 
-                // تحديث النص والقيمة المخفية فوراً
+                // تحديث البيانات
                 selectedDiv.textContent = li.textContent;
                 hiddenInput.value = li.getAttribute("data-value");
                 selectedDiv.style.color = "#0b1f3a";
                 
-                // سحب الكلاس active لإخفاء القائمة عبر الـ CSS فوراً
+                // الحل القاطع: إغلاق الكلاس فوراً
                 customDropdown.classList.remove("active");
                 
-                // تأمين إضافي: إجبار المتصفح على قطع العرض حتى لو تدخل ملف الترجمة
+                // إجبار الـ CSS على إخفائها فوراً في نفس اللحظة لمنع معالج الترجمة من إظهارها
+                optionsList.style.pointerEvents = "none";
                 setTimeout(() => {
-                    customDropdown.classList.remove("active");
-                }, 10);
+                    optionsList.style.pointerEvents = "auto";
+                }, 100);
             }
         });
 
-        // 3. إغلاق القائمة إذا نقر المستخدم في أي مكان خارجها
+        // 3. إغلاق القائمة عند النقر في أي مكان خارجها
         document.addEventListener("click", (e) => {
             if (!customDropdown.contains(e.target)) {
                 customDropdown.classList.remove("active");

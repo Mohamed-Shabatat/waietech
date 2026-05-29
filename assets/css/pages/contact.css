@@ -298,20 +298,30 @@ html[dir="ltr"] .dropdown-selected::after { right: 15px; }
     right: 0;
     background-color: #ffffff;
     border: 1px solid #27b5f7;
-    border-radius: 8px;
-    margin-top: 5px;
-    padding: 10px 0;
+    border-radius: 12px !important;
+    margin-top: 6px;
     list-style: none;
     z-index: 999;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    display: none !important; /* مخفية افتراضياً */
-    max-height: 250px;
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.1);
+    max-height: 260px;
     overflow-y: auto;
+
+    /* === طلبك: مسافة أمان لأول خيار وآخر خيار من الأطراف === */
+    padding: 10px 0 !important; 
+
+    /* === الحل البرمجي لضمان الاختفاء الحتمي ومنع تعارض الترجمة === */
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
 }
 
-/* إظهار القائمة عند التفعيل */
+/* حالة التفعيل: تظهر بسلاسة وفخامة وتختفي فوراً عند حذف الكلاس */
 .custom-dropdown.active .dropdown-options {
-    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
 /* تنسيق كل خيار على حدة داخل القائمة */
