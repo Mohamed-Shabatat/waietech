@@ -264,6 +264,15 @@ html[dir="ltr"] .counter-container {
     background-size: 1.2rem;
 }
 
+/* تنسيق خيارات القائمة عند الانسدال */
+.input-field-wrapper select option {
+    background-color: #ffffff; /* لون خلفية ناصع ونظيف للخلفية */
+    color: #0b1f3a; /* لون الخط الكحلي السيبراني الخاص بالمبادرة ليظهر بوضوح */
+    padding: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
 /* تدوير السهم ليكون في اليسار في العربية وفي اليمين في الإنجليزية */
 html[dir="rtl"] .input-field-wrapper select {
     background-position: left 15px center;
@@ -280,6 +289,7 @@ html[dir="ltr"] .input-field-wrapper select {
     background-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(39, 181, 247, 0.1);
 }
+
 
 
 
