@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // عداد حقل نص الرسالة فقط (تم إزالة حقل الموضوع تماماً)
     const messageInput = document.getElementById("form_message");
     const messageCounter = document.getElementById("message-counter");
-    const maxMessage = 500;
+    const maxMessage = 300;
 
     if (messageInput && messageCounter) {
         messageInput.addEventListener("input", () => {
