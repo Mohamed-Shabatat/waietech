@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    //options
 
     const customDropdown = document.querySelector(".custom-dropdown");
     const selectedDiv = document.getElementById("dropdown-selected");
@@ -185,32 +186,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const hiddenInput = document.getElementById("form_subject_hidden");
 
     if (customDropdown && selectedDiv && optionsList) {
+        
         // 1. فتح وإغلاق القائمة عند النقر على الحقل الرئيسي
         selectedDiv.addEventListener("click", (e) => {
             e.stopPropagation();
             customDropdown.classList.toggle("active");
         });
 
-        // 2. عند اختيار عنصر من القائمة
-        optionsList.querySelectorAll("li").forEach(option => {
-            option.addEventListener("click", function(e) {
+        // 2. الحل النهائي والقاطع للاختفاء الفوري بمجرد الاختيار
+        optionsList.addEventListener("click", function(e) {
+            const li = e.target.closest("li");
+            
+            if (li) {
                 e.stopPropagation();
                 
-                // تحديث النص الظاهري والـ Value المخفية بأمان
-                selectedDiv.textContent = this.textContent;
-                hiddenInput.value = this.getAttribute("data-value");
-                
-                // إزالة اللون الباهت الافتراضي
+                // تحديث النص والقيمة المخفية فوراً
+                selectedDiv.textContent = li.textContent;
+                hiddenInput.value = li.getAttribute("data-value");
                 selectedDiv.style.color = "#0b1f3a";
                 
-                // إغلاق القائمة
+                // سحب الكلاس active لإخفاء القائمة عبر الـ CSS فوراً
                 customDropdown.classList.remove("active");
-            });
+                
+                // تأمين إضافي: إجبار المتصفح على قطع العرض حتى لو تدخل ملف الترجمة
+                setTimeout(() => {
+                    customDropdown.classList.remove("active");
+                }, 10);
+            }
         });
 
-        // 3. إغلاق القائمة تلقائياً إذا نقر المستخدم في أي مكان خارجها
-        document.addEventListener("click", () => {
-            customDropdown.classList.remove("active");
+        // 3. إغلاق القائمة إذا نقر المستخدم في أي مكان خارجها
+        document.addEventListener("click", (e) => {
+            if (!customDropdown.contains(e.target)) {
+                customDropdown.classList.remove("active");
+            }
         });
     }
 

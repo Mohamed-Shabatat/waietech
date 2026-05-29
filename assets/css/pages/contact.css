@@ -241,55 +241,96 @@ html[dir="ltr"] .counter-container {
 }
 
 
-/* تنسيق القائمة المنسدلة للموضوع */
-.input-field-wrapper select {
-    padding: 14px 15px 12px 15px !important; /* زيادة الحشو العلوي قليلاً (14px) لدفع الخط العربي لأسفل ومنع قصه */
+/* الحاوية الرئيسية للقائمة المخصصة */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+/* تنسيق الحقل الرئيسي الصامت */
+.dropdown-selected {
+    padding: 14px 15px 12px 15px !important;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    font-family: inherit;
     font-size: 0.95rem;
     background-color: #f8fafc;
     color: #4a5568;
-    transition: all 0.3s ease;
-    width: 100%;
     cursor: pointer;
-    line-height: 1.5 !important; /* إعطاء مساحة مريحة لارتفاع أسطر الخطوط العربية */
-    box-sizing: border-box !important;
-    
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
-    background-repeat: no-repeat;
-    background-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    user-select: none;
 }
 
-/* تنسيق خيارات القائمة عند الانسدال */
-.input-field-wrapper select option {
-    background-color: #ffffff; /* لون خلفية ناصع ونظيف للخلفية */
-    color: #0b1f3a; /* لون الخط الكحلي السيبراني الخاص بالمبادرة ليظهر بوضوح */
-    padding: 10px;
-    font-family: inherit;
-    font-size: 0.95rem;
-}
-
-/* تدوير السهم ليكون في اليسار في العربية وفي اليمين في الإنجليزية */
-html[dir="rtl"] .input-field-wrapper select {
-    background-position: left 15px center;
-    padding-left: 40px;
-}
-html[dir="ltr"] .input-field-wrapper select {
-    background-position: right 15px center;
-    padding-right: 40px;
-}
-
-.input-field-wrapper select:focus {
-    outline: none;
+/* تأثير الـ Focus عند النقر */
+.custom-dropdown.active .dropdown-selected {
     border-color: #27b5f7;
     background-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(39, 181, 247, 0.1);
 }
 
+/* إضافة سهم مخصص يدعم الاتجاهين */
+.dropdown-selected::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #27b5f7;
+    transition: transform 0.3s ease;
+}
+
+html[dir="rtl"] .dropdown-selected::after { left: 15px; }
+html[dir="ltr"] .dropdown-selected::after { right: 15px; }
+
+/* تدوير السهم للأعلى عند فتح القائمة */
+.custom-dropdown.active .dropdown-selected::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* تنسيق قائمة الخيارات المنسدلة (التحكم الكامل متاح هنا) */
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #27b5f7;
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: none !important; /* مخفية افتراضياً */
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* إظهار القائمة عند التفعيل */
+.custom-dropdown.active .dropdown-options {
+    display: block !important;
+}
+
+/* تنسيق كل خيار على حدة داخل القائمة */
+.dropdown-options li {
+    padding: 12px 15px;
+    color: #0b1f3a; /* الكحلي السيبراني الخاص بك */
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+    text-align: inherit;
+}
+
+/* تأثير التمرير (Hover) على الخيارات لتجربة تصفح فخمة */
+.dropdown-options li:hover {
+    background-color: #f0f7ff; /* خلفية زرقاء ناعمة جداً تليق بالثيم */
+    color: #27b5f7; /* تحول النص للأزرق المضيء */
+    margin: 0 6px;
+    border-radius: 6px;
+}
 
 
 
@@ -363,91 +404,3 @@ html[dir="ltr"] .input-field-wrapper select {
 }
 
 
-/* الحاوية الرئيسية للقائمة المخصصة */
-.custom-dropdown {
-    position: relative;
-    width: 100%;
-}
-
-/* تنسيق الحقل الرئيسي الصامت */
-.dropdown-selected {
-    padding: 14px 15px 12px 15px !important;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    background-color: #f8fafc;
-    color: #4a5568;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    user-select: none;
-}
-
-/* تأثير الـ Focus عند النقر */
-.custom-dropdown.active .dropdown-selected {
-    border-color: #27b5f7;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(39, 181, 247, 0.1);
-}
-
-/* إضافة سهم مخصص يدعم الاتجاهين */
-.dropdown-selected::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #4a5568;
-    transition: transform 0.3s ease;
-}
-
-html[dir="rtl"] .dropdown-selected::after { left: 15px; }
-html[dir="ltr"] .dropdown-selected::after { right: 15px; }
-
-/* تدوير السهم للأعلى عند فتح القائمة */
-.custom-dropdown.active .dropdown-selected::after {
-    transform: translateY(-50%) rotate(180deg);
-}
-
-/* تنسيق قائمة الخيارات المنسدلة (التحكم الكامل متاح هنا) */
-.dropdown-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    margin-top: 5px;
-    padding: 0;
-    list-style: none;
-    z-index: 999;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    display: none; /* مخفية افتراضياً */
-    max-height: 250px;
-    overflow-y: auto;
-}
-
-/* إظهار القائمة عند التفعيل */
-.custom-dropdown.active .dropdown-options {
-    display: block;
-}
-
-/* تنسيق كل خيار على حدة داخل القائمة */
-.dropdown-options li {
-    padding: 12px 15px;
-    color: #0b1f3a; /* الكحلي السيبراني الخاص بك */
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.2s ease;
-    text-align: inherit;
-}
-
-/* تأثير التمرير (Hover) على الخيارات لتجربة تصفح فخمة */
-.dropdown-options li:hover {
-    background-color: #f0f7ff; /* خلفية زرقاء ناعمة جداً تليق بالثيم */
-    color: #27b5f7; /* تحول النص للأزرق المضيء */
-}
