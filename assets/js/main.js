@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const messageInput = document.getElementById("form_message");
     const messageCounter = document.getElementById("message-counter");
-    const maxMessage = 500;
+    const maxMessage = 300;
 
     // دالة التحقق والقص الفوري للحماية
     function validateAndCount(input, counter, maxLength) {
@@ -203,5 +203,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-    
+
 });
