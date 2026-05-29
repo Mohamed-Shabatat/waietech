@@ -240,6 +240,46 @@ html[dir="ltr"] .counter-container {
     justify-content: flex-end; /* سيبقى في نهاية الحقل من الجهة الأخرى تلقائياً بفضل الـ Flex */
 }
 
+/* تنسيق القائمة المنسدلة للموضوع */
+.input-field-wrapper select {
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #f8fafc;
+    color: #4a5568;
+    transition: all 0.3s ease;
+    width: 100%;
+    cursor: pointer;
+    /* دعم ظهور السهم بشكل أنيق في اللغتين */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-size: 1.2rem;
+}
+
+/* تدوير السهم ليكون في اليسار في العربية وفي اليمين في الإنجليزية */
+html[dir="rtl"] .input-field-wrapper select {
+    background-position: left 15px center;
+    padding-left: 40px;
+}
+html[dir="ltr"] .input-field-wrapper select {
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+.input-field-wrapper select:focus {
+    outline: none;
+    border-color: #27b5f7;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(39, 181, 247, 0.1);
+}
+
+
+
 /* مرونة التصميم الكامل للهواتف والموبايل */
 @media (max-width: 992px) {
     .contact-grid-wrapper {

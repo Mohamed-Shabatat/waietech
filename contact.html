@@ -78,10 +78,15 @@
                         
                         <div class="input-field-wrapper">
                             <label for="form_subject" data-i18n="label_subject">موضوع الرسالة</label>
-                            <input type="text" id="form_subject" data-i18n="placeholder_subject" placeholder="ما هو عنوان استفسارك؟" maxlength="50" minlength="5" autocomplete="off" required>
-                            <div class="counter-container">
-                                <span id="subject-counter">0 / 50</span>
-                            </div>
+                            <select id="form_subject" required>
+                                <option value="" disabled selected data-i18n="placeholder_subject_select">اختر موضوع الرسالة...</option>
+                                <option value="cooperation" data-i18n="subject_cooperation">تعاون</option>
+                                <option value="inquiry" data-i18n="subject_inquiry">استفسار</option>
+                                <option value="suggestion" data-i18n="subject_suggestion">اقتراح</option>
+                                <option value="affiliation" data-i18n="subject_affiliation">انتساب</option>
+                                <option value="technical" data-i18n="subject_technical">بلاغ عن مشكلة تقنية</option>
+                                <option value="other" data-i18n="subject_other">أخرى</option>
+                            </select>
                         </div>
 
                         <div class="input-field-wrapper">
