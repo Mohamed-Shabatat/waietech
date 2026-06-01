@@ -239,14 +239,187 @@ html[dir="ltr"] .hero-section {
     line-height: 1.6;
 }
 
-/* 3️⃣ شبكة المستجدات والمبادرات (News & Initiatives Grid) */
+
+/* ========================================================
+   3️⃣ محطة المعرفة والأنشطة (Knowledge & Activities Hub)
+   ======================================================== */
+
 .news-section {
-    padding: 60px 8%;
+    padding: 80px 8%;
+    background-color: #f8fafc; /* خلفية هادئة لإبراز الكروت */
 }
-.news-container-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+
+/* حاوية الكروت المرنة - عريضة على سطح المكتب وعمودية على الهاتف */
+.hub-container-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+/* تصميم الكرت المشترك (تنسيق أفقي داخلي لسطح المكتب) */
+.hub-card-item {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex: 1;
+    min-width: 0; /* منع تمدد أو انضغاط المحتوى */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+/* حركة الارتفاع والظل الفخم عند تمرير الماوس */
+.hub-card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(11, 31, 58, 0.08);
+}
+
+/* حاوية الصورة داخل الكرت */
+.hub-card-image {
+    position: relative;
+    width: 40%; /* تأخذ 40% من عرض الكرت الأفقي */
+    min-width: 180px;
+    overflow: hidden;
+}
+
+.hub-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* تأثير تقريب الصورة (Zoom) عند الهوفر على الكرت */
+.hub-card-item:hover .hub-card-image img {
+    transform: scale(1.08);
+}
+
+/* الشارات التوضيحية (Badges) */
+.hub-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #0b1f3a; /* الكحلي الخاص بالمبادرة */
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.hub-badge.badge-blog {
+    background-color: #2563eb; /* لون مميز ومختلف للمدونة */
+}
+
+/* محتوى الكرت النصي */
+.hub-card-content {
+    padding: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* البيانات الوصفية (التاريخ، المكان، الوقت) */
+.hub-card-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+.hub-card-meta i {
+    color: #2563eb;
+    margin-left: 4px;
+}
+
+.hub-card-title {
+    font-size: 1.25rem;
+    color: #0b1f3a;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* ✨ تطبيق التأثير الضبابي المتلاشي في آخر النص (Fade-out Text) ✨ */
+.hub-card-excerpt {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: auto; /* دفع الفوتر لأسفل الكرت دائماً */
+    position: relative;
+    max-height: 4.8em; /* يظهر حوالي 3 أسطر فقط بالتحديد */
+    overflow: hidden;
+}
+
+/* الطبقة الضبابية الشفافة المتلاشية في نهاية الفقرة */
+.hub-card-excerpt::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2em; /* ارتفاع مساحة التلاشي */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+/* فوتر الكرت ويحتوي على رابط الانتقال */
+.hub-card-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* حركات روابط الأزرار السهمية */
+.btn-hub-link {
+    display: inline-flex;
+    align-items: center;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.btn-hub-link .arrow-icon {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* حركة السهم عند تمرير الماوس على الكرت بالكامل */
+.hub-card-item:hover .btn-hub-link {
+    color: #0b1f3a;
+}
+.hub-card-item:hover .btn-hub-link .arrow-icon {
+    transform: translateX(-5px); /* تحريك السهم باتجاه النص في العربي */
+}
+
+/* ========================================================
+   📱 متجاوب بالكامل مع الشاشات الصغيرة والهواتف (Responsive)
+   ======================================================== */
+@media (max-width: 1024px) {
+    .hub-container-flex {
+        flex-direction: column; /* تحويل الكروت بالطول لعدم انضغاطها */
+        gap: 30px;
+    }
+    
+    .hub-card-item {
+        flex-direction: column; /* جعل الصورة فوق النص داخل الكرت نفسه */
+    }
+    
+    .hub-card-image {
+        width: 100%;
+        height: 220px; /* تحديد ارتفاع ثابت ومناسب للصورة على الهاتف */
+    }
+    
+    .hub-card-content {
+        width: 100%;
+        padding: 25px;
+    }
 }
 
 
