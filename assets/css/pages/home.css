@@ -151,6 +151,7 @@ html[dir="ltr"] .hero-section {
 /* 1️⃣ شبكة الأهداف الاستراتيجية (Strategic Goals) */
 .goals-section {
     padding: 80px 8%;
+    background-color: var(--bg-color);
 }
 .goals-grid {
     display: grid;
@@ -205,6 +206,7 @@ html[dir="ltr"] .hero-section {
 /* 2️⃣ شبكة محاور الوعي (Focus Pillars) */
 .pillars-section {
     padding: 60px 8%;
+    background-color: var(--bg-color);
 }
 .pillars-grid {
     display: grid;
@@ -218,7 +220,7 @@ html[dir="ltr"] .hero-section {
 }
 .pillar-img-placeholder {
     font-size: 3.5rem;
-    color: var(--secondary-color, #2b6cb0);
+    color: var(--secondary-color, #b02b2b);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
@@ -246,10 +248,10 @@ html[dir="ltr"] .hero-section {
 
 .news-section {
     padding: 80px 8%;
-    background-color: #f8fafc; /* خلفية هادئة لإبراز الكروت */
+    background-color: var(--bg-color); /* استخدام الخلفية الخفيفة الرسمية للموقع */
 }
 
-/* حاوية الكروت المرنة - عريضة على سطح المكتب وعمودية على الهاتف */
+/* حاوية الكروت المرنة */
 .hub-container-flex {
     display: flex;
     flex-direction: row;
@@ -258,30 +260,30 @@ html[dir="ltr"] .hero-section {
     justify-content: center;
 }
 
-/* تصميم الكرت المشترك (تنسيق أفقي داخلي لسطح المكتب) */
+/* تصميم الكرت المشترك */
 .hub-card-item {
-    background: #ffffff;
+    background: var(--white);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.04); /* ظل ناعم مائل للـ Dark Navy */
     display: flex;
     flex: 1;
-    min-width: 0; /* منع تمدد أو انضغاط المحتوى */
+    min-width: 0;
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
 }
 
-/* حركة الارتفاع والظل الفخم عند تمرير الماوس */
+/* حركة الارتفاع والظل الفخم عند تمرير الماوس بالاعتماد على ألوان الموقع */
 .hub-card-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(11, 31, 58, 0.08);
+    box-shadow: 0 20px 40px rgba(28, 74, 134, 0.08); /* تعميق ظل الـ Dark Navy */
 }
 
 /* حاوية الصورة داخل الكرت */
 .hub-card-image {
     position: relative;
-    width: 40%; /* تأخذ 40% من عرض الكرت الأفقي */
+    width: 40%;
     min-width: 180px;
     overflow: hidden;
 }
@@ -293,18 +295,18 @@ html[dir="ltr"] .hero-section {
     transition: transform 0.6s ease;
 }
 
-/* تأثير تقريب الصورة (Zoom) عند الهوفر على الكرت */
+/* تأثير تقريب الصورة (Zoom) عند الهوفر */
 .hub-card-item:hover .hub-card-image img {
     transform: scale(1.08);
 }
 
-/* الشارات التوضيحية (Badges) */
+/* الشارات التوضيحية (Badges) بالاعتماد على الـ Dark Navy */
 .hub-badge {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #0b1f3a; /* الكحلي الخاص بالمبادرة */
-    color: #ffffff;
+    background-color: var(--primary-color); /* Dark Navy */
+    color: var(--white);
     padding: 6px 14px;
     border-radius: 30px;
     font-size: 0.75rem;
@@ -312,8 +314,11 @@ html[dir="ltr"] .hero-section {
     letter-spacing: 0.5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* تمييز شارة المدونة باستخدام الـ Cyber Blue لكسر الجمود البصري */
 .hub-badge.badge-blog {
-    background-color: #2563eb; /* لون مميز ومختلف للمدونة */
+    background-color: var(--secondary-color); /* Cyber Blue */
+    color: var(--primary-color); /* نص كحلي داكن لضمان وضوح القراءة على الأزرق الفاتح */
 }
 
 /* محتوى الكرت النصي */
@@ -329,56 +334,56 @@ html[dir="ltr"] .hero-section {
     display: flex;
     gap: 15px;
     font-size: 0.8rem;
-    color: #64748b;
+    color: var(--text-light); /* الرمادي المعتمد للنصوص الثانوية */
     margin-bottom: 12px;
 }
 .hub-card-meta i {
-    color: #2563eb;
+    color: var(--secondary-color); /* أيقونات بالـ Cyber Blue */
     margin-left: 4px;
 }
 
 .hub-card-title {
-    font-size: 1.25rem;
-    color: #0b1f3a;
+    font-size: 1.15rem;
+    color: var(--text-dark); /* اللون الداكن الأساسي للنصوص */
     margin-bottom: 12px;
     line-height: 1.4;
     font-weight: 700;
 }
 
-/* ✨ تطبيق التأثير الضبابي المتلاشي في آخر النص (Fade-out Text) ✨ */
+/* تطبيق التأثير الضبابي المتلاشي في آخر النص (Fade-out Text) */
 .hub-card-excerpt {
     font-size: 0.95rem;
-    color: #475569;
+    color: var(--text-light);
     line-height: 1.6;
-    margin-bottom: auto; /* دفع الفوتر لأسفل الكرت دائماً */
+    margin-bottom: auto;
     position: relative;
     max-height: 4.8em; /* يظهر حوالي 3 أسطر فقط بالتحديد */
     overflow: hidden;
 }
 
-/* الطبقة الضبابية الشفافة المتلاشية في نهاية الفقرة */
+/* الطبقة الضبابية الشفافة المتلاشية المدمجة مع لون كرت الـ White النظيف */
 .hub-card-excerpt::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2em; /* ارتفاع مساحة التلاشي */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    height: 2em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--white));
 }
 
 /* فوتر الكرت ويحتوي على رابط الانتقال */
 .hub-card-footer {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid var(--bg-color); /* خط فاصل خفيف بلون الخلفية */
 }
 
 /* حركات روابط الأزرار السهمية */
 .btn-hub-link {
     display: inline-flex;
     align-items: center;
-    color: #2563eb;
+    color: var(--secondary-color); /* البداية بـ Cyber Blue */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
@@ -390,36 +395,12 @@ html[dir="ltr"] .hero-section {
     transition: transform 0.3s ease;
 }
 
-/* حركة السهم عند تمرير الماوس على الكرت بالكامل */
+/* تفاعل الرابط والسهم عند تمرير الماوس ليتحول إلى الـ Dark Navy */
 .hub-card-item:hover .btn-hub-link {
-    color: #0b1f3a;
+    color: var(--primary-color);
 }
 .hub-card-item:hover .btn-hub-link .arrow-icon {
-    transform: translateX(-5px); /* تحريك السهم باتجاه النص في العربي */
-}
-
-/* ========================================================
-   📱 متجاوب بالكامل مع الشاشات الصغيرة والهواتف (Responsive)
-   ======================================================== */
-@media (max-width: 1024px) {
-    .hub-container-flex {
-        flex-direction: column; /* تحويل الكروت بالطول لعدم انضغاطها */
-        gap: 30px;
-    }
-    
-    .hub-card-item {
-        flex-direction: column; /* جعل الصورة فوق النص داخل الكرت نفسه */
-    }
-    
-    .hub-card-image {
-        width: 100%;
-        height: 220px; /* تحديد ارتفاع ثابت ومناسب للصورة على الهاتف */
-    }
-    
-    .hub-card-content {
-        width: 100%;
-        padding: 25px;
-    }
+    transform: translateX(-5px); /* تحريك السهم باتجاه النص في المحاذاة العربية */
 }
 
 
@@ -429,14 +410,14 @@ html[dir="ltr"] .hero-section {
    ========================================================================== */
 .impact-section {
     padding: 60px 20px;
-    background-color: #f8fafc; /* خلفية الصفحة الخارجية الفاتحة المريحة */
+    background-color: var(--bg-color); /* خلفية الصفحة الخارجية الفاتحة المريحة */
     display: flex;
     justify-content: center;
     font-family: inherit;
 }
 
 .impact-card-wrapper {
-    background-color: #0b1829; /* اللون الكحلي الداكن الفخم من لقطة الشاشة */
+    background-color: var(--primary-color); /* اللون الكحلي الداكن الفخم من لقطة الشاشة */
     border-radius: 24px;
     padding: 40px;
     width: 100%;
@@ -770,4 +751,28 @@ html[dir="ltr"] .hero-section {
         white-space: nowrap !important; /* إجبار العنوان على البقاء في سطر واحد */
     }
     
+
+
+    .hub-container-flex {
+        flex-direction: column; /* تحويل الكروت بالكامل بالطول */
+        gap: 30px;
+    }
+    
+    .hub-card-item {
+        flex-direction: column; /* جعل الصورة فوق النص داخل الكرت */
+    }
+    
+    .hub-card-image {
+        width: 100%;
+        height: 220px; /* ارتفاع ثابت ومتناسق للصورة على شاشة الهاتف */
+    }
+    
+    .hub-card-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hub-card-excerpt {
+        max-height: 4.8em; /* الحفاظ على تأثير الـ 3 أسطر التوعوية على الهاتف */
+    }
 }
