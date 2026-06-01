@@ -786,11 +786,11 @@ html[lang="en"] .hub-card-item:hover .btn-hub-link .arrow-icon {
     
 
     .section-header p {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
     }
 
     .hub-card-title{
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 
     .hub-container-flex {
