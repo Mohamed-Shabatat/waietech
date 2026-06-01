@@ -151,8 +151,24 @@ const translations = {
         pillar_citizenship_title: "المواطنة الرقمية",
         pillar_citizenship_desc: "تعزيز السلوكيات الإيجابية والأخلاقية أثناء التعامل مع المنصات الرقمية وشبكات الإنترنت.",
         
-        home_news_title: "آخر المستجدات والمبادرات",
-        home_news_subtitle: "تابع أنشطتنا الميدانية وورش العمل التوعوية أولاً بأول",
+        // الأقسام الإضافية للرئيسية - محطة المعرفة والأنشطة
+        home_hub_title: "محطة المعرفة والأنشطة",
+        home_hub_subtitle: "اطلع على بصمتنا الميدانية وأحدث المقالات التوعوية أولاً بأول",
+        
+        // الشارات
+        badge_activity: "نشاط ميداني",
+        badge_blog: "مدونة التوعية",
+        
+        // محتوى كرت أحدث نشاط
+        home_latest_activity_title: "ورشة أساسيات الأمن السيبراني",
+        home_latest_activity_excerpt: "تم تنفيذ ورشة عمل مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...",
+        btn_explore_activities: "استكشف الأنشطة",
+        
+        // محتوى كرت أحدث مقال
+        minutes_read: "دقائق قراءة",
+        home_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
+        home_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
+        btn_read_blog: "اقرأ المدونة",
 
 
         impact_badge: "الأثر بالأرقام",
@@ -312,8 +328,25 @@ const translations = {
         pillar_citizenship_title: "Digital Citizenship",
         pillar_citizenship_desc: "Promoting positive and ethical behaviors while interacting with digital platforms and the internet.",
         
-        home_news_title: "Latest News & Initiatives",
-        home_news_subtitle: "Stay updated with our on-ground activities and educational workshops",
+        // Additional sections of home - Knowledge & Activities Hub
+        home_hub_title: "Knowledge & Activities Hub",
+        home_hub_subtitle: "Stay updated with our on-ground activities and educational articles",
+        
+        // Badges
+        badge_activity: "On-Ground Activity",
+        badge_blog: "Awareness Blog",
+        
+        // Latest Activity Card Content
+        home_latest_activity_title: "Cybersecurity Essentials Workshop",
+        home_latest_activity_excerpt: "An intensive workshop delivered to empower attendees to secure their digital environments and understand modern cyber threats...",
+        btn_explore_activities: "Explore Activities",
+        
+        // Latest Article Card Content
+        minutes_read: "Mins Read",
+        home_latest_article_title: "How to Detect Phishing Attacks",
+        home_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
+        btn_read_blog: "Read the Blog",
+
 
         impact_badge: "Our Impact",
         impact_title: "Impact in Numbers",

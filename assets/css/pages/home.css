@@ -277,7 +277,7 @@ html[dir="ltr"] .hero-section {
 /* حركة الارتفاع والظل الفخم عند تمرير الماوس بالاعتماد على ألوان الموقع */
 .hub-card-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(28, 74, 134, 0.08); /* تعميق ظل الـ Dark Navy */
+    box-shadow: 0 20px 40px rgba(39, 181, 247, 0.15); /* تعميق ظل الـ Dark Navy */
 }
 
 /* حاوية الصورة داخل الكرت */
@@ -343,7 +343,7 @@ html[dir="ltr"] .hero-section {
 }
 
 .hub-card-title {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--text-dark); /* اللون الداكن الأساسي للنصوص */
     margin-bottom: 12px;
     line-height: 1.4;
@@ -352,7 +352,7 @@ html[dir="ltr"] .hero-section {
 
 /* تطبيق التأثير الضبابي المتلاشي في آخر النص (Fade-out Text) */
 .hub-card-excerpt {
-    font-size: 0.95rem;
+    font-size: 0.90rem;
     color: var(--text-light);
     line-height: 1.6;
     margin-bottom: auto;
@@ -403,6 +403,39 @@ html[dir="ltr"] .hero-section {
     transform: translateX(-5px); /* تحريك السهم باتجاه النص في المحاذاة العربية */
 }
 
+/* ضبط ذكي لموقع الشارة لتقلب تلقائياً مع لغة الصفحة (تعتمد على كلاس الاتجاه لديك) */
+.hub-badge-pos {
+    position: absolute;
+    top: 15px;
+}
+
+/* عندما تكون الصفحة عربية (RTL): الشارة على اليمين */
+html[lang="ar"] .hub-badge-pos {
+    right: 15px;
+    left: auto;
+}
+
+/* عندما تكون الصفحة إنجليزية (LTR): الشارة تقلب لليسار تلقائياً لمنع الشذوذ البصري */
+html[lang="en"] .hub-badge-pos {
+    left: 15px;
+    right: auto;
+}
+
+/* معالجة اتجاه حركة وشكل السهم آلياً بحسب اتجاه القراءة */
+html[lang="en"] .btn-hub-link .arrow-icon {
+    transform: rotate(180deg); /* قلب السهم لليمين تلقائياً في الإنجليزي دون المساس بالكود الرئيسي */
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+html[lang="en"] .hub-card-item:hover .btn-hub-link .arrow-icon {
+    transform: rotate(180deg) translateX(5px); /* تحريك السهم للأمام في اتجاه القراءة الإنجليزية عند الهوفر */
+}
+
+/* التعديل النهائي لحركة السهم في الهوفر للنسخة الإنجليزية */
+html[lang="en"] .hub-card-item:hover .btn-hub-link .arrow-icon {
+    transform: rotate(180deg) translateX(-5px); /* تغيير الإشارة إلى سالب ليدفع السهم لليمين مع اتجاه القراءة */
+}
 
 
 /* ==========================================================================
@@ -752,6 +785,9 @@ html[dir="ltr"] .hero-section {
     }
     
 
+    .section-header p {
+        font-size: 0.85rem;
+    }
 
     .hub-container-flex {
         flex-direction: column; /* تحويل الكروت بالكامل بالطول */
