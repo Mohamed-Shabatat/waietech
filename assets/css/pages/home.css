@@ -271,7 +271,7 @@ html[dir="ltr"] .hero-section {
     min-width: 0;
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    cursor: pointer;
+    cursor: default;
 }
 
 /* حركة الارتفاع والظل الفخم عند تمرير الماوس بالاعتماد على ألوان الموقع */
@@ -383,11 +383,12 @@ html[dir="ltr"] .hero-section {
 .btn-hub-link {
     display: inline-flex;
     align-items: center;
-    color: var(--secondary-color); /* البداية بـ Cyber Blue */
+    color: var(--primary-color); /* البداية بـ Cyber Blue */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-hub-link .arrow-icon {
@@ -397,7 +398,7 @@ html[dir="ltr"] .hero-section {
 
 /* تفاعل الرابط والسهم عند تمرير الماوس ليتحول إلى الـ Dark Navy */
 .hub-card-item:hover .btn-hub-link {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 .hub-card-item:hover .btn-hub-link .arrow-icon {
     transform: translateX(-5px); /* تحريك السهم باتجاه النص في المحاذاة العربية */
