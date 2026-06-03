@@ -177,8 +177,8 @@ const translations = {
         btn_explore_activities: "استكشف الأنشطة",
 
         // الإضافات الجديدة الخاصة بصفحة الأنشطة والفلترة باللغة العربية:
-        activities_hero_title: "أنشطتنا ومبادراتنا",
-        activities_hero_subtitle: "توثيق لبصمتنا الميدانية وورش العمل التوعوية على أرض الواقع",
+        activities_hero_title: "أنشطتنا",
+        activities_hero_subtitle: "توثيق لبصمتنا الميدانية على أرض الواقع",
         btn_view_activity_details: "عرض التفاصيل",
         filter_all: "كل الأنشطة",
         filter_workshops: "ورش العمل",
@@ -375,7 +375,7 @@ const translations = {
         act_workshop_desc: "An intensive workshop delivered to empower attendees to secure their digital environments and understand modern cyber threats...",
         btn_explore_activities: "Explore Activities",
 
-        activities_hero_title: "Our Activities & Initiatives",
+        activities_hero_title: "Our Activities",
         activities_hero_subtitle: "Documenting our on-ground impact and awareness workshops",
         btn_view_activity_details: "View Details",
         filter_all: "All Activities",
