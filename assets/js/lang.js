@@ -7,7 +7,7 @@ const translations = {
         page_about_title: "من نحن | وَعْي تك ",
         page_services_title: "خدماتنا | وَعْي تك ",
         page_courses_title: "الدورات التدريبية | وَعْي تك ",
-        page_events_title: "الأحداث والورشات | وَعْي تك",
+        page_activities_title: "الأنشطة | وَعْي تك",
         page_blog_title: "المدونة الرقمية | وَعْي تك",
         page_contact_title: "تواصل معنا | وَعْي تك ",
 
@@ -19,7 +19,7 @@ const translations = {
         nav_services: "خدماتنا",
         nav_courses: "الدورات التدريبية",
         nav_contact: "تواصل معنا",
-        nav_events: "الورش والفعاليات",
+        nav_activities: "الأنشطة",
         nav_blog: "مدونة التوعية",
         nav_impact: "إنجازاتنا",
         footer_slogan: "لأنك تستحق... أن تدرك",
@@ -159,17 +159,6 @@ const translations = {
         badge_activity: "نشاط ميداني",
         badge_blog: "مدونة التوعية",
         
-        // محتوى كرت أحدث نشاط
-        home_latest_activity_title: "ورشة أساسيات الأمن السيبراني",
-        home_latest_activity_excerpt: "تم تنفيذ ورشة عمل مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...",
-        btn_explore_activities: "استكشف الأنشطة",
-        
-        // محتوى كرت أحدث مقال
-        minutes_read: "دقائق قراءة",
-        home_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
-        home_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
-        btn_read_blog: "اقرأ المدونة",
-
 
         impact_badge: "الأثر بالأرقام",
         impact_title: "أرقام مختصرة وواضحة",
@@ -178,6 +167,40 @@ const translations = {
         stat_workshops: "ورشة عمل منفذة",
         stat_programs: "برامج ومبادرات تدريبية",
         stat_partnerships: "شراكة وتكامل مؤسسي",
+
+
+        //صفحة الانشطة
+
+        // محتوى كرت أحدث نشاط
+        act_workshop_title: "ورشة أساسيات الأمن السيبراني",
+        act_workshop_desc: "تم تنفيذ ورشة عمل مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...",
+        btn_explore_activities: "استكشف الأنشطة",
+
+        // الإضافات الجديدة الخاصة بصفحة الأنشطة والفلترة باللغة العربية:
+        activities_hero_title: "أنشطتنا ومبادراتنا",
+        activities_hero_subtitle: "توثيق لبصمتنا الميدانية وورش العمل التوعوية على أرض الواقع",
+        btn_view_activity_details: "عرض التفاصيل",
+        filter_all: "كل الأنشطة",
+        filter_workshops: "ورش العمل",
+        filter_campaigns: "الحملات والمعسكرات",
+        filter_seminars: "الندوات والملتقيات",
+        no_activities: "لا توجد أنشطة متوفرة في هذا القسم حالياً.",
+
+        // نصوص الكروت الإضافية لصفحة الأنشطة:
+        act_camp_title: "معسكر التمكين المهاراتي الرقمي",
+        act_camp_desc: "سلسلة من الفعاليات الميدانية المكثفة لتأهيل الخريجين والشباب لبناء هوية رقمية آمنة بيئياً.",
+        act_forum_title: "ملتقى الذكاء الاصطناعي الآمن",
+        act_forum_desc: "توعية الأفراد حول آليات استغلال نماذج التوليد الحديثة وتوجيهها بأمان وحماية بياناتهم من التسريب.",
+
+
+
+        // صفحة المدونة
+
+        // محتوى كرت أحدث مقال
+        minutes_read: "دقائق قراءة",
+        home_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
+        home_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
+        btn_read_blog: "اقرأ المدونة",
     },
 
     en: {
@@ -186,7 +209,7 @@ const translations = {
         page_about_title: "About Us | WaieTech",
         page_services_title: "Services | WaieTech",
         page_courses_title: "Courses | WaieTech",
-        page_events_title: "Events & Workshops | WaieTech",
+        page_activities_title: "Activities | WaieTech",
         page_blog_title: "Digital Blog | WaieTech",
         page_contact_title: "Contact Us | WaieTech",
 
@@ -198,7 +221,7 @@ const translations = {
         nav_services: "Services",
         nav_courses: "Courses",
         nav_contact: "Contact",
-        nav_events: "Workshops & Events",
+        nav_activities: "Activities",
         nav_blog: "Awareness Blog",
         nav_impact: "Our Impact",
         footer_slogan: "Aware • Empower • Secure",
@@ -328,7 +351,7 @@ const translations = {
         pillar_citizenship_title: "Digital Citizenship",
         pillar_citizenship_desc: "Promoting positive and ethical behaviors while interacting with digital platforms and the internet.",
         
-        // Additional sections of home - Knowledge & Activities Hub
+        // Additional sections of home - Knowledge & Activities Hub 
         home_hub_title: "Knowledge & Activities Hub",
         home_hub_subtitle: "Stay updated with our on-ground activities and educational articles",
         
@@ -336,18 +359,6 @@ const translations = {
         badge_activity: "On-Ground Activity",
         badge_blog: "Awareness Blog",
         
-        // Latest Activity Card Content
-        home_latest_activity_title: "Cybersecurity Essentials Workshop",
-        home_latest_activity_excerpt: "An intensive workshop delivered to empower attendees to secure their digital environments and understand modern cyber threats...",
-        btn_explore_activities: "Explore Activities",
-        
-        // Latest Article Card Content
-        minutes_read: "Mins Read",
-        home_latest_article_title: "How to Detect Phishing Attacks",
-        home_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
-        btn_read_blog: "Read the Blog",
-
-
         impact_badge: "Our Impact",
         impact_title: "Impact in Numbers",
         impact_desc: "These numbers reflect the volume of engagement and work within WaieTech directly and clearly.",
@@ -355,6 +366,39 @@ const translations = {
         stat_workshops: "Workshops Delivered",
         stat_programs: "Training Programs",
         stat_partnerships: "Institutional Partnerships",
+        
+        
+        //activity page
+
+        // Latest Activity Card Content
+        act_workshop_title: "Cybersecurity Essentials Workshop",
+        act_workshop_desc: "An intensive workshop delivered to empower attendees to secure their digital environments and understand modern cyber threats...",
+        btn_explore_activities: "Explore Activities",
+
+        activities_hero_title: "Our Activities & Initiatives",
+        activities_hero_subtitle: "Documenting our on-ground impact and awareness workshops",
+        btn_view_activity_details: "View Details",
+        filter_all: "All Activities",
+        filter_workshops: "Workshops",
+        filter_campaigns: "Campaigns & Camps",
+        filter_seminars: "Seminars & Forums",
+        no_activities: "No activities available in this section currently.",
+
+        act_camp_title: "Digital Skills Empowerment Camp",
+        act_camp_desc: "A series of intensive field events to qualify graduates and youth to build a secure digital identity.",
+        act_forum_title: "Secure AI Applications Forum",
+        act_forum_desc: "Educating individuals on leveraging modern generative models securely and protecting their data.",
+
+
+        //blog page
+
+        // Latest Article Card Content
+        minutes_read: "Mins Read",
+        home_latest_article_title: "How to Detect Phishing Attacks",
+        home_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
+        btn_read_blog: "Read the Blog",
+
+        
     }
 };
 
@@ -412,6 +456,12 @@ function setLanguage(lang) {
     });
     // استدعاء بناء كروت الدورات ديناميكياً لتحديثها مع تغيير اللغة
     renderCourses(lang);
+
+    // التعديل المضاف: استدعاء تحديث الأنشطة باللغة الجديدة عند التحويل
+    if (typeof window.renderActivities === 'function') {
+        const activeFilter = document.querySelector(".filter-tab-btn.active")?.getAttribute("data-filter") || "all";
+        window.renderActivities(activeFilter);
+    }
 }
 
 function renderCourses(lang) {

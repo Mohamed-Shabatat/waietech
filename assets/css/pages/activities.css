@@ -1,0 +1,298 @@
+/* ==========================================================================
+   --- تنسيقات صفحة الأنشطة والمبادرات المخصصة (Activities Page) ---
+   ========================================================================== */
+
+/* تثبيت حجم وأبعاد الهيدر الداخلي لجميع الصفحات */
+.inner-page-hero {
+    background: linear-gradient(135deg, #0b1f3a 0%, #13335c 100%);
+    color: #ffffff;
+    
+    /* التعديل الأساسي: تثبيت الارتفاع الكلي */
+    height: 180px; 
+    margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
+    
+    /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ضبط حاوية النصوص بالداخل لضمان عدم تأثر الأبعاد */
+.inner-page-hero .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* مسافة ثابتة وصغيرة بين العنوان والوصف */
+}
+
+/* ضبط حجم الخطوط المحدث لتتناسب مع الارتفاع الثابت الجديد */
+.inner-page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.inner-page-hero .subtitle {
+    font-size: 1.05rem;
+    color: #27b5f7 !important;
+    margin: 0 !important;
+}
+
+
+/* ==========================================================================
+   --- تصميم صفحة الأنشطة المستقل والمطور (مظهر عمودي Grid فخم) ---
+   ========================================================================== */
+
+.activities-page-content .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 🎛️ أزرار الفلترة والتصنيفات */
+.filter-section {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.filter-tabs-wrapper {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    background: var(--white);
+    padding: 8px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(11, 31, 58, 0.04);
+    border: 1px solid rgba(11, 31, 58, 0.03);
+}
+
+.filter-tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tab-btn:hover {
+    color: var(--secondary-color);
+}
+
+.filter-tab-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.2);
+}
+
+/* 🚀 حاوية شبكة الكروت الجديدة (Grid ثلاثي متجاوب) */
+.activities-grid-section {
+    padding: 50px 0 120px 0 !important;
+}
+
+.hub-container-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* 🎴 كرت صفحة الأنشطة العمودي الجديد */
+.activity-page-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.03);
+    display: flex;
+    flex-direction: column; /* جعل الكرت يبنى عمودياً */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(11, 31, 58, 0.02);
+}
+
+.activity-page-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 45px rgba(39, 181, 247, 0.12);
+}
+
+/* صندوق الصورة المطور */
+.act-card-image-box {
+    position: relative;
+    width: 100%;
+    height: 230px; /* ارتفاع ثابت وموحد للصور لقفل التناسق بصرياً */
+    overflow: hidden;
+}
+
+.act-card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.activity-page-card:hover .act-card-image-box img {
+    transform: scale(1.06);
+}
+
+/* شارات الكروت الجديدة */
+.act-card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-color); /* أزرق سايبر */
+    color: var(--primary-color); /* نص كحلي داكن لوضوح ممتاز */
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* محتوى الكرت النصي */
+.act-card-info-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* جعل المحتوى يملأ الفراغ دائماً لتوحيد أطوال الكروت */
+}
+
+.act-card-top-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.act-card-top-meta i {
+    color: var(--secondary-color);
+    margin-left: 5px;
+}
+
+.act-card-main-title {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.act-card-main-desc {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    position: relative;
+    max-height: 5.1em;
+    overflow: hidden;
+}
+
+/* طبقة التلاشي والضبابية أسفل الكرت */
+.act-card-main-desc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--white));
+}
+
+/* فوتر الكرت والزر الجديد */
+.act-card-bottom-footer {
+    margin-top: auto; /* دفع الفوتر لأسفل الكرت دائماً */
+    padding-top: 15px;
+    border-top: 1px solid var(--bg-color);
+}
+
+.btn-act-page-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color); /* الكحلي الرسمي */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: color 0.3s ease;
+}
+
+.act-arrow-icon {
+    margin-right: 8px;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+/* تفاعلات الهوفر للزر الجديد */
+.activity-page-card:hover .btn-act-page-link {
+    color: var(--secondary-color); /* يتحول للسايبر عند تمرير الماوس */
+}
+
+.activity-page-card:hover .act-arrow-icon {
+    transform: translateX(-6px); /* حركة السهم باتجاه النص في العربي */
+}
+
+/* --- ضبط الاتجاهات للغات (RTL / LTR) --- */
+html[lang="ar"] .act-card-badge {
+    right: 20px;
+    left: auto;
+}
+
+html[lang="en"] .act-card-badge {
+    left: 20px;
+    right: auto;
+}
+
+html[lang="en"] .btn-act-page-link .act-arrow-icon {
+    transform: rotate(180deg);
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+html[lang="en"] .activity-page-card:hover .btn-act-page-link .act-arrow-icon {
+    transform: rotate(180deg) translateX(-6px);
+}
+
+
+
+/* متجاوب تماماً للهواتف */
+@media (max-width: 768px) {
+
+    .inner-page-hero h1 {
+        font-size: 1.5rem !important; /* تصغير الخط ليناسب الشاشة */
+        padding: 0 15px;
+    }
+    .inner-page-hero .subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+    }
+
+    .filter-tabs-wrapper {
+        width: 100%;
+        border-radius: 12px;
+        padding: 5px;
+    }
+    .filter-tab-btn {
+        width: 100%;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .hub-container-flex {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -357,7 +357,7 @@ html[dir="ltr"] .hero-section {
     line-height: 1.6;
     margin-bottom: auto;
     position: relative;
-    max-height: 4.8em; /* يظهر حوالي 3 أسطر فقط بالتحديد */
+    max-height: 5.1em; /* يظهر حوالي 3 أسطر فقط بالتحديد */
     overflow: hidden;
 }
 
