@@ -11,7 +11,7 @@ const activitiesData = [
         descKey: "act_workshop_desc", 
         date: "15/6/2026", 
         location: { ar: "مركز بناء المهارات"}, // ستبقى هكذا أو نترجمها بالسكريبت
-        link: "activities.html"
+        link: "activities/activity-001.html"
     },
     {
         id: "digital-skills-camp",

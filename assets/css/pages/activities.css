@@ -59,23 +59,25 @@
 
 /* 🎛️ أزرار الفلترة والتصنيفات */
 .filter-section {
-    padding-top: 50px;
+    padding-top: 50px !important;
     text-align: center;
 }
 
 .filter-tabs-wrapper {
+    position: relative; /* ضروري لضبط حركة كبسولة الخلفية */
     display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+    align-items: center;
+    gap: 4px;
     background: var(--white);
-    padding: 8px;
+    padding: 6px;
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(11, 31, 58, 0.04);
     border: 1px solid rgba(11, 31, 58, 0.03);
+    z-index: 1;
 }
 
 .filter-tab-btn {
+    position: relative;
     background: transparent;
     border: none;
     padding: 10px 24px;
@@ -85,20 +87,39 @@
     color: var(--text-light);
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
+    z-index: 3; /* جعل النص فوق الكبسولة المتحركة ليبقى مقروءاً */
 }
 
+/* التفاعل عند تمرير الماوس فوق أزرار سطح المكتب */
 .filter-tab-btn:hover {
     color: var(--secondary-color);
 }
 
+/* لون النص للزر النشط */
 .filter-tab-btn.active {
-    background: var(--primary-color);
-    color: var(--white);
-    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.2);
+    color: var(--white) !important;
+    background: transparent !important; /* إزالة الخلفية الثابتة القديمة */
+    box-shadow: none !important;
 }
 
-/* 🚀 حاوية شبكة الكروت الجديدة (Grid ثلاثي متجاوب) */
+/* الكبسولة الخلفية المتحركة (بنفس حركة وتأثير الفيديو) */
+.filter-indicator {
+    position: absolute;
+    height: calc(100% - 12px); /* ملاءمة طول الحاوية مع البادينغ */
+    top: 6px;
+    left: 6px;
+    background: var(--primary-color); /* الكحلي المعتمد للموقع */
+    border-radius: 25px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.2);
+    /* أنيميشن مطاطي وانسيابي فخم جداً عند الانتقال */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    pointer-events: none; /* منع تفاعل الماوس مع الخلفية لتفادي تعليق النقرات */
+}
+
+
+/* حاوية شبكة الكروت الجديدة (Grid ثلاثي متجاوب) */
 .activities-grid-section {
     padding: 50px 0 120px 0 !important;
 }
@@ -110,7 +131,7 @@
     width: 100%;
 }
 
-/* 🎴 كرت صفحة الأنشطة العمودي الجديد */
+/* كرت صفحة الأنشطة العمودي الجديد */
 .activity-page-card {
     background: var(--white);
     border-radius: 20px;
@@ -279,16 +300,59 @@ html[lang="en"] .activity-page-card:hover .btn-act-page-link .act-arrow-icon {
         padding: 0 15px;
     }
 
-    .filter-tabs-wrapper {
+    .filter-section {
+        padding-left: 20px;
+        padding-right: 20px;
         width: 100%;
-        border-radius: 12px;
-        padding: 5px;
+        box-sizing: border-box;
     }
-    .filter-tab-btn {
+
+    /* تحويل الحاوية إلى سطر واحد يمرر جانبياً بنعومة تامة وفخامة */
+    .filter-tabs-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
         width: 100%;
-        padding: 8px 15px;
-        font-size: 0.9rem;
-        border-radius: 8px;
+        background: transparent; /* إزالة الإطار الموحد لتبدو كبسولات منفصلة ورائعة */
+        box-shadow: none;
+        border: none;
+        padding: 4px 0;
+        overflow-x: auto; /* تفعيل السكرول الجانبي */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; /* سكرول سريع واستجابة فائقة للمس */
+    }
+
+    /* إخفاء شريط السكرول السفلي تماماً للحفاظ على نظافة التصميم */
+    .filter-tabs-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* أزرار الفلترة الفردية على الموبايل لتصبح كبسولات منفصلة ومستقلة */
+    .filter-tab-btn {
+        background: var(--white);
+        border: 1px solid rgba(11, 31, 58, 0.05);
+        padding: 8px 20px;
+        font-size: 0.88rem;
+        border-radius: 30px;
+        white-space: nowrap; /* منع الكلمات من الانكسار لأسفل */
+        box-shadow: 0 2px 8px rgba(11, 31, 58, 0.02);
+        flex-shrink: 0; /* منع تقلص الزر */
+        transition: all 0.3s ease;
+    }
+
+    /* كبسولة الموبايل المفعلة (ستايل فخم ومستقل وثابت) */
+    .filter-tab-btn.active {
+        background: var(--primary-color) !important;
+        color: var(--white) !important;
+        box-shadow: 0 4px 10px rgba(11, 31, 58, 0.15) !important;
+        border-color: var(--primary-color);
+    }
+
+    /* إخفاء خلفية الديسكتاب المتحركة على الموبايل لمنع العشوائية البصرية */
+    .filter-indicator {
+        display: none !important;
     }
 
     .hub-container-flex {
