@@ -312,21 +312,21 @@ html[lang="en"] .activity-page-card:hover .btn-act-page-link .act-arrow-icon {
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        align-items: center;
-        gap: 8px;
-        width: 100%;
-        background: transparent; /* إزالة الإطار الموحد لتبدو كبسولات منفصلة ورائعة */
-        box-shadow: none;
-        border: none;
-        padding: 4px 0;
-        overflow-x: auto; /* تفعيل السكرول الجانبي */
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch; /* سكرول سريع واستجابة فائقة للمس */
+        gap: 12px;
+        background: transparent;
+        padding: 8px;
+        border-radius: 30px;
+        
+        /* 🌟 الإضافات المطلوبة فقط دون تعديل الباقي */
+        border: 1px solid rgba(39, 181, 247, 0.15); /* إضافة الإطار المحيط بالحاوية */
+        overflow-x: auto; /* تفعيل التمرير الأفقي */
+        -ms-overflow-style: none;  /* إخفاء السكرول لمتصفح IE و Edge */
+        scrollbar-width: none;  /* إخفاء السكرول لمتصفح Firefox */
     }
 
-    /* إخفاء شريط السكرول السفلي تماماً للحفاظ على نظافة التصميم */
+    /* 🌟 إخفاء شريط التمرير السفلي لمتصفحات Chrome و Safari و Opera */
     .filter-tabs-wrapper::-webkit-scrollbar {
-        display: none;
+        display: none !important;
     }
 
     /* أزرار الفلترة الفردية على الموبايل لتصبح كبسولات منفصلة ومستقلة */
