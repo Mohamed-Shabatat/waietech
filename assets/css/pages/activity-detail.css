@@ -1,0 +1,251 @@
+/* 🏙️ إعدادات الحاوية المتوسطة لمنع الالتصاق بأطراف الشاشة */
+.container.detail-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px; /* مسافة أمان وحماية جانبية */
+    box-sizing: border-box;
+}
+
+/* 🌌 الهيدر المطور لحماية أبعاد الصورة من الانضغاط */
+.detail-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 380px; /* طول مريح ومناسب للبانر */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--white);
+}
+
+/* حل مشكلة الصورة المضغوطة بشكل قطعي */
+.hero-absolute-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* جعل الصورة تغطي المساحة بنسبها الحقيقية دون تشويه */
+    object-position: center;
+    z-index: -2;
+}
+
+.hero-overlay-dark {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 31, 58, 0.75), rgba(11, 31, 58, 0.92));
+    z-index: -1;
+}
+
+.detail-hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    box-sizing: border-box;
+}
+
+.detail-main-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 18px 0;
+    line-height: 1.35;
+}
+
+.detail-badge {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.detail-meta-wrapper {
+    display: flex;
+    gap: 30px;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.detail-meta-wrapper i {
+    color: var(--secondary-color);
+    margin-left: 8px;
+}
+html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
+
+/* 📦 نظام التحكم بالشبكية (Grid & Spacing) */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr; /* موازنة الكتلة اليمنى مع اليسرى */
+    gap: 35px; /* مسافة مريحة بين الكروت */
+    padding: 60px 0;
+}
+
+.detail-card, .sidebar-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.03);
+    border: 1px solid rgba(11, 31, 58, 0.04);
+}
+
+.section-sub-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-sub-title i { color: var(--primary-color); }
+
+.detail-full-desc {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--text-light);
+}
+
+/* 🖼️ التحكم بشبكة صور ألبوم الفعالية لتبدو احترافية كما في الصورة image_30503c.jpg */
+.detail-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    cursor: pointer;
+}
+
+.gallery-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-img-wrapper:hover img {
+    transform: scale(1.06);
+}
+
+/* 📥 ضبط مساحات الأزرار والمعلومات الجانبية */
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+}
+
+.sidebar-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-icon {
+    width: 50px; height: 50px;
+    background: rgba(11, 31, 58, 0.04);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.stat-label { display: block; font-size: 0.88rem; color: var(--text-light); margin-bottom: 4px; }
+.stat-value { font-size: 1.1rem; color: var(--text-dark); font-weight: 700; }
+
+.sidebar-divider { border: 0; border-top: 1px solid rgba(11, 31, 58, 0.08); margin: 25px 0; }
+
+/* 🌟 تهيئة وضبط ستايل زر النشاط التالي */
+.btn-next-activity {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background: var(--text-dark); 
+    color: var(--white);
+    padding: 16px 28px; 
+    border-radius: 30px; 
+    text-decoration: none;
+    font-weight: 600; 
+    font-size: 1rem; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(11, 31, 58, 0.1);
+}
+
+.btn-next-activity:hover { 
+    background: var(--primary-color); 
+    transform: translateY(-2px);
+    color: var(--secondary-color);
+}
+
+html[lang="en"] .btn-next-activity i {
+    transform: rotate(180deg); /* قلب اتجاه السهم للغة الإنجليزية */
+}
+
+/* 🌟 تصميم وبناء نافذة المشاهدة المكبرة للصور (Lightbox) */
+.image-lightbox-modal {
+    display: none; /* مخفي افتراضياً */
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0; top: 0; width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(11, 31, 58, 0.95); /* خلفية كحلية داكنة جداً متناسقة مع الهوية */
+    backdrop-filter: blur(8px); /* تأثير غباش فخم خلف الصورة */
+}
+
+.lightbox-popup-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 850px;
+    border-radius: 12px;
+    animation: zoomEffect 0.3s ease-in-out;
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox-close-btn:hover { color: var(--secondary-color); }
+
+/* 📱 ميديا كويري احترافية لدعم الهواتف بالكامل وبناء مسافات مريحة */
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr; /* قلب الواجهة لصف واحد عمودي */
+        gap: 0;
+        padding: 30px 0;
+    }
+    
+    .detail-hero-section { min-height: 300px; }
+    .detail-main-title { font-size: 1.9rem; }
+    
+    .detail-card, .sidebar-card {
+        padding: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .lightbox-popup-content { width: 95%; }
+}

@@ -11,8 +11,25 @@ const activitiesData = [
         descKey: "act_workshop_desc", 
         date: "15/6/2026", 
         location: { ar: "مركز بناء المهارات"}, // ستبقى هكذا أو نترجمها بالسكريبت
-        link: "activities/activity-001.html"
+        link: "activity-detail.html",
+
+        attendees: "+150",
+        partnersKey: "act_001_partners",
+        outputsKey: "act_001_outputs", // مفتاح مصفوفة المخرجات في الترجمة
+        gallery: [
+            "assets/images/cybersecurity.jfif",
+            "assets/images/cybersecurity.jfif",
+            "assets/images/cybersecurity.jfif",
+            "assets/images/cybersecurity.jfif"
+        ],
+
+        materials: [
+            { nameKey: "mat_presentation", url: "downloads/cyber_basics.pdf" }
+        ]
     },
+
+
+
     {
         id: "digital-skills-camp",
         featured: false, 
@@ -23,8 +40,10 @@ const activitiesData = [
         descKey: "act_camp_desc", 
         date: "20/6/2026",
         location: { ar: "قاعة الابتكار الرقمي"}, 
-        link: "activities.html"
+        link: "activity-detail.html"
     },
+
+
     {
         id: "ai-safety-forum",
         featured: false, 
@@ -35,6 +54,6 @@ const activitiesData = [
         descKey: "act_forum_desc", 
         date: "25/6/2026",
         location: { ar: "المدرج الرئيسي"}, 
-        link: "activities.html"
+        link: "activity-detail.html"
     }
 ];

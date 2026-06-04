@@ -173,7 +173,7 @@ const translations = {
 
         // محتوى كرت أحدث نشاط
         act_workshop_title: "ورشة أساسيات الأمن السيبراني",
-        act_workshop_desc: "تم تنفيذ ورشة عمل مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...",
+        act_workshop_desc: "تم تنفيذ ورشة عمل مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...  ",
         btn_explore_activities: "استكشف الأنشطة",
 
         // الإضافات الجديدة الخاصة بصفحة الأنشطة والفلترة باللغة العربية:
@@ -201,6 +201,27 @@ const translations = {
         home_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
         home_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
         btn_read_blog: "اقرأ المدونة",
+
+
+        // نصوص صفحة تفاصيل الأنشطة الثابتة
+        detail_about: "حول النشاط",
+        detail_outputs: "مخرجات ونتائج النشاط",
+        detail_gallery: "ألبوم صور الفعالية",
+        detail_info_title: "معلومات سريعة",
+        detail_attendees: "عدد الحضور",
+        detail_partners: "الجهات المشاركة",
+        detail_materials: "المواد التدريبية والمرفقات",
+        detail_next_act: "النشاط التالي",
+        mat_presentation: "تحميل العرض التقديمي (PDF)",
+
+        // مصفوفة المخرجات الخاصة بالنشاط الأول (تُحقن كقائمة نقطية)
+        act_001_outputs: [
+            "توعية أكثر من 150 طالباً وطالبة بأبرز مخاطر التصيد الاحتيالي.",
+            "شرح عملي لكيفية فحص الروابط والملفات المشبوهة قبل فتحها.",
+            "توزيع مواد تعليمية وحقائب تدريبية رقمية للمشاركين.",
+            "تعزيز مهارات الحضور في بناء استراتيجيات دفاعية للملفات الحساسة."
+        ],
+
     },
 
     en: {
@@ -398,6 +419,25 @@ const translations = {
         home_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
         btn_read_blog: "Read the Blog",
 
+
+        // Static Activity Details Page Texts
+        detail_about: "About the Activity",
+        detail_outputs: "Activity Outputs & Results",
+        detail_gallery: "Event Photo Gallery",
+        detail_info_title: "Quick Information",
+        detail_attendees: "Attendees Count",
+        detail_partners: "Participating Entities",
+        detail_materials: "Training Materials & Attachments",
+        detail_next_act: "Next Activity",
+        mat_presentation: "Download Presentation (PDF)",
+
+        // Outputs Array for Activity 001
+        act_001_outputs: [
+            "Educating more than 150 students on the major risks of phishing.",
+            "Practical demonstration on analyzing suspicious links and files before opening them.",
+            "Distributing educational materials and digital training packages to participants.",
+            "Enhancing attendees' skills in building defensive strategies for sensitive files."
+        ],
         
     }
 };

@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3 class="act-card-main-title" data-i18n="${activity.titleKey}">${titleText}</h3>
                         <p class="act-card-main-desc" data-i18n="${activity.descKey}">${descText}</p>
                         <div class="act-card-bottom-footer">
-                            <a href="${activity.link}" class="btn-act-page-link">
+                            <a href="activity-detail.html?id=${activity.id}" class="btn-act-page-link">
                                 <span data-i18n="btn_view_activity_details">${btnText}</span> 
                                 <i class="fas fa-arrow-left act-arrow-icon"></i>
                             </a>

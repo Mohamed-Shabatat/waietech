@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل النشاط - وعي تك</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/pages/activity-detail.css"> 
+</head>
+<body>
+
+    <!-- قسم الهيدر الداخلي المطور للنشاط (حماية أبعاد الصورة) -->
+    <section class="detail-hero-section">
+        <!-- الصورة الرئيسية الفردية الثابتة هندسياً والمحمية من الانضغاط -->
+        <img src="" alt="Activity Banner" class="hero-absolute-bg" id="detail-hero-img">
+        <div class="hero-overlay-dark"></div>
+        
+        <div class="container detail-hero-container">
+            <span class="detail-badge" id="detail-badge"></span>
+            <h1 class="detail-main-title" id="detail-title">---</h1>
+            
+            <div class="detail-meta-wrapper">
+                <div class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span id="detail-date">---</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="detail-location">---</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المحتوى الرئيسي للتفاصيل داخل حاوية الحماية المحددة للمسافات -->
+    <main class="container detail-content-wrapper">
+        <div class="detail-grid">
+            
+            <!-- القسم الأيمن: الوصف والمخرجات والألبوم -->
+            <div class="detail-main-side">
+                <!-- 1. حول النشاط -->
+                <div class="detail-card">
+                    <h2 class="section-sub-title"><i class="fas fa-align-right"></i> <span data-i18n="detail_about">حول النشاط</span></h2>
+                    <p class="detail-full-desc" id="detail-desc">---</p>
+                </div>
+
+                <!-- 2. مخرجات النشاط -->
+                <div class="detail-card">
+                    <h2 class="section-sub-title"><i class="fas fa-star"></i> <span data-i18n="detail_outputs">مخرجات ونتائج النشاط</span></h2>
+                    <ul class="detail-outputs-list" id="detail-outputs">
+                        <!-- تُحقن ديناميكياً -->
+                    </ul>
+                </div>
+
+                <!-- 3. ألبوم صور الفعالية -->
+                <div class="detail-card">
+                    <h2 class="section-sub-title"><i class="fas fa-images"></i> <span data-i18n="detail_gallery">ألبوم صور الفعالية</span></h2>
+                    <div class="detail-gallery-grid" id="detail-gallery">
+                        <!-- تُحقن ديناميكياً -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- القسم الأيسر: الإحصائيات والمعلومات السريعة -->
+            <div class="detail-sidebar-side">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title" data-i18n="detail_info_title">معلومات سريعة</h3>
+                    
+                    <div class="sidebar-stat-item">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label" data-i18n="detail_attendees">عدد الحضور</span>
+                            <strong class="stat-value" id="detail-attendees-count">---</strong>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-stat-item">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label" data-i18n="detail_partners">الجهات المشاركة</span>
+                            <strong class="stat-value" id="detail-partners-list">---</strong>
+                        </div>
+                    </div>
+
+                    <!-- روابط ومواد تدريبية -->
+                    <div id="training-materials-wrapper" style="display: none;">
+                        <hr class="sidebar-divider">
+                        <h4 class="materials-title" data-i18n="detail_materials">المواد التدريبية والمرفقات</h4>
+                        <div id="detail-materials-links"></div>
+                    </div>
+                </div>
+
+                <!-- ضبط أزرار التنقل -->
+                <div class="next-activity-wrapper">
+                    <a href="#" id="next-activity-btn" class="btn-next-activity">
+                        <span data-i18n="detail_next_act">النشاط التالي</span>
+                        <i class="fas fa-arrow-left arrow-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- نافذة العرض المكبرة المخصصة للصور (Lightbox Modal) -->
+    <div class="image-lightbox-modal" id="image-lightbox">
+        <span class="lightbox-close-btn" id="lightbox-close">&times;</span>
+        <img class="lightbox-popup-content" id="lightbox-target-img" src="">
+    </div>
+
+
+    <script src="assets/js/activities-data.js"></script> 
+    <script src="assets/js/lang.js"></script> 
+    <script src="assets/js/activity-detail.js"></script> 
+</body>
+</html>
