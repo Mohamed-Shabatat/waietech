@@ -332,6 +332,7 @@ html[lang="en"] .activity-page-card:hover .btn-act-page-link .act-arrow-icon {
     /* أزرار الفلترة الفردية على الموبايل لتصبح كبسولات منفصلة ومستقلة */
     .filter-tab-btn {
         background: var(--white);
+        color: var(--secondary-color);
         border: 1px solid rgba(11, 31, 58, 0.05);
         padding: 8px 20px;
         font-size: 0.88rem;
