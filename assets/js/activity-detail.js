@@ -124,9 +124,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // التشغيل الأولي للملف
+    // أضف هذا السطر في نهاية ملف activity-detail.js لجعل الدالة مرئية للملفات الأخرى
+    window.renderActivityDetails = renderActivityDetails;
+
+    // استدعاء الدالة لأول مرة عند تحميل الصفحة
     renderActivityDetails();
 
+    
     // إعادة الرندر عند تحويل اللغة
     const langToggleBtn = document.getElementById("lang-toggle") || document.querySelector(".lang-switch");
     if (langToggleBtn) {

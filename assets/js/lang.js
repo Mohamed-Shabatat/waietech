@@ -449,26 +449,27 @@ const translations = {
 document.addEventListener("DOMContentLoaded", () => {
     let currentLang = localStorage.getItem("lang") || "ar";
 
+    // 1. تشغيل اللغة عند تحميل الصفحة مباشرة
     setLanguage(currentLang);
-
-    const handleLangChange = () => {
-        currentLang = currentLang === "ar" ? "en" : "ar";
-        localStorage.setItem("lang", currentLang);
-        setLanguage(currentLang);
-    };
-
-    setTimeout(() => {
-        const langToggle = document.getElementById("lang-toggle");
-        const langToggleMobile = document.getElementById("lang-toggle-mobile");
-
-        if (langToggle) langToggle.addEventListener("click", handleLangChange);
-        if (langToggleMobile) langToggleMobile.addEventListener("click", handleLangChange);
-        
-        setLanguage(currentLang);
-    }, 60); 
 });
 
-//  تحديث الدالة الذكية لترجمة النصوص والـ Placeholders معاً ومنع المشاكل
+// 2. حل مشكلة الموبايل والكمبيوتر وصراع التوقيت مع ملف components.js
+window.addEventListener("click", (e) => {
+    // التقاط دقيق للأزرار حتى لو ضغط المستخدم على أيقونة أو نص بداخل الزر
+    const targetBtn = e.target.closest("#lang-toggle, #lang-toggle-mobile, .btn-lang, .btn-lang-mobile");
+    
+    if (targetBtn) {
+        e.preventDefault();
+        
+        let currentLang = localStorage.getItem("lang") || "ar";
+        currentLang = currentLang === "ar" ? "en" : "ar";
+        
+        localStorage.setItem("lang", currentLang);
+        setLanguage(currentLang);
+    }
+});
+
+// تحديث الدالة الذكية لترجمة النصوص، الـ Placeholders، والمصفوفات ديناميكياً
 function setLanguage(lang) {
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = lang;
@@ -482,29 +483,46 @@ function setLanguage(lang) {
     document.querySelectorAll("[data-i18n]").forEach(element => {
         const translationKey = element.getAttribute("data-i18n");
         
-        if (translations[lang] && translations[lang][translationKey]) {
+        if (translations[lang] && translations[lang][translationKey] !== undefined) {
             const translationValue = translations[lang][translationKey];
             
-            // الفحص والترجمة الذكية بحسب نوع عنصر الـ HTML
+            // الفحص والترجمة الذكية بحسب نوع عنصر الـ HTML وطبيعة البيانات
             if (element.tagName === "TITLE") {
-                // 1. إذا كان العنصر هو عنوان الصفحة في المتصفح
                 document.title = translationValue;
-            } else if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-                // 2. إذا كان العنصر حقل إدخال، نترجم الـ Placeholder
+            } 
+            else if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
                 element.setAttribute("placeholder", translationValue);
-            } else {
-                // 3. إذا كان عنصراً عادياً، نترجم النص الداخلي له
-                element.textContent = translationValue;
+            } 
+            // 🌟 [حل المخرجات والـ Bullet Points]: إذا كانت الترجمة عبارة عن مصفوفة (Array)
+            else if (Array.isArray(translationValue)) {
+                element.innerHTML = ""; // تنظيف القائمة الحالية بالكامل
+                translationValue.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item;
+                    element.appendChild(li);
+                });
+            } 
+            // 🌟 [حل العناوين، الوصف، والباجة]: حقن النصوص الطويلة بأمان دون تقطيع
+            else {
+                element.innerHTML = translationValue;
             }
         }
     });
+    
     // استدعاء بناء كروت الدورات ديناميكياً لتحديثها مع تغيير اللغة
-    renderCourses(lang);
+    if (typeof renderCourses === 'function') {
+        renderCourses(lang);
+    }
 
     // التعديل المضاف: استدعاء تحديث الأنشطة باللغة الجديدة عند التحويل
     if (typeof window.renderActivities === 'function') {
         const activeFilter = document.querySelector(".filter-tab-btn.active")?.getAttribute("data-filter") || "all";
         window.renderActivities(activeFilter);
+    }
+
+    // 🔥 التعديل الجذري الجديد: تحديث نصوص صفحة تفاصيل النشاط (العنوان، الوصف، المخرجات) فوراً
+    if (typeof window.renderActivityDetails === 'function') {
+        window.renderActivityDetails();
     }
 }
 
