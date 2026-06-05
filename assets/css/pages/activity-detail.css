@@ -290,12 +290,15 @@ html[lang="en"] .btn-next-activity i {
         padding: 24px;
         margin-bottom: 20px;
     }
-    .detail-card h2 {
-        padding-top: 5px;
+    
+    .section-sub-title::after,
+    .section-sub-title span {
+    display: inline-block;
+    transform: translateY(2px); /* ينزل النص لأسفل بمقدار 2 بكسل بدقة مجهرية */
     }
 
     .detail-outputs-list {
-        padding-right: 22px;
+        padding-right: 20px;
     }
     
     .lightbox-popup-content { width: 95%; }
