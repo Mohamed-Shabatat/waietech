@@ -297,11 +297,15 @@ html[lang="en"] .btn-next-activity i {
     transform: translateY(2px); /* ينزل النص لأسفل بمقدار 2 بكسل بدقة مجهرية */
     }
 
-    .detail-outputs-list {
-        padding-right: 20px;
+    #detail-outputs {
+        padding-right: 20px; /* إعطاء مساحة مريحة للنقاط من اليمين في العربية */
+        padding-left: 20px;  /* ومساحة من اليسار في الإنجليزية */
     }
-    html[lang="en"] .detail-outputs-list li {
-        padding-left: 5px;
+
+    #detail-outputs li {
+        margin-bottom: 10px; /* مسافة رأسية خفيفة بين كل نقطة وأخرى لكي لا تلتصق الأسطر */
+        line-height: 1.6;    /* ارتفاع سطر احترافي ومريح جداً للقراءة */
+        word-spacing: normal !important;
     }
     
 
