@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3 class="hub-card-title" data-i18n="${featuredActivity.titleKey}">${homeTitle}</h3>
                         <p class="hub-card-excerpt" data-i18n="${featuredActivity.descKey}">${homeDesc}</p>
                         <div class="hub-card-footer">
-                            <a href="activities.html" class="btn-hub-link">
+                            <a href="activities.html" class="btn-hub-link" onclick="event.preventDefault(); window.innerWidth > 768 ? window.open('activities.html', '_blank') : window.location.href = 'activities.html';">
                                 <span data-i18n="btn_explore_activities">${homeBtnText}</span> 
                                 <i class="fas fa-arrow-left arrow-icon"></i>
                             </a>

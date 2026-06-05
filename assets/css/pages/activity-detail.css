@@ -102,7 +102,7 @@ html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
 
 .detail-outputs-list li {
     position: relative;
-    padding-right: 22px; /* مسافة أمان مريحة للأيقونة */
+    padding-right: 5px; /* مسافة أمان مريحة للأيقونة */
     padding-left: 0;
     margin-bottom: 10px;
     font-size: 0.85rem; /* تقليل حجم الخط ليكون متناسقاً كعناصر فرعية */
@@ -153,7 +153,7 @@ html[lang="en"] .section-sub-title i {
     color: var(--text-light);
 }
 
-/* 🖼️ التحكم بشبكة صور ألبوم الفعالية لتبدو احترافية كما في الصورة image_30503c.jpg */
+/* التحكم بشبكة صور ألبوم الفعالية لتبدو احترافية كما في الصورة image_30503c.jpg */
 .detail-gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -180,7 +180,7 @@ html[lang="en"] .section-sub-title i {
     transform: scale(1.06);
 }
 
-/* 📥 ضبط مساحات الأزرار والمعلومات الجانبية */
+/* ضبط مساحات الأزرار والمعلومات الجانبية */
 .sidebar-title {
     font-size: 1.2rem;
     font-weight: 700;
@@ -210,7 +210,7 @@ html[lang="en"] .section-sub-title i {
 
 .sidebar-divider { border: 0; border-top: 1px solid rgba(11, 31, 58, 0.08); margin: 25px 0; }
 
-/* 🌟 تهيئة وضبط ستايل زر النشاط التالي */
+/* تهيئة وضبط ستايل زر النشاط التالي */
 .btn-next-activity {
     display: flex; 
     justify-content: space-between; 
@@ -299,6 +299,9 @@ html[lang="en"] .btn-next-activity i {
 
     .detail-outputs-list {
         padding-right: 20px;
+    }
+    .detail-outputs-list li {
+        padding-right: 5px;
     }
     
 
