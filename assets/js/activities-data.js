@@ -34,7 +34,7 @@ const activitiesData = [
         id: "digital-skills-camp",
         featured: false, 
         category: "campaigns",
-        image: "assets/images/Phishing Attack.jfif", 
+        image: "assets/images/digital.jfif", 
         badgeKey: "filter_campaigns", // نربطها بمفاتيح الترجمة لديك مباشرة
         titleKey: "act_camp_title", // سنضيف المفاتيح في ملف الترجمة بالخطوة التالية
         descKey: "act_camp_desc", 
@@ -43,6 +43,16 @@ const activitiesData = [
         link: "activity-detail.html",
 
         attendees: "",
+        partnersKey: "",
+        outputsKey: "",
+        gallery: [
+            "assets/images/digital.jfif",
+            "assets/images/digital.jfif",
+            "assets/images/digital.jfif",
+            "assets/images/digital.jfif",
+        ],
+
+        materials :[],
     },
 
 
@@ -50,12 +60,24 @@ const activitiesData = [
         id: "ai-safety-forum",
         featured: false, 
         category: "seminars",
-        image: "assets/images/Phishing Attack.jfif", 
+        image: "assets/images/AI.jfif", 
         badgeKey: "filter_seminars", 
         titleKey: "act_forum_title", 
         descKey: "act_forum_desc", 
         date: "25/6/2026",
         location: { ar: "المدرج الرئيسي"}, 
-        link: "activity-detail.html"
+        link: "activity-detail.html",
+
+        attendees: "",
+        partnersKey: "",
+        outputsKey: "",
+        gallery: [
+            "assets/images/AI.jfif",
+            "assets/images/AI.jfif",
+            "assets/images/AI.jfif",
+            "assets/images/AI.jfif",
+        ],
+
+        materials :[],
     }
 ];
