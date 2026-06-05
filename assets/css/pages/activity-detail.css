@@ -129,7 +129,7 @@ html[lang="en"] .detail-outputs-list {
 }
 
 .section-sub-title i { 
-    color: var(--primary-color); 
+    color: var(--secondary-color); 
     margin-left: 12px;
     margin-right: 0;
     display: inline-block; /* ضرورية لكي يعمل تأثير الانعكاس بشكل صحيح */
@@ -236,15 +236,15 @@ html[lang="en"] .btn-next-activity i {
     transform: rotate(180deg); /* قلب اتجاه السهم للغة الإنجليزية */
 }
 
-/* 🌟 تصميم وبناء نافذة المشاهدة المكبرة للصور (Lightbox) */
+/* تصميم وبناء نافذة المشاهدة المكبرة للصور (Lightbox) */
 .image-lightbox-modal {
     display: none; /* مخفي افتراضياً */
     position: fixed;
     z-index: 9999;
-    padding-top: 60px;
+    padding-top: 140px;
     left: 0; top: 0; width: 100%; height: 100%;
     overflow: auto;
-    background-color: rgba(11, 31, 58, 0.95); /* خلفية كحلية داكنة جداً متناسقة مع الهوية */
+    background-color: rgba(11, 31, 58, 0.75); /* خلفية كحلية داكنة جداً متناسقة مع الهوية */
     backdrop-filter: blur(8px); /* تأثير غباش فخم خلف الصورة */
 }
 
@@ -266,14 +266,14 @@ html[lang="en"] .btn-next-activity i {
     position: absolute;
     top: 30px;
     right: 35px;
-    color: #f1f1f1;
+    color: var(--secondary-color);
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.lightbox-close-btn:hover { color: var(--secondary-color); }
+.lightbox-close-btn:hover { color: var(--primary-color); }
 
 /* 📱 ميديا كويري احترافية لدعم الهواتف بالكامل وبناء مسافات مريحة */
 @media (max-width: 768px) {
@@ -302,4 +302,8 @@ html[lang="en"] .btn-next-activity i {
     }
     
     .lightbox-popup-content { width: 95%; }
+
+    .stat-value {
+        font-size: 0.95rem;
+    }
 }
