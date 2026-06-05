@@ -1,4 +1,4 @@
-/* 🏙️ إعدادات الحاوية المتوسطة لمنع الالتصاق بأطراف الشاشة */
+/* إعدادات الحاوية المتوسطة لمنع الالتصاق بأطراف الشاشة */
 .container.detail-content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-/* 🌌 الهيدر المطور لحماية أبعاد الصورة من الانضغاط */
+/* الهيدر المطور لحماية أبعاد الصورة من الانضغاط */
 .detail-hero-section {
     position: relative;
     width: 100%;
@@ -75,7 +75,7 @@
 }
 html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
 
-/* 📦 نظام التحكم بالشبكية (Grid & Spacing) */
+/* نظام التحكم بالشبكية (Grid & Spacing) */
 .detail-grid {
     display: grid;
     grid-template-columns: 2.2fr 1fr; /* موازنة الكتلة اليمنى مع اليسرى */
@@ -301,11 +301,14 @@ html[lang="en"] .btn-next-activity i {
         padding-right: 20px; /* إعطاء مساحة مريحة للنقاط من اليمين في العربية */
         padding-left: 20px;  /* ومساحة من اليسار في الإنجليزية */
     }
-
     #detail-outputs li {
         margin-bottom: 10px; /* مسافة رأسية خفيفة بين كل نقطة وأخرى لكي لا تلتصق الأسطر */
         line-height: 1.6;    /* ارتفاع سطر احترافي ومريح جداً للقراءة */
         word-spacing: normal !important;
+    }
+
+    html[lang="en"] .detail-outputs-list li {
+        padding-left: 5px;
     }
     
 
