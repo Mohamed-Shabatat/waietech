@@ -293,6 +293,10 @@ html[lang="en"] .btn-next-activity i {
     .detail-card h2 {
         padding-top: 5px;
     }
+
+    .detail-outputs-list {
+        padding-right: 22px;
+    }
     
     .lightbox-popup-content { width: 95%; }
 }
