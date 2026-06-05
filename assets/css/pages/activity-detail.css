@@ -265,7 +265,7 @@ html[lang="en"] .btn-next-activity i {
 .lightbox-close-btn {
     position: absolute;
     top: 30px;
-    right: 35px;
+    right: 15px;
     color: var(--secondary-color);
     font-size: 40px;
     font-weight: bold;
