@@ -222,6 +222,8 @@ const translations = {
             "تعزيز مهارات الحضور في بناء استراتيجيات دفاعية للملفات الحساسة."
         ],
 
+        act_001_partners: "جامعة الطفيلة التقنية / مركز بناء المهارات ",
+
     },
 
     en: {
@@ -438,6 +440,8 @@ const translations = {
             "Distributing educational materials and digital training packages to participants.",
             "Enhancing attendees' skills in building defensive strategies for sensitive files."
         ],
+
+        act_001_partners: "Tafila Technical University / Skills Center",
         
     }
 };

@@ -15,6 +15,7 @@
     align-items: center;
     overflow: hidden;
     color: var(--white);
+    margin-top: 80px;
 }
 
 /* حل مشكلة الصورة المضغوطة بشكل قطعي */
@@ -91,6 +92,32 @@ html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
     border: 1px solid rgba(11, 31, 58, 0.04);
 }
 
+/* 1. ضبط قائمة المخرجات: إزالة الصح تماماً وإبعاد النص عن حافة الكرت */
+.detail-outputs-list {
+    list-style: disc; /* إعادة التنقيط الافتراضي الدائري الناعم */
+    padding-right: 25px; /* ترك مسافة أمان مريحة تبعد النقاط عن حافة الكرت اليمنى */
+    padding-left: 0;
+    margin: 0;
+}
+
+.detail-outputs-list li {
+    position: relative;
+    padding-right: 22px; /* مسافة أمان مريحة للأيقونة */
+    padding-left: 0;
+    margin-bottom: 10px;
+    font-size: 0.85rem; /* تقليل حجم الخط ليكون متناسقاً كعناصر فرعية */
+    color: var(--text-light);
+    line-height: 1.5;
+    text-align: justify; /* ضبط محاذاة النص */
+}
+
+/* ضبط مسافات المخرجات عند تحويل اللغة للإندونيسية/الإنجليزية */
+html[lang="en"] .detail-outputs-list {
+    padding-right: 0;
+    padding-left: 25px; /* إبعاد النقاط عن حافة الكرت اليسرى في الإنجليزي */
+}
+
+
 .section-sub-title {
     font-size: 1.35rem;
     font-weight: 700;
@@ -98,14 +125,31 @@ html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
     margin-bottom: 25px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0;
 }
 
-.section-sub-title i { color: var(--primary-color); }
+.section-sub-title i { 
+    color: var(--primary-color); 
+    margin-left: 12px;
+    margin-right: 0;
+    display: inline-block; /* ضرورية لكي يعمل تأثير الانعكاس بشكل صحيح */
+    transition: transform 0.2s ease;
+}
+
+/* عند تحويل اللغة للإنجليزية: الأيقونة تقلب لليسار تلقائياً وتبعد عن النص يميناً */
+html[lang="en"] .section-sub-title {
+    flex-direction: row; /* تضمن تدفق العناصر من اليسار لليمين بشكل طبيعي */
+}
+
+html[lang="en"] .section-sub-title i {
+    transform: scaleX(-1);
+    margin-left: 0;
+    margin-right: 12px; /* عكس اتجاه المسافة لتلتصق بالكلمة الإنجليزية */
+}
 
 .detail-full-desc {
-    font-size: 1.08rem;
-    line-height: 1.85;
+    font-size: 1.05rem;
+    line-height: 1.6;
     color: var(--text-light);
 }
 
@@ -240,7 +284,7 @@ html[lang="en"] .btn-next-activity i {
     }
     
     .detail-hero-section { min-height: 300px; }
-    .detail-main-title { font-size: 1.9rem; }
+    .detail-main-title { font-size: 1.6rem; }
     
     .detail-card, .sidebar-card {
         padding: 24px;

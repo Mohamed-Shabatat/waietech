@@ -40,7 +40,9 @@ const activitiesData = [
         descKey: "act_camp_desc", 
         date: "20/6/2026",
         location: { ar: "قاعة الابتكار الرقمي"}, 
-        link: "activity-detail.html"
+        link: "activity-detail.html",
+
+        attendees: "",
     },
 
 
