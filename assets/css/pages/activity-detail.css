@@ -301,9 +301,65 @@ html[lang="en"] .btn-next-activity i {
         padding-right: 20px;
     }
     
-    .lightbox-popup-content { width: 95%; }
 
     .stat-value {
         font-size: 0.95rem;
     }
+
+
+    .lightbox-popup-content { width: 95%; }
+
+    /* 1. تحويل حاوية المعرض إلى شريط أفقي ممتد */
+    #detail-gallery {
+        display: flex !important; /* تحويل العناصر بجانب بعضها */
+        flex-wrap: nowrap !important; /* منع الصور من النزول لسطر جديد */
+        overflow-x: auto !important; /* تفعيل التمرير الأفقي */
+        overflow-y: hidden !important; /* إخفاء أي تمرير رأسي */
+        
+        /* ميزة السحب السلس والذكي بالإصبع لجعل الصورة تقف في المنتصف تماماً */
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; /* سلاسة التمرير على هواتف آيفون */
+
+        scrollbar-width: none;
+        
+        /* إضافة مسافات جمالية في الأطراف وببين الصور */
+        gap: 15px;
+        padding: 10px 5px 20px 5px;
+    }
+
+    #detail-gallery::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    /* 2. التحكم في حجم الكارت أو غلاف الصورة داخل السلايدر */
+    #detail-gallery .gallery-img-wrapper {
+        flex: 0 0 85%; /* كل صورة تأخذ 85% من عرض الشاشة ليظهر طرف الصورة التالية تشويقاً للمستخدم */
+        width: 85%;
+        scroll-snap-align: center; /* عند السحب، تقف الصورة بمنتصف الشاشة تلقائياً */
+        
+        /* الحفاظ على التناسق والارتفاع */
+        aspect-ratio: 4 / 3; /* يضمن عدم تمدد أو تشوه الصور */
+        height: auto;
+    }
+
+    /* 3. التأكد من أن الصور تملأ الغلاف الخاص بها بشكل متناسق */
+    #detail-gallery .gallery-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* قص متناسق وحماية هندسية لأبعاد الصورة */
+        border-radius: 12px; /* حواف ناعمة متناسقة مع روح مبادرة وعي تك */
+    }
+
+    /* 4. إخفاء شريط التمرير الافتراضي المزعج للحفاظ على المظهر الاحترافي */
+    #detail-gallery::-webkit-scrollbar {
+        height: 5px; /* شريط نحيف جداً */
+    }
+    #detail-gallery::-webkit-scrollbar-thumb {
+        background-color: var(--sec-color, #ff9800); /* لون الهوية */
+        border-radius: 10px;
+    }
+
 }

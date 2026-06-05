@@ -10,6 +10,7 @@ const translations = {
         page_activities_title: "الأنشطة | وَعْي تك",
         page_blog_title: "المدونة الرقمية | وَعْي تك",
         page_contact_title: "تواصل معنا | وَعْي تك ",
+        page_activity_detail_title: " تفاصيل النشاط | وَعْي تك ",
 
 
         // --- القائمة الرئيسية والفوتر الموحد ---
@@ -235,6 +236,7 @@ const translations = {
         page_activities_title: "Activities | WaieTech",
         page_blog_title: "Digital Blog | WaieTech",
         page_contact_title: "Contact Us | WaieTech",
+        page_activity_detail_title: "Activity Details | WaieTech",
 
 
         // --- Navbar & Unified Footer ---
