@@ -287,8 +287,11 @@ html[lang="en"] .btn-next-activity i {
     .detail-main-title { font-size: 1.6rem; }
     
     .detail-card, .sidebar-card {
-        padding: 26px;
+        padding: 24px;
         margin-bottom: 20px;
+    }
+    .detail-card h2 {
+        padding-top: 5px;
     }
     
     .lightbox-popup-content { width: 95%; }
