@@ -1,5 +1,8 @@
-/* assets/css/pages/blog-detail.css */
+/* ==========================================================================
+   --- تنسيقات صفحة تفاصيل المقال المخصصة (Blog Detail Page) ---
+   ========================================================================== */
 
+/* إعدادات الحاوية المتوسطة لمنع الالتصاق بأطراف الشاشة */
 .container.detail-content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -7,6 +10,7 @@
     box-sizing: border-box;
 }
 
+/* الهيدر المطور لحماية أبعاد الصورة من الانضغاط */
 .detail-hero-section {
     position: relative;
     width: 100%;
@@ -18,6 +22,7 @@
     margin-top: 80px;
 }
 
+/* حل مشكلة الصورة المضغوطة بشكل قطعي */
 .hero-absolute-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -71,6 +76,7 @@
 }
 html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
 
+/* نظام التحكم بالشبكية (Grid & Spacing) */
 .detail-grid {
     display: grid;
     grid-template-columns: 2.2fr 1fr;
@@ -87,13 +93,35 @@ html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
     border: 2px solid rgba(39, 181, 247, 0.15);
 }
 
-/* ستايلات مخصصة للمقالات والمحتوى الداخلي */
+/* تنسيق العناوين الفرعية للمقال مع دعم التدفق المرن والأيقونات */
 .blog-sub-title {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 15px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.blog-sub-title i {
+    color: var(--secondary-color);
+    margin-left: 12px; /* مسافة أمان ثابتة عن النص العربي من اليسار */
+    margin-right: 0;
+    font-size: 1.2rem;
+    display: inline-block; /* ضرورية لكي يعمل تأثير الانعكاس بشكل صحيح */
+    transition: transform 0.2s ease;
+}
+
+/* عند تحويل اللغة للإنجليزية: الأيقونة تقلب لليسار تلقائياً وتبعد عن النص يميناً */
+html[lang="en"] .blog-sub-title {
+    flex-direction: row;
+}
+
+html[lang="en"] .blog-sub-title i {
+    transform: scaleX(-1); /* قلب اتجاه الأيقونة هندسياً مثل الأنشطة */
+    margin-left: 0;
+    margin-right: 12px; /* عكس اتجاه المسافة لتلتصق بالكلمة الإنجليزية */
 }
 
 .detail-full-desc {
@@ -110,7 +138,7 @@ html[lang="en"] .detail-meta-wrapper i { margin-left: 0; margin-right: 8px; }
     margin: 30px 0;
 }
 
-/* تصميم لوحة النصيحة الذكية (Quick Tip Box) */
+/* تصميم لوحة ومضة وعي (Quick Tip Box) */
 .blog-quick-tip-box {
     display: flex;
     gap: 20px;
@@ -148,6 +176,7 @@ html[lang="en"] .blog-quick-tip-box {
     margin: 0;
 }
 
+/* ضبط مساحات الأزرار والمعلومات الجانبية في السايدبار */
 .sidebar-title {
     font-size: 1.2rem;
     font-weight: 700;
@@ -176,9 +205,32 @@ html[lang="en"] .blog-quick-tip-box {
 .stat-value { font-size: 1.05rem; color: var(--text-dark); font-weight: 700; }
 
 .sidebar-divider { border: 0; border-top: 1px solid rgba(11, 31, 58, 0.08); margin: 25px 0; }
-.materials-title { font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 15px; }
 
-/* ستايل زر المرجع الخارجي السيّد */
+/* تنسيق عنوان المرجع الجانبي مع الأيقونة والقلب الهندي */
+.materials-title { 
+    font-size: 1rem; 
+    font-weight: 700; 
+    color: var(--text-dark); 
+    margin-bottom: 15px; 
+    display: flex;
+    align-items: center;
+}
+
+.materials-title i {
+    color: var(--secondary-color);
+    margin-left: 8px; /* مسافة أمان عن النص العربي */
+    margin-right: 0;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+html[lang="en"] .materials-title i {
+    transform: scaleX(-1); /* قلب الأيقونة الجانبية */
+    margin-left: 0;
+    margin-right: 8px; /* عكس اتجاه المسافة في الإنجليزية */
+}
+
+/* ستايل زر المرجع الخارجي */
 .btn-reference-link {
     display: flex;
     align-items: center;
@@ -201,6 +253,7 @@ html[lang="en"] .blog-quick-tip-box {
     border-color: var(--primary-color);
 }
 
+/* تهيئة وضبط ستايل زر المقال التالي */
 .btn-next-activity {
     display: flex; 
     justify-content: space-between; 
@@ -222,56 +275,18 @@ html[lang="en"] .blog-quick-tip-box {
     color: var(--secondary-color);
 }
 
-html[lang="en"] .btn-next-activity i { transform: rotate(180deg); }
-
-/* تنسيق العناوين الفرعية مع الأيقونات */
-.blog-sub-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
+/* قلب اتجاه السهم بشكل كامل وتلقائي ليناسب القراءة من اليسار لليمين */
+html[lang="en"] .btn-next-activity i { 
+    transform: scaleX(-1); 
 }
 
-.blog-sub-title i {
-    color: var(--secondary-color);
-    margin-left: 12px; /* مسافة أمان عن النص العربي */
-    margin-right: 0;
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
-}
-
-/* التبديل الذكي عند تحويل الواجهة للغة الإنجليزية */
-html[lang="en"] .blog-sub-title {
-    flex-direction: row;
-}
-
-html[lang="en"] .blog-sub-title i {
-    margin-left: 0;
-    margin-right: 12px; /* عكس المسافة لتلتصق بالكلمة الإنجليزية */
-}
-
-/* تنسيق أيقونة المرجع الجانبي */
-.materials-title i {
-    color: var(--secondary-color);
-    margin-left: 8px;
-}
-html[lang="en"] .materials-title i {
-    margin-left: 0;
-    margin-right: 8px;
-}
-
-html[lang="en"] .btn-next-activity i {
-    transform: scaleX(-1); /* قلب السهم بشكل كامل ليناسب القراءة من اليسار لليمين */
-}
-
+/* ميديا كويري لدعم الهواتف بالكامل وبناء مسافات مريحة */
 @media (max-width: 768px) {
     .detail-grid { grid-template-columns: 1fr; gap: 0; padding: 30px 0; }
     .detail-hero-section { min-height: 280px; }
     .detail-main-title { font-size: 1.5rem; }
     .detail-card, .sidebar-card { padding: 24px; margin-bottom: 20px; }
-    .blog-sub-title { font-size: 1.2rem; }
+    .blog-sub-title { font-size: 0.95rem; }
     .detail-full-desc { font-size: 0.98rem; }
+    .stat-value { font-size: 0.95rem; }
 }
