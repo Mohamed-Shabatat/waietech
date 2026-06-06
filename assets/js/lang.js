@@ -11,7 +11,7 @@ const translations = {
         page_blog_title: "المدونة الرقمية | وَعْي تك",
         page_contact_title: "تواصل معنا | وَعْي تك ",
         page_activity_detail_title: " تفاصيل النشاط | وَعْي تك ",
-
+        page_blog_detail_title: "تفاصيل المقال | وَعْي تك",
 
         // --- القائمة الرئيسية والفوتر الموحد ---
         logo_text: "وَعْي تك",
@@ -21,7 +21,7 @@ const translations = {
         nav_courses: "الدورات التدريبية",
         nav_contact: "تواصل معنا",
         nav_activities: "الأنشطة",
-        nav_blog: "مدونة التوعية",
+        nav_blog: "المدونة الرقمية",
         nav_impact: "إنجازاتنا",
         footer_slogan: "لأنك تستحق... أن تدرك",
         footer_rights: "جميع الحقوق محفوظة.",
@@ -194,16 +194,6 @@ const translations = {
         act_forum_desc: "توعية الأفراد حول آليات إستثمار نماذج التوليد الحديثة وتوجيهها بأمان وحماية بياناتهم من التسريب.",
 
 
-
-        // صفحة المدونة
-
-        // محتوى كرت أحدث مقال
-        minutes_read: "دقائق قراءة",
-        home_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
-        home_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
-        btn_read_blog: "اقرأ المدونة",
-
-
         // نصوص صفحة تفاصيل الأنشطة الثابتة
         detail_about: "حول النشاط",
         detail_outputs: "مخرجات ونتائج النشاط",
@@ -225,6 +215,40 @@ const translations = {
 
         act_001_partners: "جامعة الطفيلة التقنية / مركز بناء المهارات ",
 
+
+
+        
+
+        // صفحة المدونة
+
+        // محتوى كرت أحدث مقال
+        minutes_read: "دقائق قراءة",
+        blog_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
+        blog_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
+        btn_read_blog: "اقرأ المدونة",
+
+        blog_hero_title: "المدونة الرقمية",
+        blog_hero_subtitle: "مقالات توعوية ونوافذ معرفية لتعزيز إدراكك الأمني والتقني",
+        btn_view_details: "عرض التفاصيل",
+        filter_all_blog: "كل المقالات",
+        filter_cybersecurity: "الأمن السيبراني",
+        filter_ai: "الذكاء الاصطناعي",
+        filter_digital_skills: "المهارات الرقمية",
+        filter_networks: "الشبكات والتقنية",
+        no_articles: "لا توجد مقالات منشورة في هذا القسم حالياً.",
+        
+
+
+        // نصوص صفحة تفاصيل المدونة الثابتة
+        blog_tip_label: "ومضة وَعْي",
+        blog_sidebar_title: "بطاقة معلومات المقال",
+        blog_publisher: "الجهة الناشرة",
+        blog_reference_title: "المرجع والمصدر الأصلي",
+        btn_visit_source: "زيارة المصدر الأصلي للمقال",
+        detail_next_blog: "المقال التالي",
+        brand_name: "مبادرة وَعْي تك",
+        
+
     },
 
     en: {
@@ -237,6 +261,7 @@ const translations = {
         page_blog_title: "Digital Blog | WaieTech",
         page_contact_title: "Contact Us | WaieTech",
         page_activity_detail_title: "Activity Details | WaieTech",
+        page_blog_detail_title: "Article Details | WaieTech",
 
 
         // --- Navbar & Unified Footer ---
@@ -247,7 +272,7 @@ const translations = {
         nav_courses: "Courses",
         nav_contact: "Contact",
         nav_activities: "Activities",
-        nav_blog: "Awareness Blog",
+        nav_blog: "Digital Blog",
         nav_impact: "Our Impact",
         footer_slogan: "Aware • Empower • Secure",
         footer_rights: "All Rights Reserved.",
@@ -415,15 +440,6 @@ const translations = {
         act_forum_desc: "Educating individuals on leveraging modern generative models securely and protecting their data.",
 
 
-        //blog page
-
-        // Latest Article Card Content
-        minutes_read: "Mins Read",
-        home_latest_article_title: "How to Detect Phishing Attacks",
-        home_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
-        btn_read_blog: "Read the Blog",
-
-
         // Static Activity Details Page Texts
         detail_about: "About the Activity",
         detail_outputs: "Activity Outputs & Results",
@@ -444,6 +460,39 @@ const translations = {
         ],
 
         act_001_partners: "Tafila Technical University / Skills Center",
+
+
+
+        //blog page
+
+        // Latest Article Card Content
+        minutes_read: "Mins Read",
+        blog_latest_article_title: "How to Detect Phishing Attacks",
+        blog_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
+        btn_read_blog: "Read the Blog",
+
+        blog_hero_title: "Digital Blog",
+        blog_hero_subtitle: "Awareness articles and insights to boost your security and technical literacy",
+        btn_view_details: "View Details",
+        filter_all_blog: "All Articles",
+        filter_cybersecurity: "Cybersecurity",
+        filter_ai: "Artificial Intelligence",
+        filter_digital_skills: "Digital Skills",
+        filter_networks: "Networks & Tech",
+        no_articles: "No articles available in this section currently.",
+        
+
+
+        // Static Blog Details Page Texts
+        blog_tip_label: "Waie Spark",
+        blog_sidebar_title: "Article Metadata Card",
+        blog_publisher: "Publisher Entity",
+        blog_reference_title: "References & Original Source",
+        btn_visit_source: "Visit Original Source",
+        detail_next_blog: "Next Article",
+        brand_name: "WaieTech Initiative",
+
+        
         
     }
 };

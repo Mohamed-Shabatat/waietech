@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_blog_detail_title">تفاصيل المقال | وَعْي تك</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/pages/blog-detail.css"> 
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <!-- قسم الهيدر الداخلي للمقال (حماية أبعاد الصورة) -->
+    <section class="detail-hero-section">
+        <img src="" alt="Blog Banner" class="hero-absolute-bg" id="detail-hero-img">
+        <div class="hero-overlay-dark"></div>
+        
+        <div class="container detail-hero-container">
+            <span class="detail-badge" id="detail-badge">---</span>
+            <h1 class="detail-main-title" id="detail-title">---</h1>
+            
+            <div class="detail-meta-wrapper">
+                <div class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span id="detail-date">---</span>
+                </div>
+                <div class="meta-item">
+                    <i class="far fa-clock"></i>
+                    <span id="detail-read-time">---</span> <span data-i18n="minutes_read">دقائق قراءة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المحتوى الرئيسي للمقال -->
+    <main class="container detail-content-wrapper">
+        <div class="detail-grid">
+            
+            <!-- القسم الأيمن: نص المقال والفقرات والملاحظة الذكية -->
+            <div class="detail-main-side">
+                <div class="detail-card blog-body-container">
+                    
+                    <!-- الفقرة الأولى مع أيقونة الـ Heading -->
+                    <h2 class="blog-sub-title">
+                        <i class="fas fa-shield-alt"></i> <!-- أيقونة حماية/عنوان -->
+                        <span id="blog-subtitle-1">---</span>
+                    </h2>
+                    <p class="detail-full-desc" id="blog-paragraph-1">---</p>
+                    
+                    <hr class="blog-internal-divider">
+                    
+                    <!-- الفقرة الثانية مع أيقونة الـ Heading -->
+                    <h2 class="blog-sub-title">
+                        <i class="fas fa-terminal"></i> <!-- أيقونة تيرمينال/تطبيق عملي -->
+                        <span id="blog-subtitle-2">---</span>
+                    </h2>
+                    <p class="detail-full-desc" id="blog-paragraph-2">---</p>
+                    
+                    <!-- صندوق ومضة وعي -->
+                    <div class="blog-quick-tip-box" id="blog-quick-tip-wrapper">
+                        <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="tip-content">
+                            <h4 data-i18n="blog_tip_label">ومضة وعي</h4>
+                            <p id="blog-quick-tip">---</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- القسم الأيسر: شريط جانبي يحتوي المرجع والتحكم والمقال التالي -->
+            <div class="detail-sidebar-side">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title" data-i18n="blog_sidebar_title">بطاقة معلومات المقال</h3>
+                    
+                    <!-- إحصائية كاتب أو ناشر المقال -->
+                    <div class="sidebar-stat-item">
+                        <div class="stat-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label" data-i18n="blog_publisher">الجهة الناشرة</span>
+                            <strong class="stat-value" data-i18n="brand_name">مبادرة وَعْي تك</strong>
+                        </div>
+                    </div>
+
+                    <!-- حاوية المرجع الأصلي للمقال (تظهر وتختفي ديناميكياً) -->
+                    <div id="blog-reference-wrapper" style="display: none;">
+                        <hr class="sidebar-divider">
+                        <h4 class="materials-title">
+                            <i class="fas fa-book-reader"></i> <!-- أيقونة المرجع والمطالعة -->
+                            <span data-i18n="blog_reference_title">المرجع والمصدر الأصلي</span>
+                        </h4>
+                        <div id="blog-reference-links">
+                            <!-- يحقن هنا زر الانتقال للمصدر ديناميكياً -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- زر المقال التالي بشكل دائري مغلق -->
+                <div class="next-activity-wrapper">
+                    <a href="#" id="next-blog-btn" class="btn-next-activity">
+                        <span data-i18n="detail_next_blog">المقال التالي</span>
+                        <i class="fas fa-arrow-left arrow-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="assets/js/components.js"></script> 
+    <script src="assets/js/blog-data.js"></script>    
+    <script src="assets/js/lang.js"></script> 
+    <script src="assets/js/blog-detail.js"></script>
+    <script src="assets/js/main.js"></script> 
+</body>
+</html>

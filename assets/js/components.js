@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li><i class="fas fa-th-large nav-icon"></i><a href="services.html" data-i18n="nav_services">خدماتنا</a></li>
                     <li><i class="fas fa-graduation-cap nav-icon"></i><a href="courses.html" data-i18n="nav_courses">الدورات</a></li>
                     <li><i class="fas fa-calendar-alt nav-icon"></i><a href="activities.html" data-i18n="nav_activities">الأنشطة</a></li>
-                    <li><i class="fas fa-blog nav-icon"></i><a href="cooming-soon.html" data-i18n="nav_blog">المدونة</a></li>
+                    <li><i class="fas fa-blog nav-icon"></i><a href="blog.html" data-i18n="nav_blog">المدونة</a></li>
                     <li><i class="fas fa-envelope nav-icon"></i><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
                 </ul>
 
@@ -132,8 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="footer-col">
                         <h4 class="col-title" data-i18n="footer_future_title">المبادرات والأخبار</h4>
                         <ul class="footer-links">
-                            <li><a href="cooming-soon.html" data-i18n="nav_activities">الورش والفعاليات</a></li>
-                            <li><a href="cooming-soon.html" data-i18n="nav_blog">مدونة التوعية</a></li>
+                            <li><a href="activities.html" data-i18n="nav_activities">الورش والفعاليات</a></li>
+                            <li><a href="blog.html" data-i18n="nav_blog">مدونة التوعية</a></li>
                             <li><a href="cooming-soon.html" data-i18n="nav_impact">إنجازاتنا</a></li>
                         </ul>
                     </div>

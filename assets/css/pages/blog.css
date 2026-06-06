@@ -1,0 +1,360 @@
+/* ==========================================================================
+   --- تنسيقات صفحة المدونة والمقالات المخصصة (Blog Page) ---
+   ========================================================================== */
+
+/* تثبيت حجم وأبعاد الهيدر الداخلي لجميع الصفحات */
+.inner-page-hero {
+    background: linear-gradient(135deg, #0b1f3a 0%, #13335c 100%);
+    color: #ffffff;
+    
+    /* التعديل الأساسي: تثبيت الارتفاع الكلي */
+    height: 180px; 
+    margin-top: 80px; /* الابتعاد عن القائمة الرئيسية الثابتة */
+    
+    /* تحويله لـ Flexbox لتوسيط النصوص عمودياً وأفقياً داخل الارتفاع الثابت */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ضبط حاوية النصوص بالداخل لضمان عدم تأثر الأبعاد */
+.inner-page-hero .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* مسافة ثابتة وصغيرة بين العنوان والوصف */
+}
+
+/* ضبط حجم الخطوط المحدث لتتناسب مع الارتفاع الثابت الجديد */
+.inner-page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 !important;
+    line-height: 1.2;
+}
+
+.inner-page-hero .subtitle {
+    font-size: 1.05rem;
+    color: #27b5f7 !important;
+    margin: 0 !important;
+}
+
+
+/* ==========================================================================
+   --- تصميم صفحة المدونة المستقل والمطور (مظهر عمودي Grid فخم) ---
+   ========================================================================== */
+
+.blog-page-content .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 🎛️ أزرار الفلترة والتصنيفات للمدونة */
+.filter-section {
+    padding-top: 50px !important;
+    text-align: center;
+}
+
+.blog-filter-tabs-wrapper {
+    position: relative; /* ضروري لضبط حركة كبسولة الخلفية */
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--white);
+    padding: 6px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(11, 31, 58, 0.04);
+    border: 1px solid rgba(11, 31, 58, 0.03);
+    z-index: 1;
+}
+
+.blog-filter-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 3; /* جعل النص فوق الكبسولة المتحركة ليبقى مقروءاً */
+}
+
+/* التفاعل عند تمرير الماوس فوق أزرار سطح المكتب */
+.blog-filter-btn:hover {
+    color: var(--secondary-color);
+}
+
+/* لون النص للزر النشط */
+.blog-filter-btn.active {
+    color: var(--white) !important;
+    background: transparent !important; /* إزالة الخلفية الثابتة القديمة */
+    box-shadow: none !important;
+}
+
+/* الكبسولة الخلفية المتحركة (بنفس حركة وتأثير الفيديو) */
+.blog-filter-indicator {
+    position: absolute;
+    height: calc(100% - 12px); /* ملاءمة طول الحاوية مع البادينغ */
+    top: 6px;
+    left: 6px;
+    background: var(--primary-color); /* الكحلي المعتمد للموقع */
+    border-radius: 25px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.2);
+    /* أنيميشن مطاطي وانسيابي فخم جداً عند الانتقال */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    pointer-events: none; /* منع تفاعل الماوس مع الخلفية لتفادي تعليق النقرات */
+}
+
+
+/* حاوية شبكة الكروت الجديدة (Grid ثلاثي متجاوب) */
+.blog-grid-section {
+    padding: 50px 0 120px 0 !important;
+}
+
+.hub-container-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* كرت صفحة المدونة العمودي الجديد */
+.blog-page-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.03);
+    display: flex;
+    flex-direction: column; /* جعل الكرت يبنى عمودياً */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(11, 31, 58, 0.02);
+}
+
+.blog-page-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 45px rgba(39, 181, 247, 0.12);
+}
+
+/* صندوق الصورة المطور */
+.blog-card-image-box {
+    position: relative;
+    width: 100%;
+    height: 230px; /* ارتفاع ثابت وموحد للصور لقفل التناسق بصرياً */
+    overflow: hidden;
+}
+
+.blog-card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.blog-page-card:hover .blog-card-image-box img {
+    transform: scale(1.06);
+}
+
+/* شارات الكروت الجديدة للمدونة */
+.blog-card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-color); /* أزرق سايبر */
+    color: var(--primary-color); /* نص كحلي داكن لوضوح ممتاز */
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* محتوى الكرت النصي */
+.blog-card-info-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* جعل المحتوى يملأ الفراغ دائماً لتوحيد أطوال الكروت */
+}
+
+.blog-card-top-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.blog-card-top-meta i {
+    color: var(--secondary-color);
+    margin-left: 5px;
+}
+
+.blog-card-main-title {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.blog-card-main-desc {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    position: relative;
+    max-height: 5.1em;
+    overflow: hidden;
+}
+
+/* طبقة التلاشي والضبابية أسفل الكرت */
+.blog-card-main-desc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--white));
+}
+
+/* فوتر الكرت والزر الجديد */
+.blog-card-bottom-footer {
+    margin-top: auto; /* دفع الفوتر لأسفل الكرت دائماً */
+    padding-top: 15px;
+    border-top: 1px solid var(--bg-color);
+}
+
+.btn-blog-page-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color); /* الكحلي الرسمي */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: color 0.3s ease;
+}
+
+.blog-arrow-icon {
+    margin-right: 8px;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+/* تفاعلات الهوفر للزر الجديد */
+.blog-page-card:hover .btn-blog-page-link {
+    color: var(--secondary-color); /* يتحول للسايبر عند تمرير الماوس */
+}
+
+.blog-page-card:hover .blog-arrow-icon {
+    transform: translateX(-6px); /* حركة السهم باتجاه النص في العربي */
+}
+
+/* --- ضبط الاتجاهات للغات (RTL / LTR) --- */
+html[lang="ar"] .blog-card-badge {
+    right: 20px;
+    left: auto;
+}
+
+html[lang="en"] .blog-card-badge {
+    left: 20px;
+    right: auto;
+}
+
+html[lang="en"] .btn-blog-page-link .blog-arrow-icon {
+    transform: rotate(180deg);
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+html[lang="en"] .blog-page-card:hover .btn-blog-page-link .blog-arrow-icon {
+    transform: rotate(180deg) translateX(-6px);
+}
+
+
+/* متجاوب تماماً للهواتف */
+@media (max-width: 768px) {
+
+    .inner-page-hero h1 {
+        font-size: 1.5rem !important; /* تصغير الخط ليناسب الشاشة */
+        padding: 0 15px;
+    }
+    .inner-page-hero .subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+    }
+
+    .filter-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* تحويل الحاوية إلى سطر واحد يمرر جانبياً بنعومة تامة وفخامة */
+    .blog-filter-tabs-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 12px;
+        background: transparent;
+        padding: 8px;
+        border-radius: 30px;
+        
+        border: 1px solid rgba(39, 181, 247, 0.15); /* إضافة الإطار المحيط بالحاوية */
+        overflow-x: auto; /* تفعيل التمرير الأفقي */
+        -ms-overflow-style: none;  /* إخفاء السكرول لمتصفح IE و Edge */
+        scrollbar-width: none;  /* إخفاء السكرول لمتصفح Firefox */
+    }
+
+    /* إخفاء شريط التمرير السفلي لمتصفحات Chrome و Safari و Opera */
+    .blog-filter-tabs-wrapper::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* أزرار الفلترة الفردية على الموبايل لتصبح كبسولات منفصلة ومستقلة */
+    .blog-filter-btn {
+        background: var(--white);
+        color: var(--secondary-color);
+        border: 1px solid rgba(11, 31, 58, 0.05);
+        padding: 8px 20px;
+        font-size: 0.88rem;
+        border-radius: 30px;
+        white-space: nowrap; /* منع الكلمات من الانكسار لأسفل */
+        box-shadow: 0 2px 8px rgba(11, 31, 58, 0.02);
+        flex-shrink: 0; /* منع تقلص الزر */
+        transition: all 0.3s ease;
+    }
+
+    /* كبسولة الموبايل المفعلة (ستايل فخم ومستقل وثابت) */
+    .blog-filter-btn.active {
+        background: var(--primary-color) !important;
+        color: var(--white) !important;
+        box-shadow: 0 4px 10px rgba(11, 31, 58, 0.15) !important;
+        border-color: var(--primary-color);
+    }
+
+    /* إخفاء خلفية الديسكتاب المتحركة على الموبايل لمنع العشوائية البصرية */
+    .blog-filter-indicator {
+        display: none !important;
+    }
+
+    .hub-container-flex {
+        grid-template-columns: 1fr;
+    }
+}

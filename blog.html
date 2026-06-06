@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_blog_title">المدونة الرقمية | وَعْي تك</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&family=Tajawal:wght=400;500;700;900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/blog.css"> 
+</head>
+<body class="light-theme">
+
+    <header id="header"></header>
+
+    <main class="blog-page-content">
+        
+        <section class="inner-page-hero">
+            <div class="container">
+                <h1 data-i18n="blog_hero_title">المدونة الرقمية</h1>
+                <p class="subtitle" data-i18n="blog_hero_subtitle">مقالات توعوية ونوافذ معرفية لتعزيز إدراكك الأمني والتقني</p>
+            </div>
+        </section>
+
+        <section class="filter-section container">
+            <div class="blog-filter-tabs-wrapper">
+                <button class="blog-filter-btn active" data-filter="all" data-i18n="filter_all_blog">كل المقالات</button>
+                <button class="blog-filter-btn" data-filter="cybersecurity" data-i18n="filter_cybersecurity">الأمن السيبراني</button>
+                <button class="blog-filter-btn" data-filter="ai" data-i18n="filter_ai">الذكاء الاصطناعي</button>
+                <button class="blog-filter-btn" data-filter="digital-skills" data-i18n="filter_digital_skills">المهارات الرقمية</button>
+                <button class="blog-filter-btn" data-filter="networks" data-i18n="filter_networks">الشبكات والتقنية</button>
+
+                <span class="blog-filter-indicator"></span>
+            </div>
+        </section>
+
+        <section class="blog-grid-section container">
+            <div class="hub-container-flex" id="blog-page-grid"></div>
+        </section>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/lang.js"></script>
+    <script src="assets/js/blog-data.js"></script>   
+    <script src="assets/js/main.js"></script>        
+    <script src="assets/js/blog.js"></script>        
+</body>
+</html>
