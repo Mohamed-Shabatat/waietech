@@ -223,8 +223,6 @@ const translations = {
 
         // محتوى كرت أحدث مقال
         minutes_read: "دقائق قراءة",
-        blog_latest_article_title: "طرق كشف وهجمات التصيد الإلكتروني",
-        blog_latest_article_excerpt: "تعرف على أساليب الهندسة الاجتماعية الأكثر انتشاراً، وكيف تحمي حساباتك الشخصية والمؤسسية من الوقوع في الفخ...",
         btn_read_blog: "اقرأ المدونة",
 
         blog_hero_title: "المدونة الرقمية",
@@ -248,6 +246,20 @@ const translations = {
         detail_next_blog: "المقال التالي",
         brand_name: "مبادرة وَعْي تك",
         
+
+        //محتوى المقالات
+        blog_nvidia_title: "مؤتمر NVIDIA GTC 2026 : معالجات خارقة وثورة جديدة في الذكاء الاصطناعي السيادي",
+        blog_nvidia_excerpt: "تغطية شاملة لأحدث إعلانات إنفيديا عن معمارية معالجات Quantum-X وحزم NIM البرمجية التي تعيد تشغيل النماذج الذكية محلياً وبأمان كامل.",
+
+        blog_latest_article_title: "تحذيرات CISA السيبرانية لعام 2026: أساليب تصيد متطورة لتجاوز التحقق الثنائي (MFA Bypass)",
+        blog_latest_article_excerpt: "تعرف على آليات عمل هجمات الهندسة الاجتماعية الحديثة وكيفية حماية حسابات منشأتك عبر الانتقال إلى حلول التوثيق المقاومة للتصيد.",
+
+        blog_skills_title: "إطار اليونسكو المحدث لعام 2026: ما هي المهارات الرقمية الضرورية للنجاح في عصر الذكاء الاصطناعي ؟",
+        blog_skills_excerpt: "دليل شامل يستعرض الكفاءات الرقمية الجديدة المطلوبة عالمياً لتأمين الوظائف ومواكبة بيئات العمل السحابية والأتمتة الذكية.",
+
+        blog_networks_title: "ثورة الشبكات المعرفة برمجياً (SDN) وإدارة إنترنت الأشياء الصناعي لعام 2026 من Cisco",
+        blog_networks_excerpt: "رؤية تقنية عميقة حول مستقبل بنية الشبكات الحديثة وتكامل التشفير المقاوم للحوسبة الكمومية لتأمين مليارات الأجهزة المتصلة.",
+
 
     },
 
@@ -467,8 +479,6 @@ const translations = {
 
         // Latest Article Card Content
         minutes_read: "Mins Read",
-        blog_latest_article_title: "How to Detect Phishing Attacks",
-        blog_latest_article_excerpt: "Learn the most common social engineering techniques and discover how to protect your personal and corporate accounts from falling into the trap...",
         btn_read_blog: "Read the Blog",
 
         blog_hero_title: "Digital Blog",
@@ -492,7 +502,21 @@ const translations = {
         detail_next_blog: "Next Article",
         brand_name: "WaieTech Initiative",
 
-        
+
+        //Artical Content
+
+        blog_nvidia_title: "NVIDIA GTC 2026: Next-Gen Processors & The Rise of Sovereign AI",
+        blog_nvidia_excerpt: "Comprehensive coverage of NVIDIA's latest chip architecture and NIM software ecosystem built for secure, local AI deployment.",
+
+        blog_latest_article_title: "CISA 2026 Cybersecurity Advisory: Advanced Phishing Tactics Bypassing MFA",
+        blog_latest_article_excerpt: "Understand how next-generation social engineering attacks capture live tokens and how to migrate toward phishing-resistant authentication.",
+
+        blog_skills_title: "UNESCO's 2026 Framework: Essential Digital Skills Demanded in the AI Era",
+        blog_skills_excerpt: "A complete overview of newly established global digital competencies needed to secure careers and adapt to automated work spaces.",
+
+        blog_networks_title: "Cisco 2026 Revolution: Software-Defined Networks & Industrial IoT Safeguards",
+        blog_networks_excerpt: "Deep technical insight into the future of network infrastructures and the integration of post-quantum cryptography to secure connected endpoints."
+                
         
     }
 };
