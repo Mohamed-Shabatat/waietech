@@ -286,7 +286,7 @@ html[lang="en"] .btn-next-activity i {
     .detail-hero-section { min-height: 300px; }
     .detail-main-title { font-size: 1.5rem; }
     .detail-card, .sidebar-card { padding: 24px; margin-bottom: 20px; }
-    .blog-sub-title { font-size: 1.2rem; }
+    .blog-sub-title { font-size: 1rem; }
     /* استخدام المسافة المنطقية الذكية لضمان انسياب الأيقونة في الجهتين على الهاتف */
     .blog-sub-title i {
         margin-inline-end: 10px;

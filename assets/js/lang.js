@@ -575,6 +575,11 @@ function setLanguage(lang) {
     if (typeof window.renderActivityDetails === 'function') {
         window.renderActivityDetails();
     }
+
+    // 🔥 التعديل الجذري الجديد: تحديث تفاصيل المقال (المدونة) فوراً لحل مشكلة الهاتف
+    if (typeof window.renderBlogDetails === 'function') {
+        window.renderBlogDetails();
+    }
 }
 
 function renderCourses(lang) {
