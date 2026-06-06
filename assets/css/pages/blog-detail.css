@@ -283,10 +283,15 @@ html[lang="en"] .btn-next-activity i {
 /* ميديا كويري لدعم الهواتف بالكامل وبناء مسافات مريحة */
 @media (max-width: 768px) {
     .detail-grid { grid-template-columns: 1fr; gap: 0; padding: 30px 0; }
-    .detail-hero-section { min-height: 280px; }
+    .detail-hero-section { min-height: 300px; }
     .detail-main-title { font-size: 1.5rem; }
     .detail-card, .sidebar-card { padding: 24px; margin-bottom: 20px; }
-    .blog-sub-title { font-size: 0.95rem; }
+    .blog-sub-title { font-size: 1.2rem; }
+    /* استخدام المسافة المنطقية الذكية لضمان انسياب الأيقونة في الجهتين على الهاتف */
+    .blog-sub-title i {
+        margin-inline-end: 10px;
+        margin-inline-start: 0;
+    }
     .detail-full-desc { font-size: 0.98rem; }
     .stat-value { font-size: 0.95rem; }
 }
