@@ -6,7 +6,7 @@ const activitiesData = [
         featured: true, 
         category: "workshops",
         image: "assets/images/cybersecurity.jfif", 
-        badgeKey: "badge_activity", 
+        badgeKey: "filter_workshops", 
         titleKey: "act_workshop_title", 
         descKey: "act_workshop_desc", 
         date: "15/6/2026", 
