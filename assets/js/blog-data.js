@@ -25,9 +25,9 @@ const blogData = [
                 quickTip: "لا توجد شركة أمنية أو بنك يطلب منك تحديث بياناتك السرية عبر رابط بريد إلكتروني مباشر أبداً!"
             },
             en: {
-                subtitle1: "What is Phishing and Social Engineering?",
+                subtitle1: "What is Phishing and Social Engineering ?",
                 paragraph1: "Phishing is one of the most dangerous social engineering techniques that relies on deceiving victims into revealing sensitive data like passwords, through spoofed emails or fake links that perfectly mimic official entities.",
-                subtitle2: "How to Detect Malicious Links?",
+                subtitle2: "How to Detect Malicious Links ?",
                 paragraph2: "To protect yourself, always inspect the domain name carefully, verify the HTTPS protocol, and never interact with urgent messages that create a false sense of panic.",
                 quickTip: "No secure institution or bank will ever ask you to update your secret credentials via a direct email link!"
             }

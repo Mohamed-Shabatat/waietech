@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3 class="hub-card-title" data-i18n="${featuredArticle.titleKey}">${homeTitle}</h3>
                         <p class="hub-card-excerpt" data-i18n="${featuredArticle.descKey}">${homeDesc}</p>
                         <div class="hub-card-footer">
-                            <a href="blog-detail.html?id=${featuredArticle.id}" class="btn-hub-link" onclick="event.preventDefault(); window.innerWidth > 768 ? window.open('blog-detail.html?id=${featuredArticle.id}', '_blank') : window.location.href = 'blog-detail.html?id=${featuredArticle.id}';">
+                            <a href="blog.html?id=${featuredArticle.id}" class="btn-hub-link" onclick="event.preventDefault(); window.innerWidth > 768 ? window.open('blog-detail.html?id=${featuredArticle.id}', '_blank') : window.location.href = 'blog-detail.html?id=${featuredArticle.id}';">
                                 <span data-i18n="btn_read_blog">${homeBtnText}</span> 
                                 <i class="fas fa-arrow-left arrow-icon"></i>
                             </a>
