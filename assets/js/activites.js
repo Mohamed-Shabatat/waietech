@@ -1,7 +1,7 @@
 // assets/js/activities.js
 document.addEventListener("DOMContentLoaded", () => {
 
-        // [1] معالجة وحقن كرت الصفحة الرئيسية (Home Page)
+    // [1] معالجة وحقن كرت الصفحة الرئيسية (Home Page)
     const mainFeaturedActivityContainer = document.getElementById("main-featured-activity-container");
 
     if (mainFeaturedActivityContainer && typeof activitiesData !== 'undefined') {
