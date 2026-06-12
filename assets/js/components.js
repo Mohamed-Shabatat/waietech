@@ -141,7 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="footer-col">
                         <h4 class="col-title" data-i18n="footer_support_title">تواصل معنا</h4>
                         <ul class="footer-contact-info">
-                            <li><i class="fas fa-envelope"></i> <span>info@waietech.com</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>waietech.supp@gmail.com
+</span></li>
                             <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_location">المملكة الأردنية الهاشمية</span></li>
                         </ul>
                         <div class="footer-socials">

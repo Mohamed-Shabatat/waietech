@@ -107,7 +107,7 @@ const translations = {
 
         // المفاتيح الجديدة الخاصة بالبريد والموقع الجغرافي
         contact_email_label: "البريد الإلكتروني",
-        contact_email_val: "info@waietech.com",
+        contact_email_val: "waietech.supp@gmail.com",
         contact_location_label: "الموقع الجغرافي",
         contact_location_val: "المملكة الأردنية الهاشمية",
         
@@ -169,7 +169,7 @@ const translations = {
 
         // محتوى كرت أحدث نشاط
         act_workshop_title: "ورشة أساسيات الأمن السيبراني",
-        act_workshop_desc: "تم تنفيذ ورشة عمل مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...  ",
+        act_workshop_desc: "تم تنفيذ ورشة تدريبية مكثفة تهدف إلى تمكين الحضور من حماية بيئاتهم الرقمية وفهم التهديدات السيبرانية الحديثة...  ",
         btn_explore_activities: "استكشف الأنشطة",
 
         // الإضافات الجديدة الخاصة بصفحة الأنشطة والفلترة باللغة العربية:
@@ -202,13 +202,13 @@ const translations = {
 
         // مصفوفة المخرجات الخاصة بالنشاط الأول (تُحقن كقائمة نقطية)
         act_001_outputs: [
-            "توعية أكثر من 150 طالباً وطالبة بأبرز مخاطر التصيد الاحتيالي.",
+            "توعية أكثر من 20 متدربة بأبرز مخاطر التصيد الاحتيالي.",
             "شرح عملي لكيفية فحص الروابط والملفات المشبوهة قبل فتحها.",
             "توزيع مواد تعليمية وحقائب تدريبية رقمية للمشاركين.",
             "تعزيز مهارات الحضور في بناء استراتيجيات دفاعية للملفات الحساسة."
         ],
 
-        act_001_partners: "جامعة الطفيلة التقنية / مركز بناء المهارات ",
+        act_001_partners: "مركز بناء المهارات / مؤسسة إنجاز - المنصة",
 
 
 
@@ -363,7 +363,7 @@ const translations = {
 
         // الترجمة الإنجليزية للمفاتيح الجديدة
         contact_email_label: "Email Address",
-        contact_email_val: "info@waietech.com",
+        contact_email_val: "waietech.supp@gmail.com",
         contact_location_label: "Location",
         contact_location_val: "Hashemite Kingdom of Jordan",
         

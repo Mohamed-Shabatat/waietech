@@ -317,14 +317,14 @@ html[lang="en"] .activity-page-card:hover .btn-act-page-link .act-arrow-icon {
         padding: 8px;
         border-radius: 30px;
         
-        /* 🌟 الإضافات المطلوبة فقط دون تعديل الباقي */
+        /* الإضافات المطلوبة فقط دون تعديل الباقي */
         border: 1px solid rgba(39, 181, 247, 0.15); /* إضافة الإطار المحيط بالحاوية */
         overflow-x: auto; /* تفعيل التمرير الأفقي */
         -ms-overflow-style: none;  /* إخفاء السكرول لمتصفح IE و Edge */
         scrollbar-width: none;  /* إخفاء السكرول لمتصفح Firefox */
     }
 
-    /* 🌟 إخفاء شريط التمرير السفلي لمتصفحات Chrome و Safari و Opera */
+    /* إخفاء شريط التمرير السفلي لمتصفحات Chrome و Safari و Opera */
     .filter-tabs-wrapper::-webkit-scrollbar {
         display: none !important;
     }

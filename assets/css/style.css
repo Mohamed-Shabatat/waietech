@@ -487,6 +487,16 @@ html[dir="rtl"] .col-title::after {
         align-items: center; /* توسط عمودي مثالي للسطر */
     }
 
+    #nav-links li a {
+        display: inline-block;
+        transform: translateY(2px); /* ينزل نص الرابط لأسفل ليحاذي الأيقونة مجهرياً */
+        vertical-align: middle;
+    }
+
+    #nav-links li .nav-icon {
+        vertical-align: middle;     /* يضمن بقاء الأيقونة في نقطة الارتكاز */
+    }
+
     /* طبقة التظليل الخلفية */
     .nav-overlay {
         position: fixed;
