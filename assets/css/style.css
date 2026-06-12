@@ -492,6 +492,10 @@ html[dir="rtl"] .col-title::after {
         transform: translateY(4px); /* ينزل نص الرابط لأسفل ليحاذي الأيقونة مجهرياً */
         vertical-align: middle;
     }
+
+    #nav-links li .nav-icon {
+        vertical-align: middle;     /* يضمن بقاء الأيقونة في نقطة الارتكاز */
+    }
     
 
     /* طبقة التظليل الخلفية */
