@@ -489,7 +489,7 @@ html[dir="rtl"] .col-title::after {
 
     #nav-links li a {
         display: inline-block;
-        transform: translateY(4px); /* ينزل نص الرابط لأسفل ليحاذي الأيقونة مجهرياً */
+        transform: translateY(5px); /* ينزل نص الرابط لأسفل ليحاذي الأيقونة مجهرياً */
         vertical-align: middle;
     }
 
